@@ -9,9 +9,12 @@
   *{box-sizing:border-box;}
   body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--fg);background:var(--bg);line-height:1.55;font-size:16px;}
   .container{max-width:820px;margin:0 auto;padding:48px 22px 80px;}
-  header{margin-bottom:14px;}
+  header{display:flex;align-items:center;gap:18px;margin-bottom:14px;}
+  .avatar{width:80px;height:80px;border-radius:50%;object-fit:cover;flex:0 0 auto;border:1px solid var(--border);}
+  .header-text{flex:1;min-width:0;}
   h1{font-size:26px;margin:0 0 4px;font-weight:600;}
   .contact{font-size:14px;color:var(--muted);margin-top:12px;}
+  .motivation{font-size:14.5px;color:#333;margin:16px 0 0;text-align:justify;}
   .contact a{color:var(--link);text-decoration:none;}
   .contact a:hover{text-decoration:underline;}
   .intro{font-size:15px;color:#333;margin:26px 0 4px;padding-bottom:26px;border-bottom:1px solid var(--border);text-align:justify;}
@@ -24,7 +27,7 @@
   .caption{font-size:12.5px;color:#666;margin:8px 12px 4px;font-style:italic;}
   .rows{margin:0;}
   .row{display:flex;gap:14px;padding:5px 0;font-size:15px;align-items:baseline;}
-  .row .k{flex:0 0 84px;color:var(--muted);font-size:13px;text-transform:uppercase;letter-spacing:.03em;}
+  .row .k{flex:0 0 130px;color:var(--muted);font-size:13px;text-transform:uppercase;letter-spacing:.03em;}
   .row .v{flex:1;text-align:justify;}
   .tools{display:flex;flex-wrap:wrap;gap:6px;margin-top:2px;}
   .tools span{background:var(--tag);border:1px solid var(--border);border-radius:3px;padding:2px 8px;font-size:13px;color:#444;}
@@ -67,9 +70,14 @@
 <div class="container">
 
   <header>
-    <h1>Mathis Burgevin</h1>
-    <p class="contact">06 63 93 15 59 · <a href="mailto:mathis.burgevin@gmail.com">mathis.burgevin@gmail.com</a> · <a href="https://linkedin.com/in/mathis-burgevin">LinkedIn</a></p>
+    <img class="avatar" src="mathis.jpeg" alt="Photo de Mathis Burgevin">
+    <div class="header-text">
+      <h1>Mathis Burgevin</h1>
+      <p class="contact">06 63 93 15 59 · <a href="mailto:mathis.burgevin@gmail.com">mathis.burgevin@gmail.com</a> · <a href="https://linkedin.com/in/mathis-burgevin">LinkedIn</a></p>
+    </div>
   </header>
+
+  <p class="motivation">Étudiant en dernière année à Polytech Tours (aménagement du territoire). Après deux stages en bureau d'études, ce qui m'intéresse maintenant c'est de mettre le SIG au service d'une collectivité — là où la donnée sert directement à décider et à agir sur le terrain.</p>
 
   <p class="intro">Quelques réalisations SIG dont je suis l'auteur ou le co-auteur, présentées à l'appui de ma candidature. Pour chacune, l'objectif, mon rôle et les outils utilisés. Certaines données ont été anonymisées.</p>
 
@@ -115,6 +123,7 @@
       <div class="row"><div class="k">Objectif</div><div class="v">Visualiser le phasage des chantiers d'un quartier dans le temps (emprises, installations, circulations, accès), pour coordonner les opérations et anticiper les interfaces.</div></div>
       <div class="row"><div class="k">Mon rôle</div><div class="v">Appui SIG sur un outil de phasage existant : après en avoir compris le fonctionnement (liaison entre planning et cartographie), j'ai aidé des collègues moins à l'aise avec le SIG à résoudre leurs problèmes d'affichage, de liens, de mise en page ou d'ajout d'éléments reliés à une base de données, sur certains secteurs.</div></div>
       <div class="row"><div class="k">Outils</div><div class="v"><div class="tools"><span>QGIS</span><span>PostgreSQL</span><span>MS Project</span></div></div></div>
+      <div class="row"><div class="k">Ce que j'en retiens</div><div class="v">Sur ce type d'outil partagé, la vraie difficulté n'est pas technique — c'est de le rendre utilisable au quotidien par des collègues dont le SIG n'est pas le métier. C'est ce projet qui me l'a fait comprendre concrètement.</div></div>
     </div>
   </section>
 
