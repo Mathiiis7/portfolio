@@ -33,6 +33,7 @@
   .tools span{background:var(--tag);border:1px solid var(--border);border-radius:3px;padding:2px 8px;font-size:13px;color:#444;}
   .case p{text-align:justify;margin:0 0 12px;font-size:15px;}
   .case p:last-child{margin-bottom:0;}
+  .case-prompt{color:var(--muted);font-size:13.5px;font-style:italic;text-align:justify;margin:10px 0 22px;line-height:1.55;}
   .dashboard-mockup{margin-top:24px;border:1px solid var(--border);border-radius:6px;background:#fff;overflow:hidden;}
   .dm-header{padding:10px 16px;background:#fafafa;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;}
   .dm-title{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;}
@@ -132,6 +133,7 @@
 
   <section class="project" style="border-bottom:none;">
     <h2>Étude de cas – suivi des aménagements cyclables</h2>
+    <p class="case-prompt">« La Ville souhaite publier une carte interactive permettant de suivre les aménagements cyclables réalisés chaque année et de produire un tableau de bord pour les élus. Décrivez les principales étapes que vous mettriez en œuvre, les outils utilisés, et les éléments les plus importants pour garantir la réussite du projet. La réponse est attendue en 20 lignes maximum. Vous pouvez illustrer schématiquement votre réponse. »</p>
     <div class="case">
       <p>La première étape, ce serait de cadrer le besoin avec les services concernés : savoir exactement ce qu'on veut suivre (le linéaire réalisé chaque année, le type d'aménagement, le quartier, éventuellement le coût) et ce que les élus attendent de leur côté. C'est important de clarifier le besoin avant de produire, parce que toute la suite en dépend.</p>
       <p>Ensuite je préparerais la couche de données des aménagements cyclables sous QGIS ou ArcGIS, en m'appuyant autant que possible sur les référentiels et données déjà disponibles à la Ville, et en la structurant proprement (année de réalisation, type, longueur, statut), avant de la publier sur ArcGIS Online. Cette couche servira de base commune à la carte et au tableau de bord.</p>
@@ -139,7 +141,7 @@
       <p>Le plus important, c'est surtout de garder la donnée à jour. Vu qu'on suit les aménagements faits chaque année, il faut savoir dès le début qui la met à jour et quand, par exemple à chaque fin d'année. Et je laisserais un document pour que quelqu'un d'autre puisse reprendre le suivi si besoin.</p>
       <div class="dashboard-mockup" role="img" aria-label="Aperçu illustratif du tableau de bord destiné aux élus : réalisés annuels, cumul depuis 2020, avancement de l'objectif Plan Vélo 2030, évolution année par année, répartition par type et par quartier.">
         <div class="dm-header">
-          <span class="dm-title">Aménagements cyclables — tableau de bord</span>
+          <span class="dm-title">Aménagements cyclables, tableau de bord</span>
           <div class="dm-filters">
             <span class="dm-filter">Année : 2026 ▾</span>
             <span class="dm-filter">Type ▾</span>
@@ -192,7 +194,7 @@
           </div>
         </div>
       </div>
-      <p class="dm-note">Aperçu illustratif de la sortie destinée aux élus (chiffres fictifs) — la carte grand public repose sur la même couche, avec filtre temporel et symbologie par type.</p>
+      <p class="dm-note">Aperçu illustratif de la sortie destinée aux élus (chiffres fictifs). La carte grand public repose sur la même couche, avec filtre temporel et symbologie par type.</p>
     </div>
   </section>
 
