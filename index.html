@@ -34,18 +34,33 @@
   .dm-header{padding:10px 16px;background:#fafafa;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;}
   .dm-title{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;}
   .dm-filter{font-size:12px;color:var(--muted);padding:3px 10px;border:1px solid var(--border);border-radius:3px;background:#fff;}
-  .dm-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:16px;}
+  .dm-filters{display:flex;gap:6px;flex-wrap:wrap;}
+  .dm-grid{display:flex;flex-direction:column;gap:12px;padding:16px;}
+  .dm-row{display:grid;gap:12px;}
+  .dm-row-3{grid-template-columns:1fr 1fr 1fr;}
+  .dm-row-2{grid-template-columns:1fr 1fr;}
   .dm-card{border:1px solid var(--border);border-radius:4px;padding:14px;background:#fff;}
   .dm-label{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:.03em;margin-bottom:10px;}
   .dm-big{font-size:15px;color:var(--fg);}
   .dm-big strong{font-size:28px;font-weight:600;color:var(--link);margin-right:4px;}
+  .dm-big .dm-of{color:var(--muted);font-size:15px;margin-left:2px;}
+  .dm-progress{display:flex;align-items:center;gap:10px;margin-top:10px;}
+  .dm-progress-track{flex:1;height:8px;background:#eee;border-radius:2px;overflow:hidden;}
+  .dm-progress-fill{height:100%;background:var(--link);opacity:.85;}
+  .dm-progress-pct{font-size:12px;color:var(--muted);}
   .dm-bar{display:grid;grid-template-columns:100px 1fr 34px;gap:8px;align-items:center;margin-top:7px;font-size:12px;}
   .dm-bar-lbl{color:var(--fg);}
   .dm-bar-fill{height:8px;background:var(--link);border-radius:2px;display:block;opacity:.85;}
   .dm-bar-val{color:var(--muted);text-align:right;}
+  .dm-timeline-row{display:grid;grid-template-columns:repeat(7,1fr);gap:6px;margin-top:12px;}
+  .dm-year{display:flex;flex-direction:column;align-items:center;gap:4px;}
+  .dm-year-val{font-size:11px;color:var(--muted);}
+  .dm-year-bar-container{height:60px;width:100%;display:flex;align-items:flex-end;justify-content:center;}
+  .dm-year-bar{width:60%;background:var(--link);opacity:.85;border-radius:2px 2px 0 0;}
+  .dm-year-label{font-size:11px;color:var(--fg);}
   .dm-note{font-size:12px;color:var(--muted);font-style:italic;margin:10px 2px 0;}
   footer{margin-top:34px;font-size:13.5px;color:var(--muted);}
-  @media(max-width:520px){.row{flex-direction:column;gap:2px;}.row .k{flex-basis:auto;}.dm-grid{grid-template-columns:1fr;}.dm-bar{grid-template-columns:90px 1fr 34px;}}
+  @media(max-width:520px){.row{flex-direction:column;gap:2px;}.row .k{flex-basis:auto;}.dm-row-3,.dm-row-2{grid-template-columns:1fr;}.dm-bar{grid-template-columns:90px 1fr 34px;}.dm-timeline-row{gap:3px;}.dm-year-val,.dm-year-label{font-size:10px;}}
 </style>
 </head>
 <body>
@@ -114,31 +129,58 @@
       <p>Ensuite je préparerais la couche de données des aménagements cyclables sous QGIS ou ArcGIS, en m'appuyant autant que possible sur les référentiels et données déjà disponibles à la Ville, et en la structurant proprement (année de réalisation, type, longueur, statut), avant de la publier sur ArcGIS Online. Cette couche servira de base commune à la carte et au tableau de bord.</p>
       <p>Après, je publierais une carte web sous ArcGIS Online, avec un filtre temporel par année et une symbologie distinguant les types d'aménagement cyclable (piste, bande, voie verte...). Et en parallèle, un tableau de bord sous ArcGIS Dashboards destiné aux élus, avec les chiffres clés : les kilomètres réalisés dans l'année et le total cumulé depuis le début, la répartition par type d'aménagement et par quartier pour vérifier que le développement est équilibré sur le territoire, et si la donnée existe le budget engagé.</p>
       <p>Le plus important, c'est surtout de garder la donnée à jour. Vu qu'on suit les aménagements faits chaque année, il faut savoir dès le début qui la met à jour et quand, par exemple à chaque fin d'année. Et je laisserais un document pour que quelqu'un d'autre puisse reprendre le suivi si besoin.</p>
-      <div class="dashboard-mockup" role="img" aria-label="Aperçu illustratif du tableau de bord destiné aux élus : réalisés annuels, cumul depuis 2020, répartition par type et par quartier.">
+      <div class="dashboard-mockup" role="img" aria-label="Aperçu illustratif du tableau de bord destiné aux élus : réalisés annuels, cumul depuis 2020, avancement de l'objectif PDU 2030, évolution année par année, répartition par type et par quartier.">
         <div class="dm-header">
           <span class="dm-title">Aménagements cyclables — tableau de bord</span>
-          <span class="dm-filter">Année : 2026 ▾</span>
+          <div class="dm-filters">
+            <span class="dm-filter">Année : 2026 ▾</span>
+            <span class="dm-filter">Type ▾</span>
+            <span class="dm-filter">Quartier ▾</span>
+          </div>
         </div>
         <div class="dm-grid">
-          <div class="dm-card">
-            <div class="dm-label">Réalisés en 2026</div>
-            <div class="dm-big"><strong>12,4</strong>km</div>
+          <div class="dm-row dm-row-3">
+            <div class="dm-card">
+              <div class="dm-label">Réalisés en 2026</div>
+              <div class="dm-big"><strong>12,4</strong>km</div>
+            </div>
+            <div class="dm-card">
+              <div class="dm-label">Cumul depuis 2020</div>
+              <div class="dm-big"><strong>58</strong>km</div>
+            </div>
+            <div class="dm-card">
+              <div class="dm-label">Objectif PDU 2030</div>
+              <div class="dm-big"><strong>58</strong><span class="dm-of">/ 80 km</span></div>
+              <div class="dm-progress"><div class="dm-progress-track"><div class="dm-progress-fill" style="width:72.5%"></div></div><span class="dm-progress-pct">73 %</span></div>
+            </div>
           </div>
-          <div class="dm-card">
-            <div class="dm-label">Cumul depuis 2020</div>
-            <div class="dm-big"><strong>58</strong>km</div>
+          <div class="dm-row">
+            <div class="dm-card">
+              <div class="dm-label">Évolution annuelle (km réalisés)</div>
+              <div class="dm-timeline-row">
+                <div class="dm-year"><span class="dm-year-val">3,5</span><div class="dm-year-bar-container"><div class="dm-year-bar" style="height:17px"></div></div><span class="dm-year-label">2020</span></div>
+                <div class="dm-year"><span class="dm-year-val">5,8</span><div class="dm-year-bar-container"><div class="dm-year-bar" style="height:28px"></div></div><span class="dm-year-label">2021</span></div>
+                <div class="dm-year"><span class="dm-year-val">7,2</span><div class="dm-year-bar-container"><div class="dm-year-bar" style="height:35px"></div></div><span class="dm-year-label">2022</span></div>
+                <div class="dm-year"><span class="dm-year-val">8,4</span><div class="dm-year-bar-container"><div class="dm-year-bar" style="height:41px"></div></div><span class="dm-year-label">2023</span></div>
+                <div class="dm-year"><span class="dm-year-val">9,7</span><div class="dm-year-bar-container"><div class="dm-year-bar" style="height:47px"></div></div><span class="dm-year-label">2024</span></div>
+                <div class="dm-year"><span class="dm-year-val">11,0</span><div class="dm-year-bar-container"><div class="dm-year-bar" style="height:53px"></div></div><span class="dm-year-label">2025</span></div>
+                <div class="dm-year"><span class="dm-year-val">12,4</span><div class="dm-year-bar-container"><div class="dm-year-bar" style="height:60px"></div></div><span class="dm-year-label">2026</span></div>
+              </div>
+            </div>
           </div>
-          <div class="dm-card">
-            <div class="dm-label">Répartition par type</div>
-            <div class="dm-bar"><span class="dm-bar-lbl">Piste</span><span class="dm-bar-fill" style="width:100%"></span><span class="dm-bar-val">6,2</span></div>
-            <div class="dm-bar"><span class="dm-bar-lbl">Bande</span><span class="dm-bar-fill" style="width:65%"></span><span class="dm-bar-val">4,0</span></div>
-            <div class="dm-bar"><span class="dm-bar-lbl">Voie verte</span><span class="dm-bar-fill" style="width:35%"></span><span class="dm-bar-val">2,2</span></div>
-          </div>
-          <div class="dm-card">
-            <div class="dm-label">Répartition par quartier</div>
-            <div class="dm-bar"><span class="dm-bar-lbl">Bas-Montreuil</span><span class="dm-bar-fill" style="width:100%"></span><span class="dm-bar-val">5,4</span></div>
-            <div class="dm-bar"><span class="dm-bar-lbl">Centre</span><span class="dm-bar-fill" style="width:70%"></span><span class="dm-bar-val">3,8</span></div>
-            <div class="dm-bar"><span class="dm-bar-lbl">Ruffins</span><span class="dm-bar-fill" style="width:59%"></span><span class="dm-bar-val">3,2</span></div>
+          <div class="dm-row dm-row-2">
+            <div class="dm-card">
+              <div class="dm-label">Répartition par type</div>
+              <div class="dm-bar"><span class="dm-bar-lbl">Piste</span><span class="dm-bar-fill" style="width:100%"></span><span class="dm-bar-val">6,2</span></div>
+              <div class="dm-bar"><span class="dm-bar-lbl">Bande</span><span class="dm-bar-fill" style="width:65%"></span><span class="dm-bar-val">4,0</span></div>
+              <div class="dm-bar"><span class="dm-bar-lbl">Voie verte</span><span class="dm-bar-fill" style="width:35%"></span><span class="dm-bar-val">2,2</span></div>
+            </div>
+            <div class="dm-card">
+              <div class="dm-label">Répartition par quartier</div>
+              <div class="dm-bar"><span class="dm-bar-lbl">Bas-Montreuil</span><span class="dm-bar-fill" style="width:100%"></span><span class="dm-bar-val">5,4</span></div>
+              <div class="dm-bar"><span class="dm-bar-lbl">Centre</span><span class="dm-bar-fill" style="width:70%"></span><span class="dm-bar-val">3,8</span></div>
+              <div class="dm-bar"><span class="dm-bar-lbl">Ruffins</span><span class="dm-bar-fill" style="width:59%"></span><span class="dm-bar-val">3,2</span></div>
+            </div>
           </div>
         </div>
       </div>
