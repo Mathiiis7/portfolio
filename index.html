@@ -21,6 +21,7 @@
   .shot{border:1px solid var(--border);border-radius:4px;overflow:hidden;background:#fafafa;margin-bottom:16px;}
   .shot a{display:block;}
   .shot img{display:block;width:100%;height:auto;}
+  .caption{font-size:12.5px;color:#666;margin:8px 12px 4px;font-style:italic;}
   .rows{margin:0;}
   .row{display:flex;gap:14px;padding:5px 0;font-size:15px;align-items:baseline;}
   .row .k{flex:0 0 84px;color:var(--muted);font-size:13px;text-transform:uppercase;letter-spacing:.03em;}
@@ -52,8 +53,8 @@
   <section class="project">
     <h2>Outil cartographique automatisé – patrimoine bâti</h2>
     <p class="context">Stage chez Egis, Nantes – schéma directeur immobilier</p>
-    <div class="shot"><a href="projet-outil-atlas.png" target="_blank" rel="noopener"><img src="projet-outil-atlas.png" alt="Atlas cartographique généré automatiquement sous QGIS"></a></div>
-    <div class="shot"><a href="projet-outil-webgis.png" target="_blank" rel="noopener"><img src="projet-outil-webgis.png" alt="Publication WebSIG sous ArcGIS Online avec couches thématiques et filtres"></a></div>
+    <div class="shot"><a href="projet-outil-atlas.png" target="_blank" rel="noopener"><img src="projet-outil-atlas.png" alt="Atlas cartographique généré automatiquement sous QGIS"></a><p class="caption">Atlas cartographique généré automatiquement, avec vue d'ensemble en cases et cartes de détail par secteur.</p></div>
+    <div class="shot"><a href="projet-outil-webgis.png" target="_blank" rel="noopener"><img src="projet-outil-webgis.png" alt="Publication WebSIG sous ArcGIS Online avec couches thématiques et filtres"></a><p class="caption">WebSIG publié sous ArcGIS Online : couches thématiques et table attributaire consultables en ligne.</p></div>
     <div class="rows">
       <div class="row"><div class="k">Objectif</div><div class="v">Transformer automatiquement les résultats d'un diagnostic énergétique et immobilier (tenu sous Excel) en cartes exploitables, pour donner une vue d'ensemble d'un parc de bâtiments et aider à prioriser les interventions.</div></div>
       <div class="row"><div class="k">Mon rôle</div><div class="v">Auteur de l'outil, de l'analyse du besoin à la livraison. J'ai conçu un processus de traitement en Python (PyQGIS) qui prend le fichier Excel en entrée et génère automatiquement, sous QGIS, un atlas cartographique : création des géométries, structuration des données et application de la symbologie selon les critères du diagnostic, avec une vue d'ensemble découpée en cases et des cartes de détail pour chaque secteur. Les données ont ensuite été publiées sur un WebSIG sous ArcGIS Online, avec des couches thématiques (typologie, coût énergétique, chauffage...) et des filtres, pour une consultation en ligne plus interactive. J'ai également rédigé un guide d'utilisation pour que le traitement puisse être relancé à chaque mise à jour des données, sans tout refaire à la main.</div></div>
@@ -64,7 +65,7 @@
   <section class="project">
     <h2>Cartographie d'un projet de renouvellement urbain</h2>
     <p class="context">Stage chez Egis, Montreuil – réponse à un appel d'offre (marché public)</p>
-    <div class="shot"><a href="projet-pru.png" target="_blank" rel="noopener"><img src="projet-pru.png" alt="Carte d'un quartier en renouvellement urbain"></a></div>
+    <div class="shot"><a href="projet-pru.png" target="_blank" rel="noopener"><img src="projet-pru.png" alt="Carte d'un quartier en renouvellement urbain"></a><p class="caption">Carte de synthèse d'un quartier en renouvellement urbain (structure, équipements, circulations).</p></div>
     <div class="rows">
       <div class="row"><div class="k">Objectif</div><div class="v">Représenter un quartier en renouvellement urbain (structure, équipements, flux de circulation, interfaces avec les chantiers voisins) pour appuyer un dossier de candidature à un marché public.</div></div>
       <div class="row"><div class="k">Mon rôle</div><div class="v">Auteur de la carte : construction des couches à partir de la documentation disponible, choix des éléments à représenter et de la symbologie, mise en page.</div></div>
@@ -75,7 +76,7 @@
   <section class="project">
     <h2>Repérage cartographique d'opérations autour d'un projet de transport</h2>
     <p class="context">Stage chez Egis, Montreuil – réponse à un appel d'offre (marché public)</p>
-    <div class="shot"><a href="projet-reperage.png" target="_blank" rel="noopener"><img src="projet-reperage.png" alt="Carte de repérage d'opérations le long d'une ligne de transport"></a></div>
+    <div class="shot"><a href="projet-reperage.png" target="_blank" rel="noopener"><img src="projet-reperage.png" alt="Carte de repérage d'opérations le long d'une ligne de transport"></a><p class="caption">Repérage des opérations le long d'un projet de transport : vue d'ensemble et zooms sectoriels.</p></div>
     <div class="rows">
       <div class="row"><div class="k">Objectif</div><div class="v">Recenser et localiser l'ensemble des opérations (projets immobiliers, travaux de voirie et de réseaux, ouvrages de transport) le long du tracé, pour identifier les secteurs à forts enjeux de coordination. La carte a appuyé une candidature retenue.</div></div>
       <div class="row"><div class="k">Mon rôle</div><div class="v">Auteur de la carte : reconstitution des emprises à partir de données incomplètes, recherches complémentaires (arrêtés, plans publiés), structuration des couches, cartes de synthèse et zooms sectoriels.</div></div>
@@ -86,7 +87,7 @@
   <section class="project">
     <h2>Cartographie de phasage de chantiers (OPCIC)</h2>
     <p class="context">Stage chez Egis, Montreuil – coordination urbaine et inter-chantiers</p>
-    <div class="shot"><a href="projet-phasage.png" target="_blank" rel="noopener"><img src="projet-phasage.png" alt="Carte de phasage de chantiers sur un quartier"></a></div>
+    <div class="shot"><a href="projet-phasage.png" target="_blank" rel="noopener"><img src="projet-phasage.png" alt="Carte de phasage de chantiers sur un quartier"></a><p class="caption">Cartographie de phasage de chantiers : emprises, installations et circulations dans le temps.</p></div>
     <div class="rows">
       <div class="row"><div class="k">Objectif</div><div class="v">Visualiser le phasage des chantiers d'un quartier dans le temps (emprises, installations, circulations, accès), pour coordonner les opérations et anticiper les interfaces.</div></div>
       <div class="row"><div class="k">Mon rôle</div><div class="v">Reprise d'un outil de phasage existant : compréhension de son fonctionnement (liaison entre planning et cartographie), puis évolutions apportées aux cartes, avec l'ajout de couches, modification des propriétés et de la symbologie de certaines couches, et mise à jour de données qui n'étaient plus à jour par rapport à d'autres projets.</div></div>
