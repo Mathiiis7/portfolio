@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mathis Burgevin – Réalisations SIG</title>
+<style>
+  :root{--bg:#ffffff;--fg:#1a1a1a;--muted:#666;--border:#e2e2e2;--link:#1a4f8a;--tag:#f4f4f5;}
+  *{box-sizing:border-box;}
+  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--fg);background:var(--bg);line-height:1.55;font-size:16px;}
+  .container{max-width:820px;margin:0 auto;padding:48px 22px 80px;}
+  header{margin-bottom:14px;}
+  h1{font-size:26px;margin:0 0 4px;font-weight:600;}
+  .contact{font-size:14px;color:var(--muted);margin-top:12px;}
+  .contact a{color:var(--link);text-decoration:none;}
+  .contact a:hover{text-decoration:underline;}
+  .intro{font-size:15px;color:#333;margin:26px 0 4px;padding-bottom:26px;border-bottom:1px solid var(--border);}
+  .project{padding:32px 0;border-bottom:1px solid var(--border);}
+  .project h2{font-size:18px;margin:0 0 3px;font-weight:600;}
+  .context{font-size:13.5px;color:var(--muted);margin:0 0 16px;}
+  .shot{border:1px solid var(--border);border-radius:4px;overflow:hidden;background:#fafafa;margin-bottom:16px;}
+  .shot img{display:block;width:100%;height:auto;}
+  .rows{margin:0;}
+  .row{display:flex;gap:14px;padding:5px 0;font-size:15px;align-items:baseline;}
+  .row .k{flex:0 0 84px;color:var(--muted);font-size:13px;text-transform:uppercase;letter-spacing:.03em;}
+  .row .v{flex:1;}
+  .tools{display:flex;flex-wrap:wrap;gap:6px;margin-top:2px;}
+  .tools span{background:var(--tag);border:1px solid var(--border);border-radius:3px;padding:2px 8px;font-size:13px;color:#444;}
+  .case p{text-align:justify;margin:0 0 12px;font-size:15px;}
+  .case p:last-child{margin-bottom:0;}
+  footer{margin-top:34px;font-size:13.5px;color:var(--muted);}
+  @media(max-width:520px){.row{flex-direction:column;gap:2px;}.row .k{flex-basis:auto;}}
+</style>
+</head>
+<body>
+<div class="container">
+
+  <header>
+    <h1>Mathis Burgevin</h1>
+    <p class="contact">06 63 93 15 59 · <a href="mailto:mathis.burgevin@gmail.com">mathis.burgevin@gmail.com</a> · <a href="https://linkedin.com/in/mathis-burgevin">LinkedIn</a></p>
+  </header>
+
+  <p class="intro">Quelques réalisations SIG dont je suis l'auteur ou le co-auteur, présentées à l'appui de ma candidature. Pour chacune, l'objectif, mon rôle et les outils utilisés. Certaines données ont été anonymisées.</p>
+
+  <section class="project">
+    <h2>Outil cartographique automatisé – patrimoine bâti</h2>
+    <p class="context">Stage chez Egis, Nantes – schéma directeur immobilier</p>
+    <div class="shot"><img src="projet-outil-atlas.png" alt="Atlas cartographique généré automatiquement sous QGIS"></div>
+    <div class="shot"><img src="projet-outil-webgis.png" alt="Publication WebSIG sous ArcGIS Online avec couches thématiques et filtres"></div>
+    <div class="rows">
+      <div class="row"><div class="k">Objectif</div><div class="v">Transformer automatiquement les résultats d'un diagnostic énergétique et immobilier (tenu sous Excel) en cartes exploitables, pour donner une vue d'ensemble d'un parc de bâtiments et aider à prioriser les interventions.</div></div>
+      <div class="row"><div class="k">Mon rôle</div><div class="v">Auteur de l'outil, de l'analyse du besoin à la livraison. J'ai conçu un processus de traitement en Python (PyQGIS) qui prend le fichier Excel en entrée et génère automatiquement, sous QGIS, un atlas cartographique : création des géométries, structuration des données et application de la symbologie selon les critères du diagnostic, avec une vue d'ensemble découpée en cases et des cartes de détail pour chaque secteur. Les données ont ensuite été publiées sur un WebSIG sous ArcGIS Online, avec des couches thématiques (typologie, coût énergétique, chauffage...) et des filtres, pour une consultation en ligne plus interactive. J'ai également rédigé un guide d'utilisation pour que le traitement puisse être relancé à chaque mise à jour des données, sans tout refaire à la main.</div></div>
+      <div class="row"><div class="k">Outils</div><div class="v"><div class="tools"><span>QGIS</span><span>Python (PyQGIS)</span><span>Excel</span><span>ArcGIS Online</span></div></div></div>
+    </div>
+  </section>
+
+  <section class="project">
+    <h2>Cartographie d'un projet de renouvellement urbain</h2>
+    <p class="context">Stage chez Egis, Montreuil – réponse à un appel d'offre (marché public)</p>
+    <div class="shot"><img src="projet-pru.png" alt="Carte d'un quartier en renouvellement urbain"></div>
+    <div class="rows">
+      <div class="row"><div class="k">Objectif</div><div class="v">Représenter un quartier en renouvellement urbain (structure, équipements, flux de circulation, interfaces avec les chantiers voisins) pour appuyer un dossier de candidature à un marché public.</div></div>
+      <div class="row"><div class="k">Mon rôle</div><div class="v">Auteur de la carte : construction des couches à partir de la documentation disponible, choix des éléments à représenter et de la symbologie, mise en page.</div></div>
+      <div class="row"><div class="k">Outils</div><div class="v"><div class="tools"><span>QGIS</span></div></div></div>
+    </div>
+  </section>
+
+  <section class="project">
+    <h2>Repérage cartographique d'opérations autour d'un projet de transport</h2>
+    <p class="context">Stage chez Egis, Montreuil – réponse à un appel d'offre (marché public)</p>
+    <div class="shot"><img src="projet-reperage.png" alt="Carte de repérage d'opérations le long d'une ligne de transport"></div>
+    <div class="rows">
+      <div class="row"><div class="k">Objectif</div><div class="v">Recenser et localiser l'ensemble des opérations (projets immobiliers, travaux de voirie et de réseaux, ouvrages de transport) le long du tracé, pour identifier les secteurs à forts enjeux de coordination. La carte a appuyé une candidature retenue.</div></div>
+      <div class="row"><div class="k">Mon rôle</div><div class="v">Auteur de la carte : reconstitution des emprises à partir de données incomplètes, recherches complémentaires (arrêtés, plans publiés), structuration des couches, cartes de synthèse et zooms sectoriels.</div></div>
+      <div class="row"><div class="k">Outils</div><div class="v"><div class="tools"><span>QGIS</span></div></div></div>
+    </div>
+  </section>
+
+  <section class="project">
+    <h2>Cartographie de phasage de chantiers (OPCIC)</h2>
+    <p class="context">Stage chez Egis, Montreuil – coordination urbaine et inter-chantiers</p>
+    <div class="shot"><img src="projet-phasage.png" alt="Carte de phasage de chantiers sur un quartier"></div>
+    <div class="rows">
+      <div class="row"><div class="k">Objectif</div><div class="v">Visualiser le phasage des chantiers d'un quartier dans le temps (emprises, installations, circulations, accès), pour coordonner les opérations et anticiper les interfaces.</div></div>
+      <div class="row"><div class="k">Mon rôle</div><div class="v">Reprise d'un outil de phasage existant : compréhension de son fonctionnement (liaison entre planning et cartographie), puis évolutions apportées aux cartes, avec l'ajout de couches, modification des propriétés et de la symbologie de certaines couches, et mise à jour de données qui n'étaient plus à jour par rapport à d'autres projets.</div></div>
+      <div class="row"><div class="k">Outils</div><div class="v"><div class="tools"><span>QGIS</span><span>PostgreSQL</span><span>MS Project</span></div></div></div>
+    </div>
+  </section>
+
+  <section class="project" style="border-bottom:none;">
+    <h2>Étude de cas – suivi des aménagements cyclables</h2>
+    <div class="case">
+      <p>La première étape, ce serait de cadrer le besoin avec les services concernés : savoir exactement ce qu'on veut suivre (le linéaire réalisé chaque année, le type d'aménagement, le quartier, éventuellement le coût) et ce que les élus attendent de leur côté. C'est important de clarifier le besoin avant de produire, parce que toute la suite en dépend.</p>
+      <p>Ensuite je préparerais la couche de données des aménagements cyclables sous QGIS ou ArcGIS, en m'appuyant autant que possible sur les référentiels et données déjà disponibles à la Ville, et en la structurant proprement (année de réalisation, type, longueur, statut), avant de la publier sur ArcGIS Online. Cette couche servira de base commune à la carte et au tableau de bord.</p>
+      <p>Après, je publierais une carte web sous ArcGIS Online, avec un filtre temporel par année et une symbologie distinguant les types d'aménagement cyclable (piste, bande, voie verte...). Et en parallèle, un tableau de bord sous ArcGIS Dashboards destiné aux élus, avec les chiffres clés : les kilomètres réalisés dans l'année et le total cumulé depuis le début, la répartition par type d'aménagement et par quartier pour vérifier que le développement est équilibré sur le territoire, et si la donnée existe le budget engagé.</p>
+      <p>Le plus important, c'est surtout de garder la donnée à jour. Vu qu'on suit les aménagements faits chaque année, il faut savoir dès le début qui la met à jour et quand, par exemple à chaque fin d'année. Et je laisserais un document pour que quelqu'un d'autre puisse reprendre le suivi si besoin.</p>
+    </div>
+  </section>
+
+  <footer>Mathis Burgevin – candidature au poste de chargé de projets SIG, Ville de Montreuil.</footer>
+
+</div>
+</body>
+</html>
