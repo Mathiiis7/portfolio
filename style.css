@@ -24,6 +24,7 @@ h1{font-family:var(--serif);font-size:32px;margin:0 0 6px;font-weight:500;letter
 .header-light .name a:hover{color:var(--fg);}
 .page-title{font-family:var(--serif);font-size:28px;margin:30px 0 6px;font-weight:500;letter-spacing:-0.01em;line-height:1.2;}
 .page-sub{font-size:13.5px;color:var(--muted);margin:0 0 22px;}
+.page-lead{font-size:15px;color:#333;text-align:justify;margin:0 0 26px;line-height:1.6;}
 
 /* Intro on home */
 .intro{font-size:15px;color:#333;margin:26px 0 4px;padding-bottom:26px;border-bottom:1px solid var(--border);text-align:justify;}
