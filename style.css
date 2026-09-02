@@ -62,6 +62,8 @@ h1{font-family:var(--serif);font-size:32px;margin:0 0 6px;font-weight:500;letter
 .row .v{flex:1;text-align:justify;}
 .tools{display:flex;flex-wrap:wrap;gap:6px;margin-top:2px;}
 .tools span{background:var(--tag);border:1px solid var(--border);border-radius:3px;padding:2px 8px;font-size:13px;color:#444;}
+.tools span.tools-cat{background:transparent;border:none;padding:2px 4px 2px 0;color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.05em;font-weight:500;}
+.tools span.tools-cat:not(:first-child){margin-left:6px;}
 
 /* Case study */
 .case p{text-align:justify;margin:0 0 12px;font-size:15px;}
