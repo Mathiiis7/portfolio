@@ -38,10 +38,29 @@ h1{font-family:var(--serif);font-size:32px;margin:0 0 6px;font-weight:500;letter
 .card p{font-size:13.5px;color:#444;margin:0 0 14px;flex:1;line-height:1.5;}
 .card-arrow{color:var(--link);font-size:13.5px;}
 
+/* Status pill */
+.status{margin:12px 0 0;font-size:13px;color:#333;display:inline-flex;align-items:center;gap:8px;padding:4px 12px;border:1px solid var(--border);border-radius:16px;background:#fff;}
+.status-dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:#3b8f52;}
+
 /* Formation compact block on home */
 .formation-block{padding:22px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);margin:0 0 22px;}
 .formation-block h2{font-size:14px;color:var(--muted);text-transform:uppercase;letter-spacing:.03em;font-weight:600;margin:0 0 8px;}
 .formation-block p{font-size:15px;color:#333;margin:0;text-align:justify;}
+
+/* Skills block on home */
+.skills-block{padding:26px 0;border-bottom:1px solid var(--border);margin:0 0 22px;}
+.skills-block h2{font-size:14px;color:var(--muted);text-transform:uppercase;letter-spacing:.03em;font-weight:600;margin:0 0 18px;font-family:var(--sans);}
+.skills-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px 32px;}
+.skills-cat h3{font-family:var(--sans);font-size:12px;font-weight:600;color:var(--fg);text-transform:uppercase;letter-spacing:.03em;margin:0 0 4px;}
+.skills-cat p{font-size:14.5px;color:#333;margin:0;line-height:1.5;}
+
+/* CTA contact block */
+.cta-contact{padding:28px 0 6px;margin:22px 0 0;}
+.cta-contact h2{font-family:var(--serif);font-size:22px;font-weight:500;margin:0 0 10px;letter-spacing:-0.005em;line-height:1.25;}
+.cta-contact p{margin:0 0 8px;font-size:15px;color:#333;}
+.cta-contact .cta-links{font-size:14.5px;color:var(--muted);}
+.cta-contact a{color:var(--link);text-decoration:none;}
+.cta-contact a:hover{text-decoration:underline;}
 
 /* Project sections */
 .project{padding:32px 0;border-bottom:1px solid var(--border);}
@@ -115,4 +134,5 @@ footer{margin-top:34px;font-size:13.5px;color:var(--muted);}
   .dm-timeline-row{gap:3px;}
   .dm-year-val,.dm-year-label{font-size:10px;}
   .shots-grid{grid-template-columns:1fr;}
+  .skills-grid{grid-template-columns:1fr;}
 }
