@@ -70,6 +70,7 @@ h1{font-family:var(--serif);font-size:32px;margin:0 0 6px;font-weight:500;letter
 .shot a{display:block;}
 .shot img{display:block;width:100%;height:auto;}
 .caption{font-size:12.5px;color:#666;margin:8px 12px 4px;font-style:italic;}
+.page-hint{font-size:13px;color:var(--muted);font-style:italic;margin:-6px 0 18px;}
 .project-note{font-size:13.5px;color:var(--muted);font-style:italic;margin:0 0 16px;line-height:1.55;text-align:justify;background:#fafafa;padding:10px 14px;border-left:3px solid var(--border);border-radius:0 3px 3px 0;}
 
 /* Grid for the Ligue captures */
@@ -128,6 +129,11 @@ footer{margin-top:34px;font-size:13.5px;color:var(--muted);}
   .cards{grid-template-columns:1fr;}
 }
 @media(max-width:520px){
+  /* cibles tactiles : liens de contact plus faciles a viser au pouce */
+  .contact,.cta-contact .cta-links{line-height:2.2;}
+  .contact a,.cta-contact .cta-links a{display:inline-block;padding:8px 3px;}
+  /* libelles de categorie un peu plus lisibles */
+  .card-label{font-size:12px;}
   .row{flex-direction:column;gap:2px;}
   .row .k{flex-basis:auto;}
   .dm-row-3,.dm-row-2{grid-template-columns:1fr;}
