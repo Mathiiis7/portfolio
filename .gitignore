@@ -1,3 +1,9 @@
 Thumbs.db
 .DS_Store
 desktop.ini
+
+# Documents de travail internes : NE JAMAIS publier.
+# passation.md nomme les clients Egis en clair (Leff'Armor, Bondy, Ligne 15)
+# et liste les candidatures. Le committer annulerait l'anonymisation des captures.
+passation.md
+pixelate.ps1
