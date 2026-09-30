@@ -48,6 +48,9 @@
     e.preventDefault();
     if (location.hash !== '#' + id) history.pushState(null, '', '#' + id);
     cible.scrollIntoView();
+    /* Le clic empeche le saut normal, qui deplace aussi le curseur clavier :
+       on le fait a la main pour une cible prevue pour (lien d'evitement). */
+    if (cible.hasAttribute('tabindex')) cible.focus({ preventScroll: true });
 
     var fait = false;
     function corriger() {
@@ -221,6 +224,9 @@
       points[k].classList.toggle('is-on', k === i);
       points[k].setAttribute('aria-current', k === i ? 'true' : 'false');
     }
+    /* Les vues hors cadre sortent du parcours au clavier : sinon la touche Tab
+       s'arrete sur des liens qu'on ne voit pas. */
+    for (var v = 0; v < vues.length; v++) vues[v].inert = v !== i;
   }
 
   /* L'indice vise est retenu : sans ca, deux clics rapides se perdent, le
@@ -282,20 +288,6 @@
 
   window.addEventListener('resize', rafraichir);
   rafraichir();
-})();
-
-
-/* Sur telephone, les onglets defilent horizontalement et le dernier sort du
-   cadre. Celui de la page ouverte doit etre visible : on l'amene au centre. */
-(function () {
-  var barre = document.querySelector('.nav__links');
-  if (!barre) return;
-  var actif = barre.querySelector('[aria-current]');
-  if (!actif) return;
-  var debord = barre.scrollWidth - barre.clientWidth;
-  if (debord <= 0) return;
-  var vise = actif.offsetLeft + actif.offsetWidth / 2 - barre.clientWidth / 2;
-  barre.scrollLeft = Math.max(0, Math.min(vise, debord));
 })();
 
 

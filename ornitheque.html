@@ -23,6 +23,7 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<a class="saut" href="#contenu">Aller au contenu</a>
 
 <nav class="nav">
   <div class="nav__shell">
@@ -39,7 +40,7 @@
   </div>
 </nav>
 
-<main class="sheet">
+<main class="sheet" id="contenu" tabindex="-1">
 
   <header class="hero reveal">
     <h1 class="title">L’Ornithèque</h1>
@@ -55,25 +56,25 @@
 
     <figure class="plate">
       <a href="projet-ligue-dex.webp" target="_blank" rel="noopener"><img width="1478" height="1038" loading="lazy" src="projet-ligue-dex.webp" alt="Collection Birdydex, dex des espèces avec fiche détaillée"></a>
-      <figcaption>Collection Birdydex&nbsp;: les espèces trouvables en France, chaque fiche présentant description, rareté locale et phénologie annuelle.<br><a class="zoom" href="projet-ligue-dex.webp" target="_blank" rel="noopener">Pleine résolution ↗</a></figcaption>
+      <figcaption>Collection Birdydex&nbsp;: les espèces trouvables en France, chaque fiche présentant description, rareté locale et phénologie annuelle.<br><a class="zoom" href="projet-ligue-dex.webp" target="_blank" rel="noopener" aria-label="Pleine résolution, nouvel onglet : Collection Birdydex, dex des espèces avec fiche détaillée">Pleine résolution ↗</a></figcaption>
     </figure>
 
     <div class="plates--pair">
       <figure class="plate">
         <a href="projet-ligue-obs.webp" target="_blank" rel="noopener"><img width="1461" height="1007" loading="lazy" src="projet-ligue-obs.webp" alt="Carte des observations récentes en Île-de-France"></a>
-        <figcaption>Observations récentes en Île-de-France, colorées selon la rareté de l’espèce (données eBird / GBIF).<br><a class="zoom" href="projet-ligue-obs.webp" target="_blank" rel="noopener">Pleine résolution ↗</a></figcaption>
+        <figcaption>Observations récentes en Île-de-France, colorées selon la rareté de l’espèce (données <a href="https://ebird.org" target="_blank" rel="noopener">eBird</a> / <a href="https://www.gbif.org" target="_blank" rel="noopener">GBIF</a>).<br><a class="zoom" href="projet-ligue-obs.webp" target="_blank" rel="noopener" aria-label="Pleine résolution, nouvel onglet : Carte des observations récentes en Île-de-France">Pleine résolution ↗</a></figcaption>
       </figure>
       <figure class="plate">
         <a href="projet-ligue-zone.webp" target="_blank" rel="noopener"><img width="1210" height="1021" loading="lazy" src="projet-ligue-zone.webp" alt="Outil de sélection de zone sur la carte"></a>
-        <figcaption>Outil de sélection à main levée pour lister les espèces observées dans une zone précise, ici Paris intra-muros, 14 derniers jours.<br><a class="zoom" href="projet-ligue-zone.webp" target="_blank" rel="noopener">Pleine résolution ↗</a></figcaption>
+        <figcaption>Outil de sélection à main levée pour lister les espèces observées dans une zone précise, ici Paris intra-muros, 14 derniers jours.<br><a class="zoom" href="projet-ligue-zone.webp" target="_blank" rel="noopener" aria-label="Pleine résolution, nouvel onglet : Outil de sélection de zone sur la carte">Pleine résolution ↗</a></figcaption>
       </figure>
       <figure class="plate">
         <a href="projet-ligue-repartition.png" target="_blank" rel="noopener"><img width="678" height="450" loading="lazy" src="projet-ligue-repartition.png" alt="Carte de répartition mondiale d’une espèce"></a>
-        <figcaption>Carte de répartition mondiale d’une espèce, générée à partir des données Cornell Status &amp; Trends.<br><a class="zoom" href="projet-ligue-repartition.png" target="_blank" rel="noopener">Pleine résolution ↗</a></figcaption>
+        <figcaption>Carte de répartition mondiale d’une espèce, générée à partir des données <a href="https://ebird.org/science/status-and-trends" target="_blank" rel="noopener">eBird Status &amp; Trends</a> du Cornell Lab of Ornithology.<br><a class="zoom" href="projet-ligue-repartition.png" target="_blank" rel="noopener" aria-label="Pleine résolution, nouvel onglet : Carte de répartition mondiale d’une espèce">Pleine résolution ↗</a></figcaption>
       </figure>
       <figure class="plate">
         <a href="projet-ligue-migration.webp" target="_blank" rel="noopener"><img width="1692" height="927" loading="lazy" src="projet-ligue-migration.webp" alt="Animation de migration semaine par semaine"></a>
-        <figcaption>Animation semaine par semaine des couloirs de migration, contrôlée par un curseur temporel.<br><a class="zoom" href="projet-ligue-migration.webp" target="_blank" rel="noopener">Pleine résolution ↗</a></figcaption>
+        <figcaption>Animation semaine par semaine des couloirs de migration, contrôlée par un curseur temporel.<br><a class="zoom" href="projet-ligue-migration.webp" target="_blank" rel="noopener" aria-label="Pleine résolution, nouvel onglet : Animation de migration semaine par semaine">Pleine résolution ↗</a></figcaption>
       </figure>
     </div>
 
@@ -85,6 +86,15 @@
       <div>
         <p class="releve__k">Outils</p>
         <div class="tools"><span class="tools-cat">Cartographie</span><span>Leaflet</span><span class="tools-cat">Données</span><span>eBird</span><span>GBIF</span><span>Cornell Status &amp; Trends</span><span>xeno-canto</span><span class="tools-cat">Autre</span><span>GitHub Pages</span><span>Claude Code</span></div>
+      </div>
+      <!-- Citations exigees par les conditions d'utilisation d'eBird
+           (ebird.org/about/citation) et de Status & Trends (section 2 de
+           leurs conditions, version du 30/10/2023) : citation complete avec
+           DOI, lien vers le projet, et avertissement repris mot pour mot. -->
+      <div>
+        <p class="releve__k">Sources</p>
+        <p class="releve__v releve__v--note">Observations&nbsp;: eBird, base de données en ligne sur la répartition et l’abondance des oiseaux, Cornell Lab of Ornithology, Ithaca, New York (<a href="https://ebird.org" target="_blank" rel="noopener">ebird.org</a>)&nbsp;; <a href="https://www.gbif.org" target="_blank" rel="noopener">GBIF</a>. Répartition et migration&nbsp;: Fink, D., T. Auer, A. Johnston, M. Strimas-Mackey, S. Ligocki, O. Robinson, W. Hochachka, L. Jaromczyk, C. Crowley, K. Dunham, A. Stillman, C. Davis, M. Stokowski, P. Sharma, V. Pantoja, D. Burgin, P. Crowe, M. Bell, S. Ray, I. Davies, V. Ruiz-Gutierrez, C. Wood, A. Rodewald. 2024. eBird Status and Trends, Data Version: 2023; Released: 2025. Cornell Lab of Ornithology, Ithaca, New York. <a href="https://doi.org/10.2173/WZTW8903" target="_blank" rel="noopener">doi.org/10.2173/WZTW8903</a>, <a href="https://ebird.org/science/status-and-trends" target="_blank" rel="noopener">ebird.org/science/status-and-trends</a>.</p>
+        <p class="releve__v releve__v--note" lang="en">This material uses data from the eBird Status and Trends Project at the Cornell Lab of Ornithology, eBird.org. Any opinions, findings, and conclusions or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the Cornell Lab of Ornithology.</p>
       </div>
     </div>
 
@@ -108,6 +118,7 @@
     <a href="experiences.html">Expériences</a>
     <a href="dater-le-bati.html">Projet de recherche</a>
     <a href="etude-de-cas.html">Étude de cas</a>
+    <span class="foot__legal">Site hébergé par GitHub, Inc., 88 Colin P. Kelly Jr. St., San Francisco, CA 94107, États-Unis</span>
   </div>
 
 </main>

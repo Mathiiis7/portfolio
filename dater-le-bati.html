@@ -23,6 +23,7 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<a class="saut" href="#contenu">Aller au contenu</a>
 
 <nav class="nav">
   <div class="nav__shell">
@@ -39,7 +40,7 @@
   </div>
 </nav>
 
-<main class="sheet">
+<main class="sheet" id="contenu" tabindex="-1">
 
   <header class="hero reveal">
     <h1 class="title">Compléter une base de données du bâti par apprentissage automatique</h1>
@@ -82,7 +83,7 @@
 
     <figure class="plate plate--cote">
       <a href="projet-bati-correlations.webp" target="_blank" rel="noopener"><img width="1015" height="935" loading="lazy" src="projet-bati-correlations.webp" alt="Matrice de corrélation entre l’année de construction et les variables de forme des bâtiments"></a>
-      <figcaption>Chaque case mesure le lien entre deux variables, de -1 à 1&nbsp;: rouge, elles montent ensemble&nbsp;; bleu, l’une monte quand l’autre descend&nbsp;; blanc, aucun rapport. Seule la première ligne compte ici, celle de l’année de construction. Le lien le plus fort y plafonne à 0,49, et la hauteur du bâtiment, à 0,05, ne dit presque rien de son âge. Aucune variable ne suffit donc à elle seule&nbsp;: si le modèle y arrive, ce sera en combinant plusieurs indices faibles.<br><a class="zoom" href="projet-bati-correlations.webp" target="_blank" rel="noopener">Pleine résolution ↗</a></figcaption>
+      <figcaption>Chaque case mesure le lien entre deux variables, de -1 à 1&nbsp;: rouge, elles montent ensemble&nbsp;; bleu, l’une monte quand l’autre descend&nbsp;; blanc, aucun rapport. Seule la première ligne compte ici, celle de l’année de construction. Le lien le plus fort y plafonne à 0,49, et la hauteur du bâtiment, à 0,05, ne dit presque rien de son âge. Aucune variable ne suffit donc à elle seule&nbsp;: si le modèle y arrive, ce sera en combinant plusieurs indices faibles.<br><a class="zoom" href="projet-bati-correlations.webp" target="_blank" rel="noopener" aria-label="Pleine résolution, nouvel onglet : Matrice de corrélation entre l’année de construction et les variables de forme des bâtiments">Pleine résolution ↗</a></figcaption>
     </figure>
 
   </section>
@@ -123,7 +124,7 @@
 
     <figure class="plate plate--cote plate--miroir">
       <a href="projet-bati-confusion.webp" target="_blank" rel="noopener"><img width="612" height="496" loading="lazy" src="projet-bati-confusion.webp" alt="Matrice de confusion des périodes de construction prédites par le modèle"></a>
-      <figcaption>Chaque ligne est la période réelle du bâtiment, chaque colonne celle que le modèle a annoncée&nbsp;: la diagonale, ce sont les bonnes réponses. Une seule case est vraiment sombre, la 3-3&nbsp;: les bâtiments de 1851 à 1914, les plus nombreux dans la base, sont ceux qu’il reconnaît le mieux, et c’est aussi la période qu’il choisit quand il hésite. Et la colonne 4 le trahit&nbsp;: il y range des bâtiments alors que cette période n’existe pas à l’APUR. La ligne 12, elle, est vide&nbsp;: aucun bâtiment postérieur à 2008 dans le lot testé.<br><a class="zoom" href="projet-bati-confusion.webp" target="_blank" rel="noopener">Pleine résolution ↗</a></figcaption>
+      <figcaption>Chaque ligne est la période réelle du bâtiment, chaque colonne celle que le modèle a annoncée&nbsp;: la diagonale, ce sont les bonnes réponses. Une seule case est vraiment sombre, la 3-3&nbsp;: les bâtiments de 1851 à 1914, les plus nombreux dans la base, sont ceux qu’il reconnaît le mieux, et c’est aussi la période qu’il choisit quand il hésite. Et la colonne 4 le trahit&nbsp;: il y range des bâtiments alors que cette période n’existe pas à l’APUR. La ligne 12, elle, est vide&nbsp;: aucun bâtiment postérieur à 2008 dans le lot testé.<br><a class="zoom" href="projet-bati-confusion.webp" target="_blank" rel="noopener" aria-label="Pleine résolution, nouvel onglet : Matrice de confusion des périodes de construction prédites par le modèle">Pleine résolution ↗</a></figcaption>
     </figure>
 
   </section>
@@ -173,6 +174,7 @@
     <a href="experiences.html">Expériences</a>
     <a href="ornitheque.html">L’Ornithèque</a>
     <a href="etude-de-cas.html">Étude de cas</a>
+    <span class="foot__legal">Site hébergé par GitHub, Inc., 88 Colin P. Kelly Jr. St., San Francisco, CA 94107, États-Unis</span>
   </div>
 
 </main>

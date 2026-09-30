@@ -423,12 +423,9 @@ img{display:block;max-width:100%;height:auto;}
    (un planning, des emprises, un telephone, un trace...). */
 .tuile__img--dessin{background:var(--accent-soft);color:var(--accent);}
 .tuile__img--dessin svg{display:block;width:100%;height:100%;padding:8%;}
-/* A la souris, les vignettes restent en retrait et s'allument au survol. Sur
-   un ecran tactile, sans survol, elles restent pleines. */
-@media(hover:hover){
-  .tuile__img{opacity:.5;transition:transform .25s var(--ease),box-shadow .25s var(--ease),opacity .25s var(--ease);}
-  .tuile:hover .tuile__img,.tuile:focus-visible .tuile__img{opacity:1;}
-}
+/* Vignettes toujours pleines : a demi transparentes au repos (jusqu'au
+   30/09), elles se lisaient comme des liens desactives. Le survol se voit au
+   dessin qui grossit et au titre qui passe au vert. */
 .tuile:hover .tuile__t,.tuile:focus-visible .tuile__t{color:var(--accent);}
 @media(max-width:700px){
   .sommaire{grid-template-columns:1fr;gap:18px;}
@@ -501,6 +498,9 @@ img{display:block;max-width:100%;height:auto;}
 .releve{margin:26px 0 0;display:grid;gap:20px;max-width:70ch;}
 .releve__k{font-family:var(--mono);font-size:12.5px;letter-spacing:.03em;color:var(--ink-2);margin:0 0 4px;}
 .releve__v{margin:0;font-size:16.5px;line-height:1.62;}
+/* Citations de sources : a lire si on les cherche, pas au fil du texte. */
+.releve__v--note{font-size:13.5px;line-height:1.55;color:var(--ink-2);}
+.releve__v--note + .releve__v--note{margin-top:8px;}
 /* Un second sujet dans la meme section : un filet le detache du premier */
 .releve--a-part{margin-top:22px;padding-top:18px;border-top:1px solid var(--hair);}
 .releve .steps{margin:16px 0 0;gap:24px;}
@@ -608,6 +608,18 @@ img{display:block;max-width:100%;height:auto;}
 .foot a:hover{color:var(--accent);text-decoration:underline;}
 .foot .sep{color:var(--hair);}
 
+/* Lien d'evitement : invisible a la souris, il apparait a la premiere touche
+   Tab et saute le menu pour aller droit au contenu. */
+.saut{
+  position:absolute;left:16px;top:-60px;z-index:30;
+  background:var(--accent);color:#fff;font-weight:600;text-decoration:none;
+  padding:10px 16px;border-radius:var(--pill);
+}
+.saut:focus{top:12px;}
+#contenu:focus{outline:none;}
+/* Mention d'hebergeur exigee par la loi (LCEN, art. 1-1) : seule sur sa ligne. */
+.foot__legal{flex-basis:100%;font-size:12px;}
+
 /* ==========================================================================
    Adaptation
    ========================================================================== */
@@ -640,9 +652,11 @@ img{display:block;max-width:100%;height:auto;}
   .nav__mark{order:1;}
   .nav__cta{order:2;margin-left:auto;padding:8px 15px;font-size:14.5px;}
   .nav__links{
-    order:3;width:calc(100% + 9px);margin-left:-9px;flex-wrap:wrap;gap:2px 0;
+    order:3;width:calc(100% + 6px);margin-left:-6px;flex-wrap:wrap;gap:2px 0;
   }
-  .nav__links a{font-size:14.5px;white-space:nowrap;min-height:38px;padding:0 9px;}
+  /* 6 px de chaque cote en 14 px : les quatre liens tiennent sur une ligne a 375 px,
+     « Recherche » passait seul sur une troisieme ligne a 9 px. */
+  .nav__links a{font-size:14px;white-space:nowrap;min-height:38px;padding:0 6px;}
   .nav__long{display:none;}
   .nav__court{display:inline;}
   .hero{padding:34px 0 0;}
