@@ -620,6 +620,7 @@ img{display:block;max-width:100%;height:auto;}
 #contenu:focus{outline:none;}
 /* Mention d'hebergeur exigee par la loi (LCEN, art. 1-1) : seule sur sa ligne. */
 .foot__legal{flex-basis:100%;font-size:12px;}
+.foot__legal a{display:inline;min-height:0;text-decoration:underline;}
 
 /* ==========================================================================
    Adaptation
