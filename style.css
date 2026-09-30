@@ -1,0 +1,790 @@
+/* ==========================================================================
+   Portfolio Mathis Burgevin
+   Une planche d'atlas en tirage chaud : papier clair, accent terre cuite,
+   tuiles aux coins arrondis, apparition en fondu au defilement.
+   ========================================================================== */
+
+:root{
+  --paper:#f6f8f6;
+  --raised:#e9eeea;
+  --raised-2:#dde5e0;
+  --ink:#15201b;
+  --ink-2:#5c6a63;
+  --hair:#d8e0da;
+  --accent:#1d6b4f;
+  --accent-deep:#12523c;
+  --accent-soft:#dcece4;
+  --green:#1d6b4f;
+
+  /* Couleurs de donnees. Les trois types d amenagement forment une palette
+     categorielle validee (ecart CVD 14,1 / vision normale 15,6 / contraste > 3:1).
+     Le vert d accent sert aux mesures de quantite, une seule couleur par graphique. */
+  --c-piste:#2f6fa8;
+  --c-bande:#a8863a;
+  --c-voie:#12855c;
+  --c-mesure:#1d6b4f;
+  --c-mesure-pale:#6aa98c;
+
+  --sans:'Figtree',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+  --mono:'DM Mono',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+
+  --sheet:1024px;
+  --bar:1152px;
+  --r-sm:8px;
+  --r-md:12px;
+  --r-lg:16px;
+  --r-xl:22px;
+  --pill:999px;
+  --ease:cubic-bezier(.16,1,.3,1);
+}
+
+/* Polices servies par le site lui-meme et prechargees dans chaque page : chez
+   Google, elles arrivaient apres le premier affichage, le texte partait dans
+   une police de secours puis sautait d'une fraction de seconde a chaque page.
+   Figtree est une police variable, un seul fichier couvre les graisses 400 a 800.
+   DM Mono remplace Roboto Mono depuis le 29/09/2026, choisie pour s'accorder a Figtree. */
+@font-face{
+  font-family:'Figtree';font-style:normal;font-weight:400 800;font-display:swap;
+  src:url(polices/figtree-latin.woff2) format('woff2');
+  unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face{
+  font-family:'DM Mono';font-style:normal;font-weight:400;font-display:swap;
+  src:url(polices/dm-mono-latin.woff2) format('woff2');
+  unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+*{box-sizing:border-box;}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;}
+
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--sans);
+  font-size:17px;
+  line-height:1.66;
+  -webkit-font-smoothing:antialiased;
+}
+
+::selection{background:var(--accent-soft);color:var(--ink);}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:var(--r-sm);}
+a{color:var(--ink);text-decoration-color:var(--hair);text-underline-offset:3px;text-decoration-thickness:1px;}
+a:hover{color:var(--accent);text-decoration-color:var(--accent);}
+@supports (scrollbar-color: auto){html{scrollbar-color:#d3cec2 var(--paper);}}
+
+img{display:block;max-width:100%;height:auto;}
+
+.sheet{max-width:var(--sheet);margin:0 auto;padding:0 32px;}
+
+/* Apparition au defilement, seulement quand le script tourne */
+.js .reveal{opacity:0;transform:translateY(14px);}
+.js .reveal.is-in{
+  opacity:1;transform:none;
+  transition:opacity .6s var(--ease),transform .6s var(--ease);
+}
+
+/* ==========================================================================
+   Barre de navigation
+   ========================================================================== */
+
+.nav{
+  position:sticky;top:0;z-index:20;
+  background:var(--paper);padding:16px 0 12px;
+}
+.nav__shell{max-width:var(--sheet);margin:0 auto;padding:0 32px;}
+.nav__in{
+  background:#fff;border-radius:var(--pill);
+  padding:7px 7px 7px 22px;
+  min-height:58px;display:flex;align-items:center;gap:10px 26px;flex-wrap:wrap;
+  box-shadow:0 1px 2px rgba(21,32,27,.05),0 8px 24px rgba(21,32,27,.07);
+}
+.nav__mark{
+  font-size:17px;font-weight:800;letter-spacing:-.02em;text-decoration:none;color:var(--ink);
+  display:inline-flex;align-items:center;min-height:44px;
+}
+.nav__links{display:flex;gap:6px 22px;flex-wrap:wrap;margin-left:auto;align-items:center;}
+.nav__links a{
+  font-size:15px;text-decoration:none;color:var(--ink-2);
+  display:inline-flex;align-items:center;min-height:44px;
+}
+.nav__links a:hover{color:var(--ink);}
+.nav__links a[aria-current]{color:#fff;font-weight:600;background:var(--accent);border-radius:var(--pill);padding:0 14px;}
+.nav__cta{
+  display:inline-flex;align-items:center;min-height:44px;padding:9px 18px;
+  background:var(--accent);color:#fff;border-radius:var(--pill);
+  font-size:15px;font-weight:600;text-decoration:none;
+  transition:background .25s var(--ease),transform .25s var(--ease);
+}
+.nav__cta:hover{background:var(--ink);color:#fff;transform:translateY(-1px);}
+/* Sur telephone le menu est deja a l etroit : le projet de recherche y prend
+   son nom court. */
+.nav__court{display:none;}
+
+/* ==========================================================================
+   Ouverture de page
+   ========================================================================== */
+
+.hero{padding:58px 0 0;}
+.hero__top{display:flex;gap:22px;align-items:center;flex-wrap:wrap;}
+.hero__photo{
+  width:78px;height:78px;border-radius:var(--pill);object-fit:cover;flex:0 0 auto;
+  box-shadow:0 1px 2px rgba(21,32,27,.06),0 10px 24px rgba(21,32,27,.07);
+}
+.title{
+  font-size:clamp(34px,5.4vw,52px);font-weight:800;line-height:1.02;
+  letter-spacing:-.032em;margin:0;
+}
+.title::after{
+  content:"";display:block;width:68px;height:3px;border-radius:var(--pill);
+  background:var(--accent);margin-top:20px;
+}
+.subtitle{
+  font-size:18.5px;line-height:1.55;color:var(--ink-2);
+  margin:16px 0 0;max-width:66ch;
+}
+.subtitle strong{color:var(--ink);font-weight:600;}
+
+/* Ligne de relevé : un chiffre, une mention */
+.facts{
+  display:flex;gap:12px 30px;flex-wrap:wrap;align-items:center;
+  margin:22px 0 0;
+}
+.fact{display:inline-flex;align-items:baseline;gap:8px;}
+.fact b{font-size:25px;font-weight:800;letter-spacing:-.025em;line-height:1;color:var(--accent);}
+.fact span{font-family:var(--mono);font-size:13px;color:var(--ink-2);}
+.fact--dispo{
+  display:inline-flex;align-items:center;gap:9px;
+  font-size:14.5px;color:var(--ink);
+  background:var(--raised);border-radius:var(--pill);padding:7px 15px;
+}
+.fact--dispo i{width:8px;height:8px;border-radius:var(--pill);background:var(--green);display:block;flex:0 0 8px;}
+
+.actions{display:flex;flex-wrap:wrap;gap:10px;margin:26px 0 0;}
+.btn{
+  display:inline-flex;align-items:center;gap:9px;min-height:48px;padding:11px 20px;
+  border-radius:var(--pill);text-decoration:none;
+  font-size:15.5px;font-weight:600;
+  background:var(--raised);color:var(--ink);
+  transition:background .25s var(--ease),color .25s var(--ease),transform .25s var(--ease);
+}
+.btn:hover{background:var(--raised-2);color:var(--ink);transform:translateY(-1px);}
+.btn--primary{background:var(--accent);color:#fff;}
+.btn--primary:hover{background:var(--ink);color:#fff;}
+
+/* ==========================================================================
+   Sections
+   ========================================================================== */
+
+.section{padding:60px 0 0;}
+.section__head{display:flex;align-items:center;gap:14px;margin:0 0 22px;flex-wrap:wrap;}
+.section__title{
+  font-size:23px;font-weight:800;letter-spacing:-.022em;line-height:1.2;
+  margin:0;flex:0 1 auto;min-width:0;
+}
+.section__rule{flex:1;height:1px;background:var(--hair);}
+.section__count{
+  font-family:var(--mono);font-size:12.5px;color:var(--accent);flex:0 0 auto;
+  background:var(--accent-soft);border-radius:var(--pill);padding:4px 12px;
+}
+
+.lead{font-size:18px;line-height:1.62;margin:26px 0 0;max-width:62ch;}
+.page-sub{font-family:var(--mono);font-size:13px;line-height:1.55;color:var(--ink-2);margin:14px 0 0;}
+.hint{font-family:var(--mono);font-size:13px;line-height:1.55;color:var(--ink-2);margin:16px 0 0;}
+
+/* Pas de mot seul sur la derniere ligne quand le navigateur sait le faire */
+.subtitle,.hint,.lead,.note,.stage__sub,.index__d,.plate figcaption,.carrousel__vue .d,.releve__v,.close p{text-wrap:pretty;}
+
+.note{
+  font-size:15px;line-height:1.6;color:var(--ink-2);
+  margin:22px 0 0;max-width:72ch;
+  background:var(--raised);border-radius:var(--r-lg);padding:15px 19px;
+}
+.note strong{color:var(--ink);font-weight:600;}
+/* Variante discrete : une mention de bas de page, pas un encadre */
+.note--discret{font-family:var(--mono);font-size:13px;line-height:1.55;background:none;padding:0;margin:14px 0 0;max-width:none;}
+/* La machine a ecrire ne supporte pas le gras : l amorce se distingue par sa
+   couleur seule. */
+.note--discret strong{font-weight:400;color:var(--ink);}
+
+/* ==========================================================================
+   Carrousel de cartes
+   ========================================================================== */
+
+.carrousel{margin:18px 0 0;}
+.carrousel__piste{
+  display:grid;grid-auto-flow:column;grid-auto-columns:100%;gap:22px;
+  overflow-x:auto;overscroll-behavior-x:contain;
+  scroll-snap-type:x mandatory;scrollbar-width:none;-ms-overflow-style:none;
+  /* Chaque vue garde sa hauteur au lieu de s'aligner sur la plus haute : le
+     script donne ensuite a la piste la hauteur de la vue affichee, pour que les
+     fleches restent contre le texte. Sans script, tout reste comme avant. */
+  align-items:start;transition:height .35s var(--ease);
+}
+.js .carrousel__piste{overflow-y:hidden;}
+.carrousel__piste::-webkit-scrollbar{display:none;}
+
+.carrousel__vue{scroll-snap-align:center;display:block;text-decoration:none;color:inherit;}
+.carrousel__vue figure{margin:0;}
+.carrousel__vue img{
+  width:100%;height:clamp(250px,44vw,470px);
+  object-fit:contain;object-position:center;
+  background:#fff;border-radius:var(--r-lg);padding:12px;
+  box-shadow:0 1px 2px rgba(21,32,27,.05),0 8px 22px rgba(21,32,27,.07);
+  transition:box-shadow .3s var(--ease);
+}
+/* Capture de telephone : fond teinte plutot que blanc, comme sur la page
+   Experiences. Sinon l'image, deux fois moins large que le cadre, flotte au
+   milieu d'un grand vide blanc au lieu d'etre posee sur un fond. */
+.carrousel__vue--phone img{background:var(--raised);padding:20px;}
+.carrousel__vue:hover img,.carrousel__vue:focus-visible img{
+  box-shadow:0 2px 4px rgba(21,32,27,.07),0 16px 34px rgba(21,32,27,.12);
+}
+.carrousel__vue figcaption{margin:16px 2px 0;}
+.carrousel__vue .ligne{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 14px;}
+.carrousel__vue .d{display:block;margin:7px 0 0;font-size:15px;line-height:1.5;color:var(--ink-2);}
+/* La suite des etapes, ecrite : une image ne montre pas un processus */
+.carrousel__vue .chaine{display:flex;flex-wrap:wrap;align-items:center;gap:6px 8px;margin:13px 0 0;}
+.carrousel__vue .chaine > span{
+  font-family:var(--mono);font-size:12.5px;color:var(--ink-2);
+  background:var(--raised);border-radius:var(--pill);padding:5px 11px;
+}
+.carrousel__vue .chaine > i{font-style:normal;color:var(--accent);font-size:13px;}
+.carrousel__vue .t{font-size:18px;font-weight:700;letter-spacing:-.014em;}
+.carrousel__vue:hover .t{color:var(--accent);}
+.carrousel__vue .m{font-family:var(--mono);font-size:13px;color:var(--ink-2);}
+.carrousel__vue .v{
+  margin-left:auto;font-size:14.5px;font-weight:600;color:var(--accent);
+  display:inline-flex;align-items:center;gap:7px;white-space:nowrap;
+}
+
+/* La barre de commande ne sert a rien sans script : elle n'apparait qu'avec */
+.carrousel__barre{display:none;}
+.js .carrousel__barre{display:flex;align-items:center;justify-content:center;gap:16px;margin:22px 0 0;}
+.carrousel__b{
+  width:44px;height:44px;flex:none;border-radius:var(--pill);
+  border:1px solid var(--hair);background:#fff;color:var(--ink);cursor:pointer;
+  display:inline-flex;align-items:center;justify-content:center;
+  font-size:17px;line-height:1;padding:0;
+  box-shadow:0 1px 2px rgba(21,32,27,.05);
+  transition:background .2s var(--ease),color .2s var(--ease),border-color .2s var(--ease);
+}
+.carrousel__b:hover{background:var(--accent);color:#fff;border-color:var(--accent);}
+.carrousel__points{display:flex;}
+/* Toutes les pastilles gardent la meme taille : seule la couleur change, pour
+   qu'aucune animation ne touche a la mise en page. Le bouton est plus grand
+   que la pastille dessinee, pour qu'on puisse la toucher au doigt. */
+.carrousel__point{
+  width:34px;height:44px;padding:0;border:0;background:none;cursor:pointer;
+  display:inline-flex;align-items:center;justify-content:center;
+}
+.carrousel__point::before{
+  content:"";width:26px;height:9px;border-radius:var(--pill);
+  background:var(--raised-2);
+  transition:background .3s var(--ease);
+}
+.carrousel__point.is-on::before{background:var(--accent);}
+
+/* ==========================================================================
+   Index des travaux
+   ========================================================================== */
+
+.index{display:flex;flex-direction:column;gap:10px;}
+.index a{
+  display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px 30px;align-items:center;
+  padding:20px;border-radius:var(--r-lg);text-decoration:none;color:inherit;
+  background:transparent;
+  transition:background .25s var(--ease);
+}
+.index__body{min-width:0;}
+.index a:hover{background:var(--raised);}
+.index__t{font-size:20.5px;font-weight:700;letter-spacing:-.014em;line-height:1.3;}
+.index a:hover .index__t{color:var(--accent);}
+.index__n{font-family:var(--mono);font-size:12.5px;color:var(--ink-2);white-space:nowrap;}
+.index__d{display:block;margin:6px 0 0;font-size:15.5px;line-height:1.55;color:var(--ink-2);max-width:66ch;}
+/* Un stage par paragraphe, avec de l'air entre les deux : colles, ils se lisent comme un bloc */
+.index__l{display:block;}
+.index__l + .index__l{margin-top:9px;}
+.index__d b{color:var(--ink);font-weight:600;}
+.index__go{
+  font-size:14.5px;font-weight:600;color:var(--accent);
+  display:inline-flex;align-items:center;gap:7px;white-space:nowrap;
+}
+.index__go i{transition:transform .25s var(--ease);font-style:normal;}
+.index a:hover .index__go i{transform:translateX(4px);}
+
+/* ==========================================================================
+   Competences
+   ========================================================================== */
+
+.skills{display:grid;grid-template-columns:1fr 1fr;gap:12px 20px;}
+.skill{background:var(--raised);border-radius:var(--r-lg);padding:18px 20px;}
+.skill__k{
+  font-size:15px;font-weight:700;letter-spacing:-.006em;margin:0 0 4px;
+  display:flex;align-items:center;gap:9px;
+}
+.skill__k i{width:7px;height:7px;border-radius:var(--pill);background:var(--accent);display:block;flex:0 0 7px;}
+.skill p{margin:0;font-size:15px;line-height:1.55;color:var(--ink-2);}
+
+/* ==========================================================================
+   Planches
+   ========================================================================== */
+
+.plate{margin:26px 0 0;}
+.plate img{
+  width:100%;border-radius:var(--r-md);background:#fff;
+  box-shadow:0 1px 2px rgba(21,32,27,.05),0 8px 22px rgba(21,32,27,.07);
+}
+.plate figcaption{margin:14px 2px 0;font-size:15px;line-height:1.55;color:var(--ink-2);max-width:70ch;}
+.zoom{
+  display:inline-flex;align-items:center;gap:7px;min-height:44px;
+  font-size:14.5px;font-weight:600;color:var(--accent);text-decoration:none;
+}
+.zoom:hover{color:var(--ink);text-decoration:underline;}
+
+.plates--pair{display:grid;grid-template-columns:1fr 1fr;gap:26px 24px;margin:26px 0 0;}
+.plates--pair .plate{margin:0;}
+
+/* Une planche a cote de sa legende. Pour une figure haute comme la matrice de
+   correlation, la demi-largeur la fait tenir dans un ecran d'un seul coup, et
+   l'explication se lit en regard plutot qu'en dessous. */
+.plate--cote{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:18px 30px;align-items:center;}
+.plate--cote figcaption{margin:0;}
+/* Meme chose, image a droite : la matrice de confusion se lit apres son
+   explication, le sens de lecture va du texte vers la figure. */
+.plate--cote.plate--miroir{grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);margin-top:40px;}
+.plate--cote.plate--miroir > a{order:2;}
+.plate--cote.plate--miroir figcaption{order:1;}
+
+/* Sommaire : la page fait une vingtaine d'ecrans de telephone, il faut pouvoir
+   sauter au bon travail sans tout faire defiler. Les ancres existaient deja. */
+.sommaire{
+  /* Une vignette par travail : on voit ce qu'il y a dans la page avant de
+     lire, et chaque image donne envie de cliquer. Pas de fond, seuls les
+     stages sont des blocs pleins. */
+  margin:30px 0 0;
+  display:grid;grid-template-columns:minmax(0,5fr) minmax(0,2fr);gap:4px 28px;align-items:start;
+}
+/* La mention des captures anonymisees, juste au-dessus du sommaire */
+.sommaire__info{margin:12px 0 0;}
+.sommaire__info + .sommaire{margin-top:24px;}
+
+/* Petite mention qui s'ouvre en bulle : au survol a la souris, au toucher sur
+   telephone (le script bascule aria-expanded). */
+.info{position:relative;}
+.info__b{
+  display:inline-flex;align-items:center;gap:6px;
+  padding:12px 0;margin:-8px 0;border:0;background:none;cursor:pointer;
+  font-family:var(--mono);font-size:13px;color:var(--ink-2);
+}
+.info__b svg{flex:none;position:relative;top:-.5px;}
+.info__b:hover,.info__b[aria-expanded="true"]{color:var(--accent);}
+.info__bulle{
+  display:none;position:absolute;z-index:5;left:0;top:calc(100% + 6px);
+  width:min(290px,calc(100vw - 60px));
+  background:#fff;border-radius:var(--r-md);padding:11px 14px;
+  font-size:14px;line-height:1.5;color:var(--ink-2);text-wrap:pretty;
+  box-shadow:0 1px 2px rgba(21,32,27,.06),0 10px 28px rgba(21,32,27,.12);
+}
+.info__b[aria-expanded="true"] + .info__bulle{display:block;}
+@media(hover:hover){
+  .info:hover .info__bulle{display:block;}
+}
+.sommaire__k{
+  font-size:13.5px;font-weight:700;letter-spacing:-.005em;
+  color:var(--ink);margin:0 0 8px;
+  padding-bottom:7px;border-bottom:1px solid var(--hair);
+}
+.sommaire__l{list-style:none;margin:0;padding:0;display:grid;gap:14px;grid-template-columns:repeat(5,minmax(0,1fr));}
+.sommaire__l[start="6"]{grid-template-columns:repeat(2,minmax(0,1fr));}
+
+.tuile{display:block;color:var(--ink);text-decoration:none;}
+.tuile__img{
+  display:block;height:92px;overflow:hidden;
+  background:#fff;border-radius:var(--r-md);
+  box-shadow:0 1px 2px rgba(21,32,27,.05),0 6px 16px rgba(21,32,27,.07);
+  transition:transform .25s var(--ease),box-shadow .25s var(--ease);
+}
+
+.tuile__t{display:flex;gap:7px;align-items:baseline;margin:10px 0 0;font-size:14.5px;line-height:1.3;font-weight:600;}
+.tuile__n{font-family:var(--mono);font-size:12.5px;font-weight:400;color:var(--accent);}
+.tuile:hover .tuile__img,.tuile:focus-visible .tuile__img{
+  transform:translateY(-3px);
+  box-shadow:0 2px 4px rgba(21,32,27,.06),0 14px 28px rgba(21,32,27,.13);
+}
+.tuile:hover .tuile__img svg{transform:scale(1.06);}
+.tuile__img svg{transition:transform .4s var(--ease);}
+/* Pas de photo : chaque travail a son petit dessin, dans la meme famille
+   (un planning, des emprises, un telephone, un trace...). */
+.tuile__img--dessin{background:var(--accent-soft);color:var(--accent);}
+.tuile__img--dessin svg{display:block;width:100%;height:100%;padding:8%;}
+/* A la souris, les vignettes restent en retrait et s'allument au survol. Sur
+   un ecran tactile, sans survol, elles restent pleines. */
+@media(hover:hover){
+  .tuile__img{opacity:.5;transition:transform .25s var(--ease),box-shadow .25s var(--ease),opacity .25s var(--ease);}
+  .tuile:hover .tuile__img,.tuile:focus-visible .tuile__img{opacity:1;}
+}
+.tuile:hover .tuile__t,.tuile:focus-visible .tuile__t{color:var(--accent);}
+@media(max-width:700px){
+  .sommaire{grid-template-columns:1fr;gap:18px;}
+  /* Sur telephone, une ligne par travail : la vignette a gauche, le titre a
+     cote. Sept grandes tuiles prendraient tout l'ecran. */
+  .sommaire__l,.sommaire__l[start="6"]{grid-template-columns:1fr;gap:10px;}
+  .tuile{display:grid;grid-template-columns:76px minmax(0,1fr);gap:14px;align-items:center;}
+  .tuile__img{height:57px;}
+  .tuile__t{margin:0;font-size:15.5px;}
+}
+
+/* Une capture plus petite que la colonne garde sa taille : etiree, elle devient
+   floue, et le lien « pleine resolution » ouvrirait plus petit que l'affichage. */
+.plate--native img{display:block;width:auto;max-width:100%;margin:0 auto;}
+
+/* Une capture de telephone garde sa taille, elle ne s'etire pas sur la colonne */
+.plate--phone{background:var(--raised);border-radius:var(--r-lg);padding:30px 20px 24px;}
+.plate--phone img{display:block;width:auto;max-width:100%;margin:0 auto;border-radius:var(--r-md);}
+.plate--phone figcaption{text-align:center;max-width:56ch;margin:16px auto 0;}
+/* A cote de sa legende, seul le telephone garde son fond */
+.plate--cote.plate--phone{background:none;border-radius:0;padding:0;}
+.plate--cote.plate--phone > a{display:block;background:var(--raised);border-radius:var(--r-lg);padding:24px 20px;}
+.plate--cote.plate--phone figcaption{text-align:left;margin:0;}
+.plate--cote + .plate--cote{margin-top:34px;}
+/* Une capture a cote des paragraphes qu'elle illustre, pas avant eux : l'outil
+   de visite montre le formulaire en regard de « Mon role » et de l'analyse. */
+.duo{display:grid;grid-template-columns:240px minmax(0,1fr);gap:22px 40px;align-items:center;margin:26px 0 0;}
+.duo > .plate,.duo > .releve{margin:0;}
+.duo figcaption{font-size:14px;}
+.duo .plate--phone{padding:22px 18px 16px;}
+.duo .plate--phone img{width:180px;}
+/* Page Experiences : des vignettes a moitie de colonne, la legende en regard.
+   La pleine resolution reste a un clic. */
+.plate--vignette{grid-template-columns:minmax(0,1fr) minmax(0,1fr);}
+.plate--vignette.plate--phone{grid-template-columns:auto minmax(0,1fr);}
+
+/* ==========================================================================
+   Projets
+   ========================================================================== */
+
+/* Chaque stage ouvre un chapitre : un bandeau sur fond, un titre nettement plus
+   grand que ceux des travaux, pour que la hierarchie se lise d'un coup d'oeil. */
+.stage{
+  margin:96px 0 0;padding:30px 34px 32px;
+  background:var(--raised);border-radius:var(--r-xl);
+}
+/* Juste sous le sommaire, le premier stage n'a pas besoin d'autant d'air */
+.hero + .stage{margin-top:44px;}
+.stage__n{font-family:var(--mono);font-size:13px;letter-spacing:.02em;color:var(--accent-deep);margin:0 0 8px;}
+.stage__t{font-size:clamp(32px,4.4vw,46px);font-weight:800;line-height:1.08;letter-spacing:-.032em;margin:0;}
+.stage__sub{margin:14px 0 0;font-size:17px;line-height:1.6;color:var(--ink-2);}
+.stage + .item{padding-top:44px;}
+
+.item{padding:64px 0 0;}
+.item__title{
+  display:grid;grid-template-columns:auto minmax(0,1fr);gap:14px;align-items:baseline;
+  font-size:clamp(21px,2.4vw,26px);font-weight:800;line-height:1.22;letter-spacing:-.022em;margin:0;
+}
+/* Le numero du travail, le meme que dans le sommaire */
+.item__n{color:var(--accent);min-width:1em;font-variant-numeric:tabular-nums;}
+/* Les etiquettes s'alignent sur le debut du titre, pas sur le numero */
+.item__title:has(.item__n) + .item__meta{padding-left:calc(clamp(21px,2.4vw,26px) + 14px);}
+.item__meta{display:flex;flex-wrap:wrap;gap:8px 10px;align-items:center;margin:12px 0 0;}
+.tag{
+  font-family:var(--mono);font-size:12.5px;color:var(--ink-2);
+  background:var(--raised);border-radius:var(--pill);padding:5px 12px;
+}
+.tag--role{background:var(--accent-soft);color:var(--accent-deep);}
+
+.releve{margin:26px 0 0;display:grid;gap:20px;max-width:70ch;}
+.releve__k{font-family:var(--mono);font-size:12.5px;letter-spacing:.03em;color:var(--ink-2);margin:0 0 4px;}
+.releve__v{margin:0;font-size:16.5px;line-height:1.62;}
+/* Un second sujet dans la meme section : un filet le detache du premier */
+.releve--a-part{margin-top:22px;padding-top:18px;border-top:1px solid var(--hair);}
+.releve .steps{margin:16px 0 0;gap:24px;}
+
+.tools{display:flex;flex-wrap:wrap;gap:8px;align-items:center;}
+.tools span{
+  font-family:var(--mono);font-size:12.5px;
+  background:var(--raised);border-radius:var(--pill);padding:5px 12px;color:var(--ink);
+}
+.tools .tools-cat{background:none;padding:5px 2px;color:var(--ink-2);}
+
+/* legende de classes, ex. les periodes de construction de l'APUR */
+.legende{display:flex;flex-wrap:wrap;gap:6px;}
+.legende span{
+  font-family:var(--mono);font-size:12.5px;
+  background:var(--raised);border-radius:var(--pill);padding:5px 10px;color:var(--ink-2);
+}
+
+/* ==========================================================================
+   Etude de cas
+   ========================================================================== */
+
+.prompt{
+  margin:26px 0 0;max-width:70ch;
+  background:var(--raised);border-radius:var(--r-lg);padding:20px 22px;
+  font-size:16px;line-height:1.62;color:var(--ink-2);
+}
+.prompt__k{
+  display:block;font-family:var(--mono);font-size:12.5px;letter-spacing:.03em;
+  color:var(--ink-2);margin-bottom:9px;
+}
+.answer{margin:30px 0 0;max-width:68ch;}
+.answer p{margin:0 0 18px;}
+.answer p:last-child{margin:0;}
+
+/* Pas de marge haute : le titre du livrable doit coller a son cadre comme celui
+   de la carte, sinon les deux blocs ne respirent pas pareil. */
+.dash{background:var(--raised);border-radius:var(--r-xl);padding:26px;}
+.dash__annees{margin:24px 0 0;padding:20px 0 0;border-top:1px solid var(--hair);}
+.dash__head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap;padding-bottom:16px;}
+.dash__title{font-size:16.5px;font-weight:700;letter-spacing:-.012em;}
+.dash__filters{display:flex;gap:8px;flex-wrap:wrap;}
+.dash__filter{
+  font-family:var(--mono);font-size:12.5px;color:var(--ink-2);
+  background:var(--paper);border-radius:var(--pill);padding:5px 12px;
+}
+/* Pas de gras en machine a ecrire : la valeur du filtre se detache par sa
+   couleur. */
+.dash__filter b{font-weight:400;color:var(--ink);}
+.dash__row{display:grid;gap:18px 26px;padding:20px 0;border-top:1px solid var(--hair);}
+.dash__row-3{grid-template-columns:1fr 1fr 1fr;}
+.dash__row-2{grid-template-columns:1fr 1fr;}
+.dash__k{font-family:var(--mono);font-size:12.5px;color:var(--ink-2);margin-bottom:10px;}
+.dash__big{font-size:15px;color:var(--ink);}
+.dash__big strong{font-size:34px;font-weight:800;letter-spacing:-.03em;color:var(--accent);margin-right:5px;}
+.dash__of{color:var(--ink-2);}
+.dash__prog{display:flex;align-items:center;gap:11px;margin-top:12px;}
+.dash__track{flex:1;height:8px;background:var(--raised-2);border-radius:var(--pill);overflow:hidden;}
+.dash__fill{height:100%;background:var(--accent);border-radius:var(--pill);}
+.dash__pct{font-family:var(--mono);font-size:12.5px;color:var(--ink-2);}
+.dash__bar{display:grid;grid-template-columns:96px 1fr 40px;gap:10px;align-items:center;margin-top:10px;}
+.dash__bar-l{font-family:var(--mono);font-size:12.5px;color:var(--ink);}
+.dash__bar-f{height:9px;display:block;background:var(--c-mesure);border-radius:0 var(--pill) var(--pill) 0;}
+.dash__bar-v{font-family:var(--mono);font-size:12.5px;color:var(--ink-2);text-align:right;}
+.dash__years{display:grid;grid-template-columns:repeat(7,1fr);gap:9px;margin-top:14px;}
+.dash__year{display:flex;flex-direction:column;align-items:center;gap:6px;}
+.dash__year-v{font-family:var(--mono);font-size:12.5px;color:var(--ink-2);}
+.dash__year-c{height:64px;width:100%;display:flex;align-items:flex-end;justify-content:center;}
+.dash__year-b{width:62%;background:var(--c-mesure-pale);border-radius:var(--r-sm) var(--r-sm) 0 0;}
+.dash__year.is-now .dash__year-b{background:var(--c-mesure);}
+.dash__year.is-now .dash__year-v,.dash__year.is-now .dash__year-l{color:var(--c-mesure);}
+.dash__year-l{font-family:var(--mono);font-size:12.5px;color:var(--ink);}
+.dash__foot{font-size:14.5px;line-height:1.55;color:var(--ink-2);margin:18px 0 0;}
+
+/* ==========================================================================
+   Fin de page
+   ========================================================================== */
+
+/* La barre du haut est collante : sans cette marge, une section atteinte par un
+   lien d'ancre arrive pile dessous et son titre est cache. */
+#contact,.item,.stage{scroll-margin-top:96px;}
+/* Un lien du sommaire pose le titre du travail toujours au meme endroit, juste
+   sous le menu : l'ecart tient compte de l'air au-dessus du titre, qui n'est
+   pas le meme sous un bandeau de stage. */
+.item{scroll-margin-top:calc(110px - 64px);}
+.stage + .item{scroll-margin-top:calc(110px - 44px);}
+.close{
+  margin:70px 0 0;background:var(--raised);border-radius:var(--r-xl);
+  padding:36px 34px;
+}
+.close h2{font-size:clamp(23px,2.7vw,30px);font-weight:800;letter-spacing:-.026em;line-height:1.2;margin:0;}
+.close p{margin:12px 0 0;font-size:17px;color:var(--ink-2);max-width:56ch;}
+.close .actions{margin-top:24px;}
+.close .btn{background:var(--paper);}
+.close .btn:hover{background:#fff;}
+.close .btn--primary{background:var(--accent);color:#fff;}
+.close .btn--primary:hover{background:var(--ink);}
+
+.foot{
+  margin-top:48px;padding:24px 0 56px;border-top:1px solid var(--hair);
+  display:flex;gap:6px 24px;flex-wrap:wrap;align-items:center;
+  font-family:var(--mono);font-size:13px;color:var(--ink-2);
+}
+.foot a{color:var(--ink-2);text-decoration:none;display:inline-flex;align-items:center;min-height:44px;}
+.foot a:hover{color:var(--accent);text-decoration:underline;}
+.foot .sep{color:var(--hair);}
+
+/* ==========================================================================
+   Adaptation
+   ========================================================================== */
+
+@media(max-width:840px){
+  .skills{grid-template-columns:1fr;}
+  .plates--pair{grid-template-columns:1fr;}
+  .plate--cote,.plate--vignette.plate--phone,.duo{grid-template-columns:1fr;gap:14px;}
+  /* empilee, la figure repasse au-dessus de son explication */
+  .plate--cote.plate--miroir{grid-template-columns:1fr;}
+  .plate--cote.plate--miroir > a{order:1;}
+  .plate--cote.plate--miroir figcaption{order:2;}
+  .dash__row-3,.dash__row-2{grid-template-columns:1fr;}
+}
+
+@media(max-width:600px){
+  body{font-size:16.5px;}
+  .sheet,.nav__shell{padding:0 18px;}
+  /* Sur telephone le menu prend trop de hauteur pour rester colle en haut :
+     il defile avec la page. */
+  .nav{position:static;padding:10px 0 8px;}
+  #contact,.item,.stage{scroll-margin-top:16px;}
+  .item{scroll-margin-top:calc(16px - 52px);}
+  .stage + .item{scroll-margin-top:calc(16px - 44px);}
+  .nav__in{border-radius:var(--r-xl);padding:8px 8px 10px 16px;}
+  /* marque + bouton sur une rangee, puis les liens dessous. Ils passent a la
+     ligne plutot que de glisser : une bande qui defile ne se voit pas, et le
+     dernier lien restait cache. */
+  .nav__in{min-height:56px;gap:0 12px;padding-top:4px;padding-bottom:6px;}
+  .nav__mark{order:1;}
+  .nav__cta{order:2;margin-left:auto;padding:8px 15px;font-size:14.5px;}
+  .nav__links{
+    order:3;width:100%;margin-left:0;flex-wrap:wrap;gap:2px 18px;
+  }
+  .nav__links a{font-size:14.5px;white-space:nowrap;min-height:38px;}
+  .nav__long{display:none;}
+  .nav__court{display:inline;}
+  .hero{padding:34px 0 0;}
+  .hero__photo{width:64px;height:64px;}
+  .index a{grid-template-columns:1fr;padding:16px;}
+  .close{padding:26px 20px;border-radius:var(--r-lg);}
+  .dash{padding:18px;border-radius:var(--r-lg);}
+  .dash__bar{grid-template-columns:82px 1fr 38px;}
+  .dash__years{gap:5px;}
+  .btn,.close .btn{width:100%;justify-content:center;}
+  .carrousel__vue .ligne{gap:2px 10px;}
+  .carrousel__vue .v{margin-left:0;width:100%;}
+  .js .carrousel__barre{gap:8px;}
+  .stage{margin-top:72px;padding:22px 20px 24px;border-radius:var(--r-lg);}
+  .stage__sub{font-size:16px;}
+  .item{padding-top:52px;}
+  .item__title{gap:10px;}
+  .item__title:has(.item__n) + .item__meta{padding-left:0;}
+  .carrousel__point{width:44px;}
+}
+
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto;}
+  *{animation-duration:.01ms !important;transition-duration:.01ms !important;}
+  .js .reveal{opacity:1;transform:none;}
+}
+
+@media print{
+  body{background:#fff;}
+  .nav__links,.nav__cta{display:none;}
+  .js .reveal{opacity:1;transform:none;}
+}
+
+/* ==========================================================================
+   Etude de cas : la methode en etapes, puis les deux livrables
+   ========================================================================== */
+
+.steps{margin:30px 0 0;max-width:72ch;display:grid;gap:30px;}
+.step{display:grid;grid-template-columns:auto minmax(0,1fr);column-gap:18px;row-gap:8px;}
+.step__n{
+  grid-row:1 / span 2;
+  width:38px;height:38px;border-radius:var(--pill);
+  background:var(--accent-soft);color:var(--accent-deep);
+  display:flex;align-items:center;justify-content:center;
+  font-size:15px;font-weight:700;
+}
+.step__k{font-size:17.5px;font-weight:700;letter-spacing:-.012em;margin:6px 0 0;}
+.step p{margin:0;grid-column:2;}
+/* Page Experiences : une capture arrive avec l'etape qu'elle illustre */
+.step .plate{grid-column:2;margin:14px 0 0;}
+.step .plate + .plate{margin-top:18px;}
+.step .plate figcaption{font-size:14.5px;}
+
+.deliverable{margin:26px 0 0;}
+.deliverable__k{
+  display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin:0 0 12px;
+}
+.deliverable__k b{font-size:17.5px;font-weight:700;letter-spacing:-.012em;}
+
+/* Apercu de la carte web */
+.webmap{background:var(--raised);border-radius:var(--r-xl);padding:26px;}
+.webmap__frame{background:#fff;border-radius:var(--r-md);overflow:hidden;padding:6px;}
+.webmap svg{display:block;width:100%;height:auto;}
+.webmap__bar{
+  display:flex;align-items:center;gap:14px 20px;flex-wrap:wrap;
+  padding:14px 2px 0;
+}
+.webmap__years{flex:1 1 320px;min-width:0;}
+.webmap__lab{
+  display:block;font-family:var(--mono);font-size:12.5px;color:var(--ink-2);
+  margin:0 0 10px;
+}
+.webmap__lab b{color:var(--accent);font-weight:400;}
+
+/* Curseur des annees : un vrai controle, manipulable a la souris,
+   au doigt et au clavier. --p porte la part deja parcourue. */
+.webmap__range{
+  --p:100%;
+  -webkit-appearance:none;appearance:none;
+  display:block;width:100%;height:30px;margin:0;background:transparent;cursor:pointer;touch-action:pan-y;
+}
+.webmap__range:focus{outline:none;}
+.webmap__range:focus-visible{outline:2px solid var(--accent);outline-offset:5px;border-radius:var(--pill);}
+.webmap__range::-webkit-slider-runnable-track{
+  height:6px;border-radius:var(--pill);
+  background:linear-gradient(to right,var(--accent) 0 var(--p),var(--raised-2) var(--p) 100%);
+}
+.webmap__range::-webkit-slider-thumb{
+  -webkit-appearance:none;appearance:none;
+  width:20px;height:20px;border-radius:var(--pill);margin-top:-7px;
+  background:#fff;border:3px solid var(--accent);
+  box-shadow:0 1px 3px rgba(21,32,27,.2);
+}
+.webmap__range::-moz-range-track{height:6px;border-radius:var(--pill);background:var(--raised-2);}
+.webmap__range::-moz-range-progress{height:6px;border-radius:var(--pill);background:var(--accent);}
+.webmap__range::-moz-range-thumb{
+  width:20px;height:20px;border-radius:var(--pill);border:3px solid var(--accent);
+  background:#fff;box-shadow:0 1px 3px rgba(21,32,27,.2);
+}
+.webmap__ticks{
+  display:flex;justify-content:space-between;margin-top:7px;
+  font-family:var(--mono);font-size:12.5px;color:var(--ink-2);
+}
+
+/* Ce qui n'est pas encore realise a l'annee choisie */
+.troncon{transition:opacity .3s var(--ease);}
+.troncon.is-off{opacity:0;}
+.dash__year{transition:opacity .3s var(--ease);}
+.dash__year.is-off{opacity:.22;}
+.webkey{display:flex;gap:10px 18px;flex-wrap:wrap;align-items:center;}
+.webkey span{
+  display:inline-flex;align-items:center;gap:8px;
+  font-family:var(--mono);font-size:12.5px;color:var(--ink-2);
+}
+.webkey i{width:18px;height:5px;border-radius:var(--pill);display:block;flex:0 0 18px;}
+
+/* Bandeau de mise a jour, en pied du tableau de bord */
+.dash__maj{
+  display:flex;align-items:center;gap:10px 18px;flex-wrap:wrap;
+  margin-top:18px;padding-top:16px;border-top:1px solid var(--hair);
+  font-family:var(--mono);font-size:12.5px;color:var(--ink-2);
+}
+.dash__maj b{color:var(--ink);font-weight:400;}
+.dash__maj i{width:8px;height:8px;border-radius:var(--pill);background:var(--accent);display:block;flex:0 0 8px;}
+
+@media(max-width:600px){
+  .webmap{padding:16px;border-radius:var(--r-lg);}
+  .step{grid-template-columns:auto minmax(0,1fr);column-gap:14px;}
+  .step__n{width:32px;height:32px;font-size:14px;}
+}
+
+/* Habillage de la carte (boussole, zoom, echelle, mention) : sur telephone il
+   descend sous 5px de haut, donc illisible. Mieux vaut le retirer que le laisser
+   en taches grises ; le trace et la legende sous la carte suffisent a la lecture. */
+@media(max-width:700px){
+  .carte-ui{display:none;}
+}
+
+/* Bloc de fin de l'accueil : ce qui ne merite pas une entree de menu */
+.extra{
+  margin:56px 0 0;padding:26px 0 0;border-top:1px solid var(--hair);
+  display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px 30px;align-items:center;
+}
+.extra h2{font-size:20.5px;font-weight:700;letter-spacing:-.014em;margin:0;}
+.extra p{margin:7px 0 0;font-size:15.5px;line-height:1.55;color:var(--ink-2);max-width:60ch;}
+.extra .btn{grid-column:2;grid-row:1;}
+@media(max-width:700px){
+  .extra{grid-template-columns:1fr;}
+  .extra .btn{grid-column:1;grid-row:auto;width:100%;justify-content:center;}
+}

@@ -1,0 +1,18 @@
+Thumbs.db
+.DS_Store
+desktop.ini
+
+# Documents de travail internes : NE JAMAIS publier.
+# Ce fichier est lui-meme public : n'y ecrire aucun nom de client ni de
+# candidature.
+passation.md
+pixelate.ps1
+CLAUDE.md
+og-cover.ps1
+
+# Documents de travail du systeme de design : utiles en local, pas destines
+# au site public (le depot est servi tel quel par GitHub Pages).
+.claude/
+.impeccable/
+PRODUCT.md
+DESIGN.md

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>L’Ornithèque – Mathis Burgevin</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<meta name="description" content="L’Ornithèque, plateforme web privée d’observation ornithologique&nbsp;: cartes d’observations en temps réel, répartitions d’espèces, animations de migration.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Mathis Burgevin">
+<meta property="og:title" content="L’Ornithèque, projet personnel">
+<meta property="og:description" content="Plateforme web d’observation ornithologique&nbsp;: cartes d’observations, répartitions d’espèces, animations de migration semaine par semaine.">
+<meta property="og:url" content="https://mathiiis7.github.io/portfolio/ornitheque.html">
+<meta property="og:image" content="https://mathiiis7.github.io/portfolio/og-cover.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="fr_FR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#f6f8f6">
+<script>document.documentElement.className+=" js";</script>
+<link rel="preload" href="polices/figtree-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="polices/dm-mono-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav__shell">
+  <div class="nav__in">
+    <a class="nav__mark" href="index.html">Mathis Burgevin</a>
+    <div class="nav__links">
+      <a href="index.html">Accueil</a>
+      <a href="experiences.html">Expériences</a>
+      <a href="ornitheque.html" aria-current="page">L’Ornithèque</a>
+      <a href="dater-le-bati.html"><span class="nav__long">Projet de recherche</span><span class="nav__court">Recherche</span></a>
+    </div>
+    <a class="nav__cta" href="#contact">Me contacter</a>
+  </div>
+  </div>
+</nav>
+
+<main class="sheet">
+
+  <header class="hero reveal">
+    <h1 class="title">L’Ornithèque</h1>
+    <p class="page-sub">Projet personnel · 2025-2026</p>
+    <p class="lead">Plateforme web privée pour un groupe d’amis passionnés d’ornithologie&nbsp;: suivre ses observations, comparer sa progression, découvrir de nouvelles espèces. Aujourd’hui, tchat, galerie photo, quiz de reconnaissance, cartes de répartition et animations de phénologie migratoire pour plus de 300 espèces.</p>
+    <div class="facts">
+      <span class="fact"><b>48</b><span>pays couverts</span></span>
+      <span class="fact"><b>4 367</b><span>cartes de répartition</span></span>
+    </div>
+  </header>
+
+  <section class="item reveal">
+
+    <figure class="plate">
+      <a href="projet-ligue-dex.webp" target="_blank" rel="noopener"><img width="1478" height="1038" loading="lazy" src="projet-ligue-dex.webp" alt="Collection Birdydex, dex des espèces avec fiche détaillée"></a>
+      <figcaption>Collection Birdydex&nbsp;: les espèces trouvables en France, chaque fiche présentant description, rareté locale et phénologie annuelle.<br><a class="zoom" href="projet-ligue-dex.webp" target="_blank" rel="noopener">Pleine résolution ↗</a></figcaption>
+    </figure>
+
+    <div class="plates--pair">
+      <figure class="plate">
+        <a href="projet-ligue-obs.webp" target="_blank" rel="noopener"><img width="1461" height="1007" loading="lazy" src="projet-ligue-obs.webp" alt="Carte des observations récentes en Île-de-France"></a>
+        <figcaption>Observations récentes en Île-de-France, colorées selon la rareté de l’espèce (données eBird / GBIF).<br><a class="zoom" href="projet-ligue-obs.webp" target="_blank" rel="noopener">Pleine résolution ↗</a></figcaption>
+      </figure>
+      <figure class="plate">
+        <a href="projet-ligue-zone.webp" target="_blank" rel="noopener"><img width="1210" height="1021" loading="lazy" src="projet-ligue-zone.webp" alt="Outil de sélection de zone sur la carte"></a>
+        <figcaption>Outil de sélection à main levée pour lister les espèces observées dans une zone précise, ici Paris intra-muros, 14 derniers jours.<br><a class="zoom" href="projet-ligue-zone.webp" target="_blank" rel="noopener">Pleine résolution ↗</a></figcaption>
+      </figure>
+      <figure class="plate">
+        <a href="projet-ligue-repartition.png" target="_blank" rel="noopener"><img width="678" height="450" loading="lazy" src="projet-ligue-repartition.png" alt="Carte de répartition mondiale d’une espèce"></a>
+        <figcaption>Carte de répartition mondiale d’une espèce, générée à partir des données Cornell Status &amp; Trends.<br><a class="zoom" href="projet-ligue-repartition.png" target="_blank" rel="noopener">Pleine résolution ↗</a></figcaption>
+      </figure>
+      <figure class="plate">
+        <a href="projet-ligue-migration.webp" target="_blank" rel="noopener"><img width="1692" height="927" loading="lazy" src="projet-ligue-migration.webp" alt="Animation de migration semaine par semaine"></a>
+        <figcaption>Animation semaine par semaine des couloirs de migration, contrôlée par un curseur temporel.<br><a class="zoom" href="projet-ligue-migration.webp" target="_blank" rel="noopener">Pleine résolution ↗</a></figcaption>
+      </figure>
+    </div>
+
+    <div class="releve">
+      <div>
+        <p class="releve__k">Mon rôle</p>
+        <p class="releve__v">Ce projet m’a permis de travailler concrètement la donnée géospatiale sur un cas grand public&nbsp;: intégration de couches d’observations en temps réel (eBird, GBIF), affichage de rasters de répartition mondiale à partir de Cornell Status &amp; Trends, et animation semaine par semaine des couloirs de migration à partir des mêmes données. Côté produit, j’ai défini le périmètre, choisi les sources et piloté le développement, en m’appuyant sur un assistant IA (Claude Code) pour la partie technique, qui n’est pas mon métier.</p>
+      </div>
+      <div>
+        <p class="releve__k">Outils</p>
+        <div class="tools"><span class="tools-cat">Cartographie</span><span>Leaflet</span><span class="tools-cat">Données</span><span>eBird</span><span>GBIF</span><span>Cornell Status &amp; Trends</span><span>xeno-canto</span><span class="tools-cat">Autre</span><span>GitHub Pages</span><span>Claude Code</span></div>
+      </div>
+    </div>
+
+  </section>
+
+  <section class="close reveal" id="contact">
+    <h2>Envie d’en savoir plus&nbsp;?</h2>
+    <p>Le site réel est privé&nbsp;: il contient les listes d’un groupe d’amis. Une démonstration publique permet d’en manipuler toutes les fonctions, sans compte, sur des données inventées.</p>
+    <div class="actions">
+      <a class="btn btn--primary" href="https://mathiiis7.github.io/ornitheque/demo/" target="_blank" rel="noopener">Essayer la démonstration ↗</a>
+      <a class="btn" href="mailto:mathis.burgevin@gmail.com">mathis.burgevin@gmail.com</a>
+      <a class="btn" href="tel:+33663931559">06 63 93 15 59</a>
+      <a class="btn" href="cv-mathis-burgevin.pdf" download>CV général (PDF)</a>
+    </div>
+  </section>
+
+  <div class="foot">
+    <span>Mathis Burgevin, portfolio</span>
+    <span class="sep">·</span>
+    <a href="index.html">Accueil</a>
+    <a href="experiences.html">Expériences</a>
+    <a href="dater-le-bati.html">Projet de recherche</a>
+    <a href="etude-de-cas.html">Étude de cas</a>
+  </div>
+
+</main>
+
+<script src="site.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Étude de cas, suivi des aménagements cyclables – Mathis Burgevin</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<meta name="description" content="Étude de cas reçue en présélection d’une collectivité&nbsp;: suivre les aménagements cyclables réalisés chaque année et produire un tableau de bord pour les élus. Ma réponse en quatre étapes et les deux sorties qui en découlent.">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Mathis Burgevin">
+<meta property="og:title" content="Étude de cas, suivi des aménagements cyclables">
+<meta property="og:description" content="Exercice reçu en présélection d’une collectivité&nbsp;: ma réponse en quatre étapes, la carte web et le tableau de bord qui en découlent.">
+<meta property="og:url" content="https://mathiiis7.github.io/portfolio/etude-de-cas.html">
+<meta property="og:image" content="https://mathiiis7.github.io/portfolio/og-cover.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="fr_FR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#f6f8f6">
+<script>document.documentElement.className+=" js";</script>
+<link rel="preload" href="polices/figtree-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="polices/dm-mono-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav__shell">
+  <div class="nav__in">
+    <a class="nav__mark" href="index.html">Mathis Burgevin</a>
+    <div class="nav__links">
+      <a href="index.html">Accueil</a>
+      <a href="experiences.html">Expériences</a>
+      <a href="ornitheque.html">L’Ornithèque</a>
+      <a href="dater-le-bati.html"><span class="nav__long">Projet de recherche</span><span class="nav__court">Recherche</span></a>
+    </div>
+    <a class="nav__cta" href="#contact">Me contacter</a>
+  </div>
+  </div>
+</nav>
+
+<main class="sheet">
+
+  <header class="hero reveal">
+    <h1 class="title">Étude de cas, suivi des aménagements cyclables</h1>
+    <p class="lead">Un exercice reçu en présélection, à la suite d’une candidature.</p>
+  </header>
+
+  <section class="section reveal">
+    <div class="section__head">
+      <h2 class="section__title">L’énoncé reçu</h2>
+      <span class="section__rule"></span>
+    </div>
+    <div class="prompt">
+      «&nbsp;La Ville souhaite publier une carte interactive permettant de suivre les aménagements cyclables réalisés chaque année et de produire un tableau de bord pour les élus. Décrivez les principales étapes que vous mettriez en œuvre, les outils utilisés, et les éléments les plus importants pour garantir la réussite du projet. La réponse est attendue en 20 lignes maximum. Vous pouvez illustrer schématiquement votre réponse.&nbsp;»
+    </div>
+  </section>
+
+  <section class="section reveal">
+    <div class="section__head">
+      <h2 class="section__title">Ma réponse</h2>
+      <span class="section__count">4 étapes</span>
+      <span class="section__rule"></span>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <span class="step__n">1</span>
+        <p class="step__k">Cadrer le besoin avec les services</p>
+        <p>Savoir exactement ce qu’on veut suivre&nbsp;: le linéaire réalisé chaque année, le type d’aménagement, le quartier, éventuellement le coût. Et ce que les élus attendent de leur côté, qui n’est pas forcément la même chose. Tout ce qui vient ensuite dépend de ce cadrage, autant le faire avant de produire quoi que ce soit.</p>
+      </div>
+      <div class="step">
+        <span class="step__n">2</span>
+        <p class="step__k">Construire une couche unique, proprement structurée</p>
+        <p>Je préparerais la couche des aménagements cyclables sous QGIS ou ArcGIS, en partant autant que possible des référentiels et des données déjà disponibles à la Ville, autour de quatre champs&nbsp;: année de réalisation, type, longueur, statut. Publiée comme couche hébergée sur ArcGIS Online, elle sert ensuite de base commune à la carte et au tableau de bord.</p>
+      </div>
+      <div class="step">
+        <span class="step__n">3</span>
+        <p class="step__k">En tirer deux sorties, pour deux publics</p>
+        <p>Pour les habitants, une carte web sous ArcGIS Online, avec un filtre par année et une symbologie qui distingue les types d’aménagement&nbsp;: piste, bande, voie verte. Pour les élus, un tableau de bord sous ArcGIS Dashboards, avec les kilomètres réalisés dans l’année et le cumul depuis le début, la répartition par type et par quartier pour vérifier que le territoire se développe de façon équilibrée, et le budget engagé si la donnée existe.</p>
+      </div>
+      <div class="step">
+        <span class="step__n">4</span>
+        <p class="step__k">Décider qui tient la donnée à jour, et quand</p>
+        <p>C’est ce qui décide de la réussite&nbsp;: un suivi annuel ne vaut que si la donnée est tenue. Il faut donc savoir dès le début qui la met à jour et à quel moment, par exemple à chaque fin d’année. Et laisser un document derrière soi, pour que quelqu’un d’autre puisse reprendre le suivi.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section reveal">
+    <div class="section__head">
+      <h2 class="section__title">Les deux sorties, à quoi elles ressembleraient</h2>
+      <span class="section__count">aperçus</span>
+      <span class="section__rule"></span>
+    </div>
+
+    <p class="hint">Les deux aperçus sont reliés&nbsp;: déplacez l’un des deux curseurs d’années, le tracé et les chiffres suivent ensemble.</p>
+
+    <div class="deliverable" data-annee-scope>
+      <p class="deliverable__k"><b>La carte web, pour les habitants</b></p>
+      <div class="webmap">
+        <div class="webmap__frame">
+          <svg viewBox="0 0 800 420" role="img" aria-label="Aperçu schématique de la carte web&nbsp;: une trame serrée d’îlots urbains, un parc avec un plan d’eau, un square, et le réseau cyclable réalisé, coloré selon le type d’aménagement.">
+            <rect width="800" height="420" fill="#ffffff"></rect>
+
+            <g fill="#f1f4f2">
+              <rect x="26" y="24" width="156" height="52" rx="4"></rect>
+              <rect x="194" y="24" width="72" height="52" rx="4"></rect>
+              <rect x="278" y="24" width="72" height="52" rx="4"></rect>
+              <rect x="362" y="24" width="72" height="52" rx="4"></rect>
+              <rect x="446" y="24" width="72" height="52" rx="4"></rect>
+              <rect x="530" y="24" width="72" height="52" rx="4"></rect>
+              <rect x="614" y="24" width="72" height="52" rx="4"></rect>
+              <rect x="698" y="24" width="72" height="52" rx="4"></rect>
+              <rect x="26" y="88" width="72" height="52" rx="4"></rect>
+              <rect x="110" y="88" width="72" height="52" rx="4"></rect>
+              <rect x="194" y="88" width="72" height="52" rx="4"></rect>
+              <rect x="278" y="88" width="156" height="52" rx="4"></rect>
+              <rect x="446" y="88" width="72" height="52" rx="4"></rect>
+              <rect x="530" y="88" width="72" height="52" rx="4"></rect>
+              <rect x="614" y="88" width="72" height="52" rx="4"></rect>
+              <rect x="698" y="88" width="72" height="52" rx="4"></rect>
+              <rect x="26" y="152" width="72" height="52" rx="4"></rect>
+              <rect x="110" y="152" width="72" height="52" rx="4"></rect>
+              <rect x="278" y="152" width="72" height="52" rx="4"></rect>
+              <rect x="362" y="152" width="72" height="52" rx="4"></rect>
+              <rect x="446" y="152" width="72" height="52" rx="4"></rect>
+              <rect x="530" y="152" width="72" height="52" rx="4"></rect>
+              <rect x="614" y="152" width="72" height="52" rx="4"></rect>
+              <rect x="698" y="152" width="72" height="52" rx="4"></rect>
+              <rect x="26" y="216" width="72" height="52" rx="4"></rect>
+              <rect x="110" y="216" width="72" height="52" rx="4"></rect>
+              <rect x="194" y="216" width="72" height="52" rx="4"></rect>
+              <rect x="278" y="216" width="72" height="52" rx="4"></rect>
+              <rect x="362" y="216" width="72" height="52" rx="4"></rect>
+              <rect x="446" y="216" width="72" height="52" rx="4"></rect>
+              <rect x="530" y="216" width="72" height="52" rx="4"></rect>
+              <rect x="614" y="216" width="72" height="52" rx="4"></rect>
+              <rect x="698" y="216" width="72" height="52" rx="4"></rect>
+              <rect x="26" y="280" width="72" height="52" rx="4"></rect>
+              <rect x="110" y="280" width="72" height="52" rx="4"></rect>
+              <rect x="194" y="280" width="72" height="52" rx="4"></rect>
+              <rect x="278" y="280" width="72" height="52" rx="4"></rect>
+              <rect x="362" y="280" width="72" height="52" rx="4"></rect>
+              <rect x="614" y="280" width="72" height="52" rx="4"></rect>
+              <rect x="698" y="280" width="72" height="52" rx="4"></rect>
+              <rect x="26" y="344" width="72" height="52" rx="4"></rect>
+              <rect x="110" y="344" width="72" height="52" rx="4"></rect>
+              <rect x="194" y="344" width="72" height="52" rx="4"></rect>
+              <rect x="278" y="344" width="72" height="52" rx="4"></rect>
+              <rect x="362" y="344" width="72" height="52" rx="4"></rect>
+              <rect x="446" y="344" width="72" height="52" rx="4"></rect>
+              <rect x="530" y="344" width="72" height="52" rx="4"></rect>
+              <rect x="614" y="344" width="156" height="52" rx="4"></rect>
+            </g>
+
+            <rect x="446" y="280" width="156" height="52" rx="4" fill="#e3efe7"></rect>
+            <ellipse cx="524" cy="306" rx="42" ry="15" fill="#dcebf3"></ellipse>
+            <rect x="194" y="152" width="72" height="52" rx="4" fill="#e9f0eb"></rect>
+
+            <g class="troncons">
+              <g class="troncon" data-annee="2020">
+                <path d="M188 24 L188 146" fill="none" stroke="#ffffff" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M188 24 L188 146" fill="none" stroke="#a8863a" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"></path>
+              </g>
+              <g class="troncon" data-annee="2025">
+                <path d="M20 146 L272 146" fill="none" stroke="#ffffff" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M20 146 L272 146" fill="none" stroke="#2f6fa8" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"></path>
+              </g>
+              <g class="troncon" data-annee="2021">
+                <path d="M20 274 L188 274" fill="none" stroke="#ffffff" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M20 274 L188 274" fill="none" stroke="#12855c" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"></path>
+              </g>
+              <g class="troncon" data-annee="2022">
+                <path d="M188 146 L188 338" fill="none" stroke="#ffffff" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M188 146 L188 338" fill="none" stroke="#a8863a" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"></path>
+              </g>
+              <g class="troncon" data-annee="2022">
+                <path d="M104 82 L272 82" fill="none" stroke="#ffffff" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M104 82 L272 82" fill="none" stroke="#a8863a" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"></path>
+              </g>
+              <g class="troncon" data-annee="2023">
+                <path d="M272 146 L272 210 L524 210" fill="none" stroke="#ffffff" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M272 146 L272 210 L524 210" fill="none" stroke="#2f6fa8" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"></path>
+              </g>
+              <g class="troncon" data-annee="2024">
+                <path d="M524 338 L780 338" fill="none" stroke="#ffffff" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M524 338 L780 338" fill="none" stroke="#12855c" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"></path>
+              </g>
+              <g class="troncon" data-annee="2021">
+                <path d="M356 24 L356 146" fill="none" stroke="#ffffff" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M356 24 L356 146" fill="none" stroke="#2f6fa8" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"></path>
+              </g>
+              <g class="troncon" data-annee="2024">
+                <path d="M188 338 L440 338" fill="none" stroke="#ffffff" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M188 338 L440 338" fill="none" stroke="#a8863a" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"></path>
+              </g>
+              <g class="troncon" data-annee="2020">
+                <path d="M440 338 L440 400" fill="none" stroke="#ffffff" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M440 338 L440 400" fill="none" stroke="#a8863a" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"></path>
+              </g>
+              <g class="troncon" data-annee="2026">
+                <path d="M692 146 L692 338" fill="none" stroke="#ffffff" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M692 146 L692 338" fill="none" stroke="#a8863a" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"></path>
+              </g>
+              <g class="troncon" data-annee="2026">
+                <path d="M188 274 L440 274" fill="none" stroke="#ffffff" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M188 274 L440 274" fill="none" stroke="#12855c" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"></path>
+              </g>
+              <g class="troncon" data-annee="2025">
+                <path d="M524 210 L780 210" fill="none" stroke="#ffffff" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M524 210 L780 210" fill="none" stroke="#2f6fa8" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"></path>
+              </g>
+              <g class="troncon" data-annee="2026">
+                <path d="M608 82 L608 274" fill="none" stroke="#ffffff" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M608 82 L608 274" fill="none" stroke="#2f6fa8" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"></path>
+              </g>
+              <g class="troncon" data-annee="2023">
+                <path d="M440 274 L440 210" fill="none" stroke="#ffffff" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path d="M440 274 L440 210" fill="none" stroke="#12855c" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"></path>
+              </g>
+              <g class="troncon" data-annee="2025"><circle cx="188" cy="146" r="5.5" fill="#ffffff" stroke="#2f6fa8" stroke-width="2.6"></circle></g>
+              <g class="troncon" data-annee="2022"><circle cx="188" cy="82" r="5.5" fill="#ffffff" stroke="#a8863a" stroke-width="2.6"></circle></g>
+              <g class="troncon" data-annee="2023"><circle cx="272" cy="210" r="5.5" fill="#ffffff" stroke="#2f6fa8" stroke-width="2.6"></circle></g>
+              <g class="troncon" data-annee="2021"><circle cx="356" cy="146" r="5.5" fill="#ffffff" stroke="#2f6fa8" stroke-width="2.6"></circle></g>
+              <g class="troncon" data-annee="2026"><circle cx="188" cy="274" r="5.5" fill="#ffffff" stroke="#12855c" stroke-width="2.6"></circle></g>
+              <g class="troncon" data-annee="2026"><circle cx="608" cy="210" r="5.5" fill="#ffffff" stroke="#2f6fa8" stroke-width="2.6"></circle></g>
+              <g class="troncon" data-annee="2026"><circle cx="440" cy="274" r="5.5" fill="#ffffff" stroke="#12855c" stroke-width="2.6"></circle></g>
+            </g>
+
+            <g class="carte-ui" font-family="DM Mono, monospace" font-size="12" fill="#6b7d74">
+              <rect x="32" y="30" width="34" height="52" rx="9" fill="#ffffff" opacity=".92"></rect>
+              <path d="M43 62 L49 44 L55 62 L49 56 Z" fill="#8f9e97"></path>
+              <text x="43" y="78">N</text>
+
+              <rect x="722" y="30" width="34" height="34" rx="9" fill="#ffffff" stroke="#dfe6e1" stroke-width="1.5"></rect>
+              <text x="733" y="52" font-size="17" fill="#3d4a44">+</text>
+              <rect x="722" y="70" width="34" height="34" rx="9" fill="#ffffff" stroke="#dfe6e1" stroke-width="1.5"></rect>
+              <text x="734" y="92" font-size="17" fill="#3d4a44">–</text>
+
+              <rect x="28" y="372" width="123" height="36" rx="9" fill="#ffffff" opacity=".92"></rect>
+              <path d="M40 404 L40 398 L40 401 L139 401 L139 398 L139 404" stroke="#8f9e97" stroke-width="1.5" fill="none"></path>
+              <text x="40" y="391">0</text>
+              <text x="139" y="391" text-anchor="end">2 km</text>
+
+              <rect x="586" y="386" width="182" height="24" rx="8" fill="#ffffff" opacity=".92"></rect>
+              <text x="760" y="403" text-anchor="end" fill="#9aa8a1">Fond de plan schématique</text>
+            </g>
+          </svg>
+        </div>
+        <div class="webmap__bar">
+          <div class="webmap__years">
+            <label class="webmap__lab" for="annee">Réalisé jusqu’à <b class="annee-lue">2026</b></label>
+            <input class="webmap__range" id="annee" type="range" min="2020" max="2026" step="1" value="2026" aria-label="Année affichée sur la carte">
+            <div class="webmap__ticks" aria-hidden="true">
+              <span>2020</span><span>2022</span><span>2024</span><span>2026</span>
+            </div>
+          </div>
+          <div class="webkey">
+            <span><i style="background:#2f6fa8"></i>Piste</span>
+            <span><i style="background:#a8863a"></i>Bande</span>
+            <span><i style="background:#12855c"></i>Voie verte</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="deliverable">
+      <p class="deliverable__k"><b>Le tableau de bord, pour les élus</b></p>
+      <div class="dash">
+        <div class="dash__head">
+          <span class="dash__title">Aménagements cyclables, tableau de bord</span>
+          <div class="dash__filters">
+            <span class="dash__filter">Année&nbsp;: <b id="f-annee">2026</b></span>
+            <span class="dash__filter">Type&nbsp;: tous</span>
+            <span class="dash__filter">Quartier&nbsp;: tous</span>
+          </div>
+        </div>
+        <div class="dash__row dash__row-3">
+          <div>
+            <div class="dash__k">Réalisés en <span id="k-annee">2026</span></div>
+            <div class="dash__big"><strong id="v-annuel">12,8</strong>km</div>
+          </div>
+          <div>
+            <div class="dash__k">Cumul depuis 2020</div>
+            <div class="dash__big"><strong id="v-cumul">58,0</strong>km</div>
+          </div>
+          <div>
+            <div class="dash__k">Objectif Plan Vélo 2030</div>
+            <div class="dash__big"><strong id="v-cumul-2">58,0</strong><span class="dash__of">/ 80 km</span></div>
+            <div class="dash__prog"><div class="dash__track"><div class="dash__fill" id="v-fill" style="width:72.5%"></div></div><span class="dash__pct" id="v-pct">73 %</span></div>
+          </div>
+        </div>
+        <div class="dash__row">
+          <div>
+            <div class="dash__k">Évolution annuelle (km réalisés)</div>
+            <div class="dash__years" id="colonnes">
+              <div class="dash__year" data-annee="2020"><span class="dash__year-v">3,7</span><div class="dash__year-c"><div class="dash__year-b" style="height:19px"></div></div><span class="dash__year-l">2020</span></div>
+              <div class="dash__year" data-annee="2021"><span class="dash__year-v">5,9</span><div class="dash__year-c"><div class="dash__year-b" style="height:30px"></div></div><span class="dash__year-l">2021</span></div>
+              <div class="dash__year" data-annee="2022"><span class="dash__year-v">7,3</span><div class="dash__year-c"><div class="dash__year-b" style="height:37px"></div></div><span class="dash__year-l">2022</span></div>
+              <div class="dash__year" data-annee="2023"><span class="dash__year-v">7,7</span><div class="dash__year-c"><div class="dash__year-b" style="height:39px"></div></div><span class="dash__year-l">2023</span></div>
+              <div class="dash__year" data-annee="2024"><span class="dash__year-v">10,3</span><div class="dash__year-c"><div class="dash__year-b" style="height:52px"></div></div><span class="dash__year-l">2024</span></div>
+              <div class="dash__year" data-annee="2025"><span class="dash__year-v">10,3</span><div class="dash__year-c"><div class="dash__year-b" style="height:52px"></div></div><span class="dash__year-l">2025</span></div>
+              <div class="dash__year is-now" data-annee="2026"><span class="dash__year-v">12,8</span><div class="dash__year-c"><div class="dash__year-b" style="height:64px"></div></div><span class="dash__year-l">2026</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="dash__row dash__row-2">
+          <div>
+            <div class="dash__k">Répartition des kilomètres <span class="annee-lue">2026</span>, par type</div>
+            <div class="dash__bar"><span class="dash__bar-l">Piste</span><span class="dash__bar-f" id="b-piste" style="width:100%;background:#2f6fa8"></span><span class="dash__bar-v" id="v-piste">6,3</span></div>
+            <div class="dash__bar"><span class="dash__bar-l">Bande</span><span class="dash__bar-f" id="b-bande" style="width:67%;background:#a8863a"></span><span class="dash__bar-v" id="v-bande">4,2</span></div>
+            <div class="dash__bar"><span class="dash__bar-l">Voie verte</span><span class="dash__bar-f" id="b-voie" style="width:37%;background:#12855c"></span><span class="dash__bar-v" id="v-voie">2,3</span></div>
+          </div>
+          <div>
+            <div class="dash__k">Répartition des kilomètres <span class="annee-lue">2026</span>, par quartier</div>
+            <div class="dash__bar"><span class="dash__bar-l">Nord</span><span class="dash__bar-f" id="b-nord" style="width:100%"></span><span class="dash__bar-v" id="v-nord">5,4</span></div>
+            <div class="dash__bar"><span class="dash__bar-l">Centre</span><span class="dash__bar-f" id="b-centre" style="width:74%"></span><span class="dash__bar-v" id="v-centre">4,0</span></div>
+            <div class="dash__bar"><span class="dash__bar-l">Sud</span><span class="dash__bar-f" id="b-sud" style="width:63%"></span><span class="dash__bar-v" id="v-sud">3,4</span></div>
+          </div>
+        </div>
+        <div class="dash__annees">
+          <div class="webmap__years">
+            <label class="webmap__lab" for="annee-dash">Réalisé jusqu’à <b class="annee-lue">2026</b></label>
+            <input class="webmap__range" id="annee-dash" type="range" min="2020" max="2026" step="1" value="2026" aria-label="Année affichée sur le tableau de bord">
+            <div class="webmap__ticks" aria-hidden="true">
+              <span>2020</span><span>2022</span><span>2024</span><span>2026</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p class="dash__foot">Les deux aperçus sont illustratifs et schématiques, avec des chiffres et un tracé fictifs&nbsp;: ils montrent la forme des sorties, pas des données réelles. Les trois couleurs de type sont les mêmes sur la carte et dans le graphique de répartition, et le vert des autres graphiques ne désigne qu’une quantité de kilomètres.</p>
+  </section>
+
+  <section class="close reveal" id="contact">
+    <h2>Une question sur cet exercice&nbsp;?</h2>
+    <p>Je peux détailler la structure de la couche, le choix des outils ou la façon dont les deux sorties ont été construites.</p>
+    <div class="actions">
+      <a class="btn btn--primary" href="mailto:mathis.burgevin@gmail.com">mathis.burgevin@gmail.com</a>
+      <a class="btn" href="tel:+33663931559">06 63 93 15 59</a>
+      <a class="btn" href="cv-mathis-burgevin.pdf" download>CV général (PDF)</a>
+    </div>
+  </section>
+
+  <div class="foot">
+    <span>Mathis Burgevin, portfolio</span>
+    <span class="sep">·</span>
+    <a href="index.html">Accueil</a>
+    <a href="experiences.html">Expériences</a>
+    <a href="ornitheque.html">L’Ornithèque</a>
+    <a href="dater-le-bati.html">Projet de recherche</a>
+  </div>
+
+</main>
+
+<script src="site.js" defer></script>
+</body>
+</html>
