@@ -103,13 +103,18 @@ img{display:block;max-width:100%;height:auto;}
   font-size:17px;font-weight:800;letter-spacing:-.02em;text-decoration:none;color:var(--ink);
   display:inline-flex;align-items:center;min-height:44px;
 }
-.nav__links{display:flex;gap:6px 22px;flex-wrap:wrap;margin-left:auto;align-items:center;}
+/* Chaque lien porte d'avance la marge de la pastille verte : sinon la page en
+   cours elargit le menu, et a certaines largeurs la barre passait sur deux
+   lignes sur une page et restait sur une seule sur la voisine. */
+.nav__links{display:flex;gap:6px 0;flex-wrap:wrap;margin-left:auto;align-items:center;}
 .nav__links a{
   font-size:15px;text-decoration:none;color:var(--ink-2);
-  display:inline-flex;align-items:center;min-height:44px;
+  display:inline-flex;align-items:center;min-height:44px;padding:0 12px;
+  border-radius:var(--pill);
 }
 .nav__links a:hover{color:var(--ink);}
-.nav__links a[aria-current]{color:#fff;font-weight:600;background:var(--accent);border-radius:var(--pill);padding:0 14px;}
+/* Epaissi par un contour plutot que par le gras : le gras elargit le mot. */
+.nav__links a[aria-current]{color:#fff;-webkit-text-stroke:.45px currentColor;background:var(--accent);}
 .nav__cta{
   display:inline-flex;align-items:center;min-height:44px;padding:9px 18px;
   background:var(--accent);color:#fff;border-radius:var(--pill);
@@ -635,9 +640,9 @@ img{display:block;max-width:100%;height:auto;}
   .nav__mark{order:1;}
   .nav__cta{order:2;margin-left:auto;padding:8px 15px;font-size:14.5px;}
   .nav__links{
-    order:3;width:100%;margin-left:0;flex-wrap:wrap;gap:2px 18px;
+    order:3;width:calc(100% + 9px);margin-left:-9px;flex-wrap:wrap;gap:2px 0;
   }
-  .nav__links a{font-size:14.5px;white-space:nowrap;min-height:38px;}
+  .nav__links a{font-size:14.5px;white-space:nowrap;min-height:38px;padding:0 9px;}
   .nav__long{display:none;}
   .nav__court{display:inline;}
   .hero{padding:34px 0 0;}
