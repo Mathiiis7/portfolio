@@ -29,6 +29,40 @@
 })();
 
 
+/* Clic sur un lien de la meme page (« Me contacter », sommaire). Le defilement
+   doux calcule sa destination au depart : si la page grandit pendant la
+   descente (images qui se chargent en route), il s'arrete trop tot. Vu le
+   30/09/2026 sur Experiences en largeur telephone, le bloc contact restait a
+   mi-ecran. On relance donc une fois le defilement quand il s'arrete, vers la
+   cible recalculee ; si elle est deja en place, ce second appel ne bouge rien. */
+(function () {
+  document.addEventListener('click', function (e) {
+    if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+    var a = e.target.closest && e.target.closest('a[href^="#"]');
+    if (!a) return;
+    var id = a.getAttribute('href').slice(1);
+    var cible;
+    try { cible = id && document.getElementById(decodeURIComponent(id)); } catch (err) { return; }
+    if (!cible) return;
+
+    e.preventDefault();
+    if (location.hash !== '#' + id) history.pushState(null, '', '#' + id);
+    cible.scrollIntoView();
+
+    var fait = false;
+    function corriger() {
+      if (fait) return;
+      fait = true;
+      window.removeEventListener('scrollend', corriger);
+      cible.scrollIntoView();
+    }
+    if ('onscrollend' in window) window.addEventListener('scrollend', corriger);
+    /* filet si scrollend n'arrive pas (navigateur ancien, aucun defilement) */
+    setTimeout(corriger, 1500);
+  });
+})();
+
+
 /* Apparition au defilement. Sans ce script, tout reste visible. */
 (function () {
   var items = document.querySelectorAll('.reveal');
