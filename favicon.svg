@@ -1,4 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" rx="10" fill="#1a4f8a"/>
-  <text x="32" y="46" font-family="Georgia,'Times New Roman',serif" font-size="42" font-weight="500" fill="#fff" text-anchor="middle">M</text>
+  <rect width="64" height="64" rx="12" fill="#1d6b4f"/>
+  <g fill="none" stroke="#4a9a79" stroke-width="3">
+    <circle cx="64" cy="64" r="20"/>
+    <circle cx="64" cy="64" r="34"/>
+    <circle cx="64" cy="64" r="48"/>
+  </g>
+  <path d="M14 49V17L32 38 50 17V49" fill="none" stroke="#f6f8f6" stroke-width="8" stroke-miterlimit="4"/>
 </svg>
