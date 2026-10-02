@@ -6,11 +6,11 @@
 <title>L’Ornithèque – Mathis Burgevin</title>
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
-<meta name="description" content="L’Ornithèque, plateforme web privée d’observation ornithologique&nbsp;: cartes d’observations en temps réel, répartitions d’espèces, animations de migration.">
+<meta name="description" content="L’Ornithèque, application web pour un groupe d’amis observateurs d’oiseaux&nbsp;: classements, collection illustrée, trophées, quiz de chants, cartes d’observations.">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Mathis Burgevin">
 <meta property="og:title" content="L’Ornithèque, projet personnel">
-<meta property="og:description" content="Plateforme web d’observation ornithologique&nbsp;: cartes d’observations, répartitions d’espèces, animations de migration semaine par semaine.">
+<meta property="og:description" content="Application web d’observation ornithologique en service auprès d’un groupe d’amis&nbsp;: classements, collection, trophées, quiz de chants, cartes.">
 <meta property="og:url" content="https://mathiiis7.github.io/portfolio/ornitheque.html">
 <meta property="og:image" content="https://mathiiis7.github.io/portfolio/og-cover.png">
 <meta property="og:image:width" content="1200">
@@ -45,15 +45,16 @@
 
   <header class="hero reveal">
     <h1 class="title">L’Ornithèque</h1>
-    <p class="page-sub">Projet personnel · 2025-2026</p>
-    <p class="lead">Plateforme web privée pour un groupe d’amis passionnés d’ornithologie&nbsp;: suivre ses observations, comparer sa progression, découvrir de nouvelles espèces. Aujourd’hui, tchat, galerie photo, quiz de reconnaissance, cartes de répartition et animations de phénologie migratoire pour plus de 300 espèces.</p>
+    <p class="page-sub">Projet personnel · 2026</p>
+    <p class="lead">Application web pour un groupe d’amis passionnés d’ornithologie&nbsp;: chacun dépose la liste des espèces qu’il a vues, exportée d’eBird, et l’application compare les listes, établit des classements et cartographie les observations. Elle compte aussi une collection illustrée façon Pokédex, des trophées, un quiz de reconnaissance des chants, un tchat et une galerie photo. Elle est en service, utilisée par un vrai groupe.</p>
     <div class="actions">
       <a class="btn btn--primary" href="https://mathiiis7.github.io/ornitheque/demo/" target="_blank" rel="noopener">Essayer la démonstration ↗</a>
     </div>
     <p class="page-sub">Démonstration publique, sans compte, sur des données inventées. Le site réel est privé.</p>
     <div class="facts">
       <span class="fact"><b>48</b><span>pays couverts</span></span>
-      <span class="fact"><b>4 367</b><span>cartes de répartition</span></span>
+      <span class="fact"><b>12</b><span>écrans</span></span>
+      <span class="fact"><b>11</b><span>bancs de mesure automatisés</span></span>
     </div>
   </header>
 
@@ -73,36 +74,49 @@
         <a href="projet-ligue-zone.webp" target="_blank" rel="noopener"><img width="1210" height="1021" loading="lazy" src="projet-ligue-zone.webp" alt="Outil de sélection de zone sur la carte"></a>
         <figcaption>Outil de sélection à main levée pour lister les espèces observées dans une zone précise, ici Paris intra-muros, 14 derniers jours.<br><a class="zoom" href="projet-ligue-zone.webp" target="_blank" rel="noopener" aria-label="Pleine résolution, nouvel onglet : Outil de sélection de zone sur la carte">Pleine résolution ↗</a></figcaption>
       </figure>
-      <figure class="plate">
-        <a href="projet-ligue-repartition.png" target="_blank" rel="noopener"><img width="678" height="450" loading="lazy" src="projet-ligue-repartition.png" alt="Carte de répartition mondiale d’une espèce"></a>
-        <figcaption>Carte de répartition mondiale d’une espèce, générée à partir des données <a href="https://ebird.org/science/status-and-trends" target="_blank" rel="noopener">eBird Status &amp; Trends</a> du Cornell Lab of Ornithology.<br><a class="zoom" href="projet-ligue-repartition.png" target="_blank" rel="noopener" aria-label="Pleine résolution, nouvel onglet : Carte de répartition mondiale d’une espèce">Pleine résolution ↗</a></figcaption>
-      </figure>
-      <figure class="plate">
-        <a href="projet-ligue-migration.webp" target="_blank" rel="noopener"><img width="1692" height="927" loading="lazy" src="projet-ligue-migration.webp" alt="Animation de migration semaine par semaine"></a>
-        <figcaption>Animation semaine par semaine des couloirs de migration, contrôlée par un curseur temporel.<br><a class="zoom" href="projet-ligue-migration.webp" target="_blank" rel="noopener" aria-label="Pleine résolution, nouvel onglet : Animation de migration semaine par semaine">Pleine résolution ↗</a></figcaption>
-      </figure>
     </div>
 
     <div class="releve">
       <div>
         <p class="releve__k">Mon rôle</p>
-        <p class="releve__v">Ce projet m’a permis de travailler concrètement la donnée géospatiale sur un cas grand public&nbsp;: intégration de couches d’observations en temps réel (eBird, GBIF), affichage de rasters de répartition mondiale à partir de Cornell Status &amp; Trends, et animation semaine par semaine des couloirs de migration à partir des mêmes données. Côté produit, j’ai défini le périmètre, choisi les sources et piloté le développement, en m’appuyant sur un assistant IA (Claude Code) pour la partie technique, qui n’est pas mon métier.</p>
+        <p class="releve__v">J’ai défini le périmètre et les règles du jeu (trois façons de classer, seuils des trophées, difficulté du quiz), choisi les sources de données et décidé de l’accès, fermé par invitation. Le développement, qui n’est pas mon métier, a été piloté avec un assistant IA (Claude Code)&nbsp;: je décide, je vérifie sur le site, et j’exige une mesure plutôt qu’une impression.</p>
       </div>
       <div>
         <p class="releve__k">Outils</p>
-        <div class="tools"><span class="tools-cat">Cartographie</span><span>Leaflet</span><span class="tools-cat">Données</span><span>eBird</span><span>GBIF</span><span>Cornell Status &amp; Trends</span><span>xeno-canto</span><span class="tools-cat">Autre</span><span>GitHub Pages</span><span>Claude Code</span></div>
+        <div class="tools"><span class="tools-cat">Cartographie</span><span>Leaflet</span><span class="tools-cat">Données</span><span>eBird</span><span>GBIF</span><span>xeno-canto</span><span>AVONET</span><span>BIRDBASE</span><span class="tools-cat">Autre</span><span>Firebase</span><span>GitHub Pages</span><span>Claude Code</span></div>
       </div>
-      <!-- Citations exigees par les conditions d'utilisation d'eBird
-           (ebird.org/about/citation) et de Status & Trends (section 2 de
-           leurs conditions, version du 30/10/2023) : citation complete avec
-           DOI, lien vers le projet, et avertissement repris mot pour mot. -->
       <div>
         <p class="releve__k">Sources</p>
-        <p class="releve__v releve__v--note">Observations&nbsp;: eBird, base de données en ligne sur la répartition et l’abondance des oiseaux, Cornell Lab of Ornithology, Ithaca, New York (<a href="https://ebird.org" target="_blank" rel="noopener">ebird.org</a>)&nbsp;; <a href="https://www.gbif.org" target="_blank" rel="noopener">GBIF</a>. Répartition et migration&nbsp;: Fink, D., T. Auer, A. Johnston, M. Strimas-Mackey, S. Ligocki, O. Robinson, W. Hochachka, L. Jaromczyk, C. Crowley, K. Dunham, A. Stillman, C. Davis, M. Stokowski, P. Sharma, V. Pantoja, D. Burgin, P. Crowe, M. Bell, S. Ray, I. Davies, V. Ruiz-Gutierrez, C. Wood, A. Rodewald. 2024. eBird Status and Trends, Data Version: 2023; Released: 2025. Cornell Lab of Ornithology, Ithaca, New York. <a href="https://doi.org/10.2173/WZTW8903" target="_blank" rel="noopener">doi.org/10.2173/WZTW8903</a>, <a href="https://ebird.org/science/status-and-trends" target="_blank" rel="noopener">ebird.org/science/status-and-trends</a>.</p>
-        <p class="releve__v releve__v--note" lang="en">This material uses data from the eBird Status and Trends Project at the Cornell Lab of Ornithology, eBird.org. Any opinions, findings, and conclusions or recommendations expressed in this material are those of the author(s) and do not necessarily reflect the views of the Cornell Lab of Ornithology.</p>
+        <p class="releve__v releve__v--note">Observations&nbsp;: eBird, base de données en ligne sur la répartition et l’abondance des oiseaux, Cornell Lab of Ornithology, Ithaca, New York (<a href="https://ebird.org" target="_blank" rel="noopener">ebird.org</a>)&nbsp;; <a href="https://www.gbif.org" target="_blank" rel="noopener">GBIF</a>. Chants&nbsp;: <a href="https://xeno-canto.org" target="_blank" rel="noopener">xeno-canto</a>. Traits des espèces&nbsp;: AVONET (Tobias et al., 2022). Milieux de vie&nbsp;: BIRDBASE.</p>
       </div>
     </div>
 
+  </section>
+
+  <section class="item reveal">
+    <h2 class="item__title">Les données et la méthode</h2>
+    <div class="releve">
+      <div>
+        <p class="releve__k">D’où viennent les données</p>
+        <p class="releve__v">eBird donne la fréquence de chaque espèce par zone et par période, GBIF les observations mondiales, xeno-canto les enregistrements de chants, AVONET les traits des espèces et BIRDBASE leurs milieux de vie. 71 programmes de collecte et de calcul fabriquent les fichiers que le site publie. La rareté de chaque espèce est notée de 0 à 10 selon sa fréquence réelle dans la zone choisie.</p>
+      </div>
+      <div>
+        <p class="releve__k">Un exemple de rigueur</p>
+        <p class="releve__v">L’année en cours est toujours incomplète&nbsp;: janvier à septembre portent huit années de données, octobre à décembre sept. Sans correction, le début d’année pèse trop. La correction retenue pondère par le nombre de listes par an, et elle a été validée par un test à blanc&nbsp;: on retire exprès une année complète et on compare à la vérité connue. Erreur médiane pour la France&nbsp;: 2,12&nbsp;% avec la correction, 3,07&nbsp;% sans, 4,09&nbsp;% en jetant l’année incomplète.</p>
+      </div>
+      <div>
+        <p class="releve__k">Mesurer plutôt que regarder</p>
+        <p class="releve__v">Onze bancs de mesure rejouent le vrai site dans un navigateur et rendent un verdict. Ils ont attrapé des défauts qu’aucun œil n’avait vus, dont quatre erreurs déjà en production. Le démarrage a été mesuré puis allégé&nbsp;: 14 737&nbsp;Ko de photos lus à l’ouverture, ramenés à 212&nbsp;Ko.</p>
+      </div>
+      <div>
+        <p class="releve__k">Accès et droits</p>
+        <p class="releve__v">L’accès est fermé par un code d’invitation à usage unique depuis le 28 septembre, après un audit des règles de sécurité. En lisant les conditions d’utilisation de Cornell, j’ai vu que ses cartes Status &amp; Trends ne peuvent pas être publiées sans accord écrit. J’ai retiré du site la carte départementale et la table qui l’alimentait, retiré leurs captures de cette page, et je prépare des cartes de remplacement faites à partir d’observations eBird publiées sur GBIF.</p>
+      </div>
+      <div>
+        <p class="releve__k">Ce qui reste imparfait</p>
+        <p class="releve__v">Les règles de sécurité sont relues à la main, pas testées automatiquement. Les cartes de répartition et de migration de l’application sont en cours de remplacement. L’accessibilité a eu une première passe mesurée, pas d’audit extérieur.</p>
+      </div>
+    </div>
   </section>
 
   <section class="close reveal" id="contact">
