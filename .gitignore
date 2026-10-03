@@ -8,7 +8,14 @@ desktop.ini
 passation.md
 pixelate.ps1
 CLAUDE.md
+en-cours.md
 og-cover.ps1
+
+# Rangement commun : notes, scripts et archives restent hors du site public
+# (le depot entier est servi par GitHub Pages).
+docs/
+outils/
+archives/
 
 # Documents de travail du systeme de design : utiles en local, pas destines
 # au site public (le depot est servi tel quel par GitHub Pages).
