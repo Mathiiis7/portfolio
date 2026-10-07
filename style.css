@@ -506,6 +506,17 @@ img{display:block;max-width:100%;height:auto;}
 /* Un second sujet dans la meme section : un filet le detache du premier */
 .releve--a-part{margin-top:22px;padding-top:18px;border-top:1px solid var(--hair);}
 .releve .steps{margin:16px 0 0;gap:24px;}
+/* Une source par ligne, son nom en face de ce qu'elle apporte */
+.sources{display:grid;grid-template-columns:auto minmax(0,1fr);gap:8px 18px;margin:0;font-size:16.5px;line-height:1.55;}
+.sources dt{font-weight:700;}
+.sources dd{margin:0;}
+.sources--note{font-size:13.5px;color:var(--ink-2);gap:6px 16px;}
+.sources--note dt{color:var(--ink);}
+/* au téléphone, la colonne des noms laissait 210 px au texte : le nom passe au-dessus */
+@media(max-width:480px){
+  .sources--note{grid-template-columns:1fr;gap:0;}
+  .sources--note dd + dt{margin-top:8px;}
+}
 
 .tools{display:flex;flex-wrap:wrap;gap:8px;align-items:center;}
 .tools span{
