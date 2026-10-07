@@ -119,28 +119,7 @@
     <div class="releve">
       <div>
         <p class="releve__k">Refaire les cartes de répartition</p>
-        <div class="steps">
-          <div class="step">
-            <span class="step__n">1</span>
-            <p class="step__k">Des cartes qu’on n’avait pas le droit de publier</p>
-            <p>Les cartes de répartition venaient d’abord de Cornell, le laboratoire américain qui gère eBird (ses modèles Status &amp; Trends). En lisant leurs conditions d’utilisation, j’ai vu qu’elles ne peuvent pas être publiées sur un site sans accord écrit.</p>
-          </div>
-          <div class="step">
-            <span class="step__n">2</span>
-            <p class="step__k">Repartir des observations brutes</p>
-            <p>Je les ai donc fait reconstruire, avec l’assistant IA, à partir des observations eBird brutes, que Cornell publie en licence libre sur GBIF, la base mondiale des données sur le vivant. Un premier essai avec les cartes toutes faites de GBIF donnait des cases de 155&nbsp;km&nbsp;: je l’ai jugé trop grossier. J’ai donc lancé un téléchargement complet&nbsp;: 1,48&nbsp;milliard d’observations depuis 2015, comptées par espèce, par mois et par case de 28&nbsp;km.</p>
-          </div>
-          <div class="step">
-            <span class="step__n">3</span>
-            <p class="step__k">Cartographier les oiseaux, pas les observateurs</p>
-            <p>Là où les observateurs sont nombreux, toutes les espèces sont plus signalées. Chaque case donne donc une fréquence de signalement&nbsp;: les observations de l’espèce divisées par toutes les observations d’oiseaux de la case.</p>
-          </div>
-          <div class="step">
-            <span class="step__n">4</span>
-            <p class="step__k">10&nbsp;896 cartes, 82,7&nbsp;Mo</p>
-            <p>Sur ces 10&nbsp;896 cartes, 10&nbsp;660 montrent la fréquence de signalement, animée sur douze mois. Certaines espèces manquaient aux données eBird publiées&nbsp;; j’ai voulu le plus d’espèces possible, d’où 236 cartes de plus, en simple présence, tirées d’autres sources de GBIF. Stockées en grilles de gris que le navigateur colore lui-même, elles pèsent 82,7&nbsp;Mo au lieu de 2,7&nbsp;Go en images couleur.</p>
-          </div>
-        </div>
+        <p class="releve__v">Les cartes de répartition venaient d’abord de Cornell, le laboratoire américain qui gère eBird. En lisant leurs conditions d’utilisation, j’ai vu qu’on ne peut pas les publier sur un site sans accord écrit. Je les ai donc fait reconstruire, avec l’assistant IA, à partir des observations eBird brutes que Cornell publie en licence libre sur GBIF, la base mondiale des données sur le vivant&nbsp;: 1,48&nbsp;milliard d’observations depuis 2015. Pour cartographier les oiseaux et non les observateurs, chaque case de la carte donne la part de l’espèce parmi toutes les observations de cette case. Le résultat&nbsp;: 10&nbsp;896 cartes, dont 10&nbsp;660 animées sur douze mois et 236 en simple présence pour des espèces absentes des données eBird.</p>
       </div>
     </div>
 
@@ -161,16 +140,6 @@
     </figure>
 
     <div class="releve">
-      <div>
-        <p class="releve__k">D’où viennent les données</p>
-        <dl class="sources">
-          <dt>eBird</dt><dd>la fréquence de chaque espèce par zone et par période</dd>
-          <dt>GBIF</dt><dd>les observations mondiales, qui servent aux cartes</dd>
-          <dt>xeno-canto</dt><dd>les enregistrements de chants</dd>
-          <dt>AVONET</dt><dd>les traits des espèces, comme leurs mensurations</dd>
-          <dt>BIRDBASE</dt><dd>leurs milieux de vie</dd>
-        </dl>
-      </div>
       <div>
         <p class="releve__k">Des données au site</p>
         <p class="releve__v">Des dizaines de programmes de collecte et de calcul en tirent les fichiers que le site publie. La rareté de chaque espèce, par exemple, est notée de 0 à 10 selon sa fréquence réelle dans la zone choisie&nbsp;: c’est elle qui colore les points de la carte ci-dessous.</p>
