@@ -357,6 +357,8 @@ img{display:block;max-width:100%;height:auto;}
    l'explication se lit en regard plutot qu'en dessous. */
 .plate--cote{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:18px 30px;align-items:center;}
 .plate--cote figcaption{margin:0;}
+/* Image à peine réduite, légende courte à côté (Ma liste de L'Ornithèque) */
+.plate--cote.plate--cote-large{grid-template-columns:minmax(0,2fr) minmax(0,1fr);}
 /* Meme chose, image a droite : la matrice de confusion se lit apres son
    explication, le sens de lecture va du texte vers la figure. */
 .plate--cote.plate--miroir{grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);margin-top:40px;}
@@ -642,7 +644,7 @@ img{display:block;max-width:100%;height:auto;}
 @media(max-width:840px){
   .skills{grid-template-columns:1fr;}
   .plates--pair{grid-template-columns:1fr;}
-  .plate--cote,.plate--vignette.plate--phone,.duo{grid-template-columns:1fr;gap:14px;}
+  .plate--cote,.plate--cote.plate--cote-large,.plate--vignette.plate--phone,.duo{grid-template-columns:1fr;gap:14px;}
   /* empilee, la figure repasse au-dessus de son explication */
   .plate--cote.plate--miroir{grid-template-columns:1fr;}
   .plate--cote.plate--miroir > a{order:1;}
