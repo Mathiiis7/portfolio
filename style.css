@@ -350,6 +350,9 @@ img{display:block;max-width:100%;height:auto;}
 
 .plates--pair{display:grid;grid-template-columns:1fr 1fr;gap:26px 24px;margin:26px 0 0;}
 .plates--pair .plate{margin:0;}
+/* Paire dont les deux images gardent la même hauteur : chaque colonne est
+   proportionnelle au format de son image, donné dans --cols par la page. */
+.plates--egal{grid-template-columns:var(--cols);align-items:start;}
 .plates--petit{max-width:560px;}
 
 /* Une planche a cote de sa legende. Pour une figure haute comme la matrice de
@@ -643,7 +646,7 @@ img{display:block;max-width:100%;height:auto;}
 
 @media(max-width:840px){
   .skills{grid-template-columns:1fr;}
-  .plates--pair{grid-template-columns:1fr;}
+  .plates--pair,.plates--egal{grid-template-columns:1fr;}
   .plate--cote,.plate--cote.plate--cote-large,.plate--vignette.plate--phone,.duo{grid-template-columns:1fr;gap:14px;}
   /* empilee, la figure repasse au-dessus de son explication */
   .plate--cote.plate--miroir{grid-template-columns:1fr;}
