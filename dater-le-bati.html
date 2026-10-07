@@ -46,9 +46,10 @@
   <header class="hero reveal">
     <h1 class="title">Compléter une base de données du bâti par apprentissage automatique</h1>
     <p class="page-sub">Projet de recherche et innovation · Polytech Tours · 2025</p>
-    <p class="lead">Dans la base des bâtiments de Paris publiée par l’APUR, un bâtiment sur trois n’a pas de date de construction. D’où la question de ce projet de recherche&nbsp;: les bâtiments bien renseignés peuvent-ils servir à deviner ce qui manque aux autres&nbsp;? La date n’était qu’un cas d’essai, le vrai sujet était la méthode.</p>
+    <p class="lead">Dans la base des bâtiments de Paris publiée par l’APUR (Atelier parisien d’urbanisme), un bâtiment sur trois n’a pas de date de construction. D’où la question de ce projet de recherche&nbsp;: les bâtiments bien renseignés peuvent-ils servir à deviner ce qui manque aux autres&nbsp;? La date n’était qu’un cas d’essai, le vrai sujet était la méthode.</p>
     <div class="facts">
       <span class="fact"><b>128 176</b><span>bâtiments dans la base</span></span>
+      <span class="fact"><b>44&nbsp;%</b><span>classés dans la bonne période</span></span>
     </div>
   </header>
 
@@ -62,7 +63,7 @@
       </div>
       <div>
         <p class="releve__k">Pourquoi la date de construction</p>
-        <p class="releve__v">Parce qu’elle ne se calcule pas. Une surface, une hauteur, une pente de toit se mesurent dans un SIG&nbsp;; une date, non&nbsp;: soit elle figure dans la base, soit elle manque. Et parce qu’elle est utile. L’époque de construction renseigne les matériaux, le vitrage et l’isolation, donc les consommations de chauffage, donc les bâtiments à rénover en premier.</p>
+        <p class="releve__v">Parce qu’elle ne se calcule pas. Une surface, une hauteur, une pente de toit se mesurent dans un SIG (système d’information géographique)&nbsp;; une date, non&nbsp;: soit elle figure dans la base, soit elle manque. Et parce qu’elle est utile. L’époque de construction renseigne les matériaux, le vitrage et l’isolation, donc les consommations de chauffage, donc les bâtiments à rénover en premier.</p>
       </div>
     </div>
 
@@ -99,7 +100,7 @@
       </div>
       <div>
         <p class="releve__k">L’apprentissage, puis la note</p>
-        <p class="releve__v">Les bâtiments sont séparés en deux groupes. Le modèle apprend sur le premier&nbsp;; sur le second, il ne voit que les formes et doit annoncer une date, qu’on compare ensuite à la vraie, qu’il n’a jamais eue sous les yeux. Trois algorithmes sont mis en concurrence de cette façon, l’arbre de décision, la forêt aléatoire et le gradient boosting, sur neuf découpages différents.</p>
+        <p class="releve__v">Les bâtiments sont séparés en deux groupes. Le modèle apprend sur le premier&nbsp;; sur le second, il ne voit que les formes et doit annoncer une date, qu’on compare ensuite à la vraie, qu’il n’a jamais eue sous les yeux. Trois algorithmes sont mis en concurrence de cette façon, l’arbre de décision, la forêt aléatoire et le gradient boosting (le premier pose une suite de questions sur la forme du bâtiment, les deux autres combinent des centaines d’arbres de ce type), sur neuf découpages différents.</p>
       </div>
     </div>
 
@@ -140,7 +141,7 @@
       </div>
       <div>
         <p class="releve__k">Ce qui ne se transpose pas</p>
-        <p class="releve__v">Le modèle a appris sur les variables de l’APUR. La BDTOPO, qui couvre le reste du territoire, ne décrit pas les bâtiments avec les mêmes&nbsp;: pour l’utiliser ailleurs, il faudrait se limiter aux variables communes aux deux bases, et vérifier que le résultat tient encore.</p>
+        <p class="releve__v">Le modèle a appris sur les variables de l’APUR. La BDTOPO (la base topographique nationale de l’IGN), qui couvre le reste du territoire, ne décrit pas les bâtiments avec les mêmes&nbsp;: pour l’utiliser ailleurs, il faudrait se limiter aux variables communes aux deux bases, et vérifier que le résultat tient encore.</p>
       </div>
       <div>
         <p class="releve__k">Ce que je ferais autrement</p>

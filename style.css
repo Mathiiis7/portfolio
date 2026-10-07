@@ -326,9 +326,11 @@ img{display:block;max-width:100%;height:auto;}
 .skill{background:var(--raised);border-radius:var(--r-lg);padding:18px 20px;}
 .skill__k{
   font-size:15px;font-weight:700;letter-spacing:-.006em;margin:0 0 4px;
-  display:flex;align-items:center;gap:9px;
+  display:flex;align-items:flex-start;gap:9px;
 }
-.skill__k i{width:7px;height:7px;border-radius:var(--pill);background:var(--accent);display:block;flex:0 0 7px;}
+/* Pastille calée sur la première ligne : un intitulé sur deux lignes (SIG
+   développé, 08/10/2026) la faisait descendre entre les deux. */
+.skill__k i{width:7px;height:7px;border-radius:var(--pill);background:var(--accent);display:block;flex:0 0 7px;margin-top:8px;}
 .skill p{margin:0;font-size:15px;line-height:1.55;color:var(--ink-2);}
 
 /* ==========================================================================
