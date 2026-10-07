@@ -351,6 +351,8 @@ img{display:block;max-width:100%;height:auto;}
 .plates--pair{display:grid;grid-template-columns:1fr 1fr;gap:26px 24px;margin:26px 0 0;}
 .plates--pair .plate{margin:0;}
 .plates--petit{max-width:560px;}
+/* Paire de captures plus petites que la colonne (fiche et sons de L'Ornithèque) */
+.plates--moyen{max-width:760px;}
 
 /* Une planche a cote de sa legende. Pour une figure haute comme la matrice de
    correlation, la demi-largeur la fait tenir dans un ecran d'un seul coup, et
