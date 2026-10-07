@@ -59,14 +59,16 @@
   </header>
 
   <section class="item reveal">
-    <h2 class="item__title">Ce qu’on y fait</h2>
-
+    <h2 class="item__title">Mon rôle</h2>
     <div class="releve">
       <div>
-        <p class="releve__k">Mon rôle</p>
-        <p class="releve__v">J’ai défini à quoi sert le site et ce qu’il montre, choisi les sources de données, fixé les règles du classement et des trophées, et décidé de l’accès, fermé par invitation. Le développement, qui n’est pas mon métier, a été piloté avec un assistant IA (Claude Code)&nbsp;: je décide, je vérifie moi-même sur le site, et je demande une preuve chiffrée avant de considérer qu’une chose marche.</p>
+        <p class="releve__v">J’ai défini à quoi sert le site et ce qu’il montre, choisi les sources de données, fixé les règles du classement et des trophées, et décidé de l’accès, fermé par invitation. Le développement, qui n’est pas mon métier, a été piloté avec un assistant IA (Claude Code)&nbsp;: je décide, je vérifie moi-même sur le site, et je demande une preuve chiffrée avant de considérer qu’une chose marche. Onze tests automatiques rejouent le vrai site dans un navigateur et rendent un verdict&nbsp;: ils ont attrapé des défauts qu’aucun œil n’avait vus, dont quatre erreurs déjà en production.</p>
       </div>
     </div>
+  </section>
+
+  <section class="item reveal">
+    <h2 class="item__title">Ce qu’on y fait</h2>
 
     <div class="releve">
       <div>
@@ -103,11 +105,6 @@
       </figure>
     </div>
 
-    <figure class="plate plate--cote">
-      <video width="1000" height="928" src="projet-ornitheque-ou-quand.mp4" poster="projet-ornitheque-ou-quand.webp" autoplay muted loop playsinline controls preload="metadata" aria-label="Démonstration : la carte et le calendrier de la Huppe fasciée, un département puis un mois choisis"></video>
-      <figcaption>«&nbsp;Où et quand la trouver&nbsp;», dans la fiche de la Huppe fasciée&nbsp;: la carte par département et le calendrier de l’année se répondent. Un clic sur l’Hérault, puis sur juin et décembre, et les deux se mettent à jour&nbsp;; la molette agrandit le graphique pour lire les faibles valeurs. Données eBird réelles.</figcaption>
-    </figure>
-
     <figure class="plate plate--cote plate--miroir">
       <a href="projet-ornitheque-quiz.webp" target="_blank" rel="noopener"><img width="1000" height="671" loading="lazy" src="projet-ornitheque-quiz.webp" alt="Quiz de reconnaissance des chants, une question en cours"></a>
       <figcaption>Le quiz de chants&nbsp;: un enregistrement, quatre réponses, pour apprendre à reconnaître une espèce à l’oreille.<br><a class="zoom" href="projet-ornitheque-quiz.webp" target="_blank" rel="noopener" aria-label="Pleine résolution, nouvel onglet : Quiz de reconnaissance des chants, une question en cours">Pleine résolution ↗</a></figcaption>
@@ -120,35 +117,36 @@
       </div>
     </div>
 
-    <div class="plates--pair plates--petit">
-      <figure class="plate">
-        <a href="projet-ornitheque-fil.webp" target="_blank" rel="noopener"><img width="884" height="1160" loading="lazy" src="projet-ornitheque-fil.webp" alt="Le fil des observations du groupe"></a>
-        <figcaption>Le fil des observations du groupe.<br><a class="zoom" href="projet-ornitheque-fil.webp" target="_blank" rel="noopener" aria-label="Pleine résolution, nouvel onglet : Le fil des observations du groupe">Pleine résolution ↗</a></figcaption>
-      </figure>
-      <figure class="plate">
-        <a href="projet-ornitheque-tchat.webp" target="_blank" rel="noopener"><img width="884" height="1135" loading="lazy" src="projet-ornitheque-tchat.webp" alt="Le tchat du groupe, une sortie proposée"></a>
-        <figcaption>Le tchat, ici pour proposer une sortie. Messages de la démonstration, inventés.<br><a class="zoom" href="projet-ornitheque-tchat.webp" target="_blank" rel="noopener" aria-label="Pleine résolution, nouvel onglet : Le tchat du groupe, une sortie proposée">Pleine résolution ↗</a></figcaption>
-      </figure>
-    </div>
-
   </section>
 
   <section class="item reveal">
     <h2 class="item__title">Les cartes et les données</h2>
 
-    <figure class="plate">
-      <a href="projet-ornitheque-carte.webp" target="_blank" rel="noopener"><img width="1600" height="1048" loading="lazy" src="projet-ornitheque-carte.webp" alt="Carte des observations de la ligue en France"></a>
-      <figcaption>La carte des observations de la ligue, colorées selon la rareté de l’espèce. Points de la démonstration, inventés.<br><a class="zoom" href="projet-ornitheque-carte.webp" target="_blank" rel="noopener" aria-label="Pleine résolution, nouvel onglet : Carte des observations de la ligue en France">Pleine résolution ↗</a></figcaption>
-    </figure>
-
     <div class="releve">
       <div>
-        <p class="releve__k">D’où viennent les données</p>
-        <p class="releve__v">eBird donne la fréquence de chaque espèce par zone et par période, GBIF les observations mondiales, xeno-canto les enregistrements de chants, AVONET les traits des espèces et BIRDBASE leurs milieux de vie. Des dizaines de programmes de collecte et de calcul fabriquent les fichiers que le site publie. La rareté de chaque espèce est notée de 0 à 10 selon sa fréquence réelle dans la zone choisie.</p>
-      </div>
-      <div>
-        <p class="releve__k">Refaire les cartes soi-même</p>
-        <p class="releve__v">Les cartes de répartition venaient d’abord des modèles Status &amp; Trends de Cornell. En lisant leurs conditions d’utilisation, j’ai vu qu’elles ne peuvent pas être publiées sur un site sans accord écrit. Je les ai donc fait reconstruire, avec l’assistant IA, à partir des observations eBird brutes, que Cornell publie sur GBIF sous licence libre&nbsp;: 1,48&nbsp;milliard d’observations depuis 2015, comptées par espèce, par mois et par case de 0,25°, soit 28&nbsp;km. Un premier essai par les cartes toutes faites de GBIF donnait des cases de 155&nbsp;km, trop grosses&nbsp;: il a fallu passer par un téléchargement en SQL. Pour ne pas cartographier les observateurs à la place des oiseaux, chaque case donne une fréquence de signalement, les observations de l’espèce divisées par toutes les observations d’oiseaux de la case. Résultat&nbsp;: 10&nbsp;660 espèces cartographiées en fréquence de signalement, animées sur douze mois, et 236 autres, absentes des données eBird publiées, en simple présence tirée d’autres sources de GBIF. Stockées en grilles de gris que le navigateur colore et projette, elles pèsent 82,7&nbsp;Mo, au lieu de 2,7&nbsp;Go en images couleur.</p>
+        <p class="releve__k">Refaire les cartes de répartition</p>
+        <div class="steps">
+          <div class="step">
+            <span class="step__n">1</span>
+            <p class="step__k">Des cartes qu’on n’avait pas le droit de publier</p>
+            <p>Les cartes de répartition venaient d’abord des modèles Status &amp; Trends de Cornell. En lisant leurs conditions d’utilisation, j’ai vu qu’elles ne peuvent pas être publiées sur un site sans accord écrit.</p>
+          </div>
+          <div class="step">
+            <span class="step__n">2</span>
+            <p class="step__k">Repartir des observations brutes</p>
+            <p>Je les ai donc fait reconstruire, avec l’assistant IA, à partir des observations eBird brutes, que Cornell publie sur GBIF sous licence libre&nbsp;: 1,48&nbsp;milliard d’observations depuis 2015, comptées par espèce, par mois et par case de 28&nbsp;km. Les cartes toutes faites de GBIF ne descendaient qu’à 155&nbsp;km, trop grossier.</p>
+          </div>
+          <div class="step">
+            <span class="step__n">3</span>
+            <p class="step__k">Cartographier les oiseaux, pas les observateurs</p>
+            <p>Là où les observateurs sont nombreux, toutes les espèces sont plus signalées. Chaque case donne donc une fréquence de signalement&nbsp;: les observations de l’espèce divisées par toutes les observations d’oiseaux de la case.</p>
+          </div>
+          <div class="step">
+            <span class="step__n">4</span>
+            <p class="step__k">10&nbsp;896 cartes, 82,7&nbsp;Mo</p>
+            <p>10&nbsp;660 espèces cartographiées en fréquence de signalement, animées sur douze mois, et 236 autres, absentes des données eBird publiées, en simple présence tirée d’autres sources de GBIF. Stockées en grilles de gris que le navigateur colore lui-même, elles pèsent 82,7&nbsp;Mo au lieu de 2,7&nbsp;Go en images couleur.</p>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -163,6 +161,23 @@
       </figure>
     </div>
 
+    <figure class="plate plate--cote">
+      <video width="1000" height="928" src="projet-ornitheque-ou-quand.mp4" poster="projet-ornitheque-ou-quand.webp" autoplay muted loop playsinline controls preload="metadata" aria-label="Démonstration : la carte et le calendrier de la Huppe fasciée, un département puis un mois choisis"></video>
+      <figcaption>«&nbsp;Où et quand la trouver&nbsp;», dans la fiche de la Huppe fasciée&nbsp;: la carte par département et le calendrier de l’année se répondent. Un clic sur l’Hérault, puis sur juin et décembre, et les deux se mettent à jour&nbsp;; la molette agrandit le graphique pour lire les faibles valeurs. Données eBird réelles.</figcaption>
+    </figure>
+
+    <div class="releve">
+      <div>
+        <p class="releve__k">D’où viennent les données</p>
+        <p class="releve__v">eBird donne la fréquence de chaque espèce par zone et par période, GBIF les observations mondiales, xeno-canto les enregistrements de chants, AVONET les traits des espèces et BIRDBASE leurs milieux de vie. Des dizaines de programmes de collecte et de calcul fabriquent les fichiers que le site publie. La rareté de chaque espèce est notée de 0 à 10 selon sa fréquence réelle dans la zone choisie.</p>
+      </div>
+    </div>
+
+    <figure class="plate">
+      <a href="projet-ornitheque-carte.webp" target="_blank" rel="noopener"><img width="1600" height="1048" loading="lazy" src="projet-ornitheque-carte.webp" alt="Carte des observations de la ligue en France"></a>
+      <figcaption>La carte des observations de la ligue, colorées selon la rareté de l’espèce. Points de la démonstration, inventés.<br><a class="zoom" href="projet-ornitheque-carte.webp" target="_blank" rel="noopener" aria-label="Pleine résolution, nouvel onglet : Carte des observations de la ligue en France">Pleine résolution ↗</a></figcaption>
+    </figure>
+
     <div class="releve">
       <div>
         <p class="releve__k">Un exemple de rigueur</p>
@@ -170,20 +185,6 @@
       </div>
     </div>
 
-  </section>
-
-  <section class="item reveal">
-    <h2 class="item__title">Mesurer plutôt que regarder</h2>
-    <div class="releve">
-      <div>
-        <p class="releve__k">Les tests automatiques</p>
-        <p class="releve__v">Onze tests automatiques rejouent le vrai site dans un navigateur et rendent un verdict. Ils ont attrapé des défauts qu’aucun œil n’avait vus, dont quatre erreurs déjà en production. Le démarrage a été mesuré puis allégé&nbsp;: 14&nbsp;737&nbsp;Ko de photos lus à l’ouverture, ramenés à 212&nbsp;Ko.</p>
-      </div>
-      <div>
-        <p class="releve__k">Accès et droits</p>
-        <p class="releve__v">L’accès est fermé par un code d’invitation à usage unique depuis le 28 septembre, après un audit des règles de sécurité. Chaque source est citée selon sa licence, jusqu’aux références des deux téléchargements GBIF qui ont servi aux cartes.</p>
-      </div>
-    </div>
   </section>
 
   <section class="item reveal">
