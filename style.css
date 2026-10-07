@@ -707,6 +707,12 @@ img{display:block;max-width:100%;height:auto;}
   .carrousel__point{width:44px;}
 }
 
+/* 360 px, largeur courante sous Android : il manquait 12 px, « Recherche »
+   passait seul sur une seconde ligne. 4 px de chaque cote suffisent. */
+@media(max-width:374px){
+  .nav__links a{padding:0 4px;}
+}
+
 @media(prefers-reduced-motion:reduce){
   html{scroll-behavior:auto;}
   *{animation-duration:.01ms !important;transition-duration:.01ms !important;}
