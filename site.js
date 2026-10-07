@@ -309,3 +309,23 @@
   document.addEventListener('click', function () { fermer(null); });
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape') fermer(null); });
 })();
+
+/* Videos de demonstration : sans la barre de commandes du navigateur, qui restait
+   par-dessus l'image a la pause (juge laid par Mathis le 07/10/2026). Un clic, Entree
+   ou Espace met en pause ou relance ; qui demande moins d'animations ne la voit pas
+   partir seule. */
+(function () {
+  var videos = document.querySelectorAll('.plate video');
+  var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  for (var i = 0; i < videos.length; i++) (function (v) {
+    v.setAttribute('tabindex', '0');
+    v.setAttribute('role', 'button');
+    v.setAttribute('aria-label', v.getAttribute('aria-label') + ' (clic pour mettre en pause ou relancer)');
+    if (reduced) { v.removeAttribute('autoplay'); v.pause(); }
+    function basculer() { if (v.paused) v.play(); else v.pause(); }
+    v.addEventListener('click', basculer);
+    v.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); basculer(); }
+    });
+  })(videos[i]);
+})();
