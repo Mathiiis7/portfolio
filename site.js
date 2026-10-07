@@ -68,6 +68,7 @@
 
 /* Apparition au defilement. Sans ce script, tout reste visible. */
 (function () {
+  window.revealPret = true;
   var items = document.querySelectorAll('.reveal');
   if (!items.length) return;
 

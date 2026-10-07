@@ -79,6 +79,8 @@ img{display:block;max-width:100%;height:auto;}
 
 /* Apparition au defilement, seulement quand le script tourne */
 .js .reveal{opacity:0;transform:translateY(14px);}
+/* filet : si site.js n'a pas tourne au bout de 3 s, la page s'affiche quand meme */
+.js.sans-reveal .reveal{opacity:1;transform:none;}
 .js .reveal.is-in{
   opacity:1;transform:none;
   transition:opacity .6s var(--ease),transform .6s var(--ease);
@@ -683,7 +685,7 @@ img{display:block;max-width:100%;height:auto;}
   }
   /* 6 px de chaque cote en 14 px : les quatre liens tiennent sur une ligne a 375 px,
      « Recherche » passait seul sur une troisieme ligne a 9 px. */
-  .nav__links a{font-size:14px;white-space:nowrap;min-height:38px;padding:0 6px;}
+  .nav__links a{font-size:14px;white-space:nowrap;min-height:44px;padding:0 6px;}
   .nav__long{display:none;}
   .nav__court{display:inline;}
   .hero{padding:34px 0 0;}

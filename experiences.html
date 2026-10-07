@@ -18,7 +18,7 @@
 <meta property="og:locale" content="fr_FR">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#f6f8f6">
-<script>document.documentElement.className+=" js";</script>
+<script>document.documentElement.className+=" js";setTimeout(function(){if(!window.revealPret)document.documentElement.className+=" sans-reveal";},3000);</script>
 <link rel="preload" href="polices/figtree-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="polices/dm-mono-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="style.css">
@@ -125,7 +125,7 @@
       </div>
     </div>
 
-    <figure class="plate plate--cote plate--vignette">
+    <figure class="plate">
       <a href="projet-phasage.webp" target="_blank" rel="noopener"><img width="1749" height="1242" loading="lazy" src="projet-phasage.webp" alt="Carte de phasage de chantiers sur un quartier"></a>
       <figcaption>Le secteur à un mois donné, ici décembre 2026&nbsp;: chaque lot avec ses dates de chantier, et les écoles qui restent en service autour.<br><a class="zoom" href="projet-phasage.webp" target="_blank" rel="noopener" aria-label="Pleine résolution, nouvel onglet : Carte de phasage de chantiers sur un quartier">Pleine résolution ↗</a></figcaption>
     </figure>
@@ -217,7 +217,7 @@
       </div>
     </div>
 
-    <figure class="plate plate--cote plate--vignette">
+    <figure class="plate plate--cote plate--cote-large">
       <a href="projet-reperage.webp" target="_blank" rel="noopener"><img width="832" height="594" loading="lazy" src="projet-reperage.webp" alt="Carte de repérage de l’ensemble des opérations le long d’un tracé de transport"></a>
       <figcaption>L’ensemble des opérations recensées le long du tracé&nbsp;: projets immobiliers, travaux de voirie, réseaux d’assainissement, de chaleur et d’éclairage.<br><a class="zoom" href="projet-reperage.webp" target="_blank" rel="noopener" aria-label="Pleine résolution, nouvel onglet : Carte de repérage de l’ensemble des opérations le long d’un tracé de transport">Pleine résolution ↗</a></figcaption>
     </figure>
@@ -253,7 +253,7 @@
       </div>
     </div>
 
-    <figure class="plate plate--cote plate--vignette">
+    <figure class="plate plate--cote plate--cote-large">
       <a href="projet-pru.webp" target="_blank" rel="noopener"><img width="1042" height="715" loading="lazy" src="projet-pru.webp" alt="Carte d’un quartier en renouvellement urbain"></a>
       <figcaption>Le quartier lu en deux couches&nbsp;: sa structure (parc, places, îlots, équipements) et ses flux (entrées, axes, sens uniques, bus).<br><a class="zoom" href="projet-pru.webp" target="_blank" rel="noopener" aria-label="Pleine résolution, nouvel onglet : Carte d’un quartier en renouvellement urbain">Pleine résolution ↗</a></figcaption>
     </figure>
@@ -315,11 +315,11 @@
             <span class="step__n">3</span>
             <p class="step__k">Publier en ligne</p>
             <p>Les couches rejoignent une base commune à tous les schémas directeurs, puis ArcGIS Online. Le client reçoit le lien d’une carte consultable en ligne. Il a fallu pour cela harmoniser le fichier Excel du diagnostic, qui changeait de l’un à l’autre.</p>
-            <figure class="plate plate--cote plate--vignette">
+            <figure class="plate plate--cote plate--cote-large">
               <a href="projet-outil-arcgis.webp" target="_blank" rel="noopener"><img width="1107" height="570" loading="lazy" src="projet-outil-arcgis.webp" alt="Fichier ArcGIS modèle chargeant plusieurs schémas directeurs depuis les mêmes bases de données"></a>
               <figcaption>La carte modèle, sous ArcGIS&nbsp;: un filtre choisit le schéma directeur à afficher, la mise en forme reste la même pour tous.<br><a class="zoom" href="projet-outil-arcgis.webp" target="_blank" rel="noopener" aria-label="Pleine résolution, nouvel onglet : Fichier ArcGIS modèle chargeant plusieurs schémas directeurs depuis les mêmes bases de données">Pleine résolution ↗</a></figcaption>
             </figure>
-            <figure class="plate plate--cote plate--vignette">
+            <figure class="plate plate--cote plate--cote-large">
               <a href="projet-outil-webgis.webp" target="_blank" rel="noopener"><img width="1147" height="633" loading="lazy" src="projet-outil-webgis.webp" alt="Publication WebSIG sous ArcGIS Online avec couches thématiques et filtres"></a>
               <figcaption>L’application remise au client (ArcGIS Experience Builder)&nbsp;: le client y affiche les couches du diagnostic qu’il veut, les filtre et consulte leur table. Elles sont décochées sur cette capture.<br><a class="zoom" href="projet-outil-webgis.webp" target="_blank" rel="noopener" aria-label="Pleine résolution, nouvel onglet : Publication WebSIG sous ArcGIS Online avec couches thématiques et filtres">Pleine résolution ↗</a></figcaption>
             </figure>
@@ -328,11 +328,11 @@
             <span class="step__n">4</span>
             <p class="step__k">Exporter en images, à la bonne échelle</p>
             <p>Une même mise en page ne convient pas à une commune seule et à une vingtaine. Plusieurs scripts d’export laissent le choix&nbsp;: une carte par bâtiment, par commune, par quartier, ou une grille pour les grands périmètres.</p>
-            <figure class="plate plate--cote plate--vignette">
+            <figure class="plate plate--cote plate--cote-large">
               <a href="projet-outil-echelles.webp" target="_blank" rel="noopener"><img width="842" height="296" loading="lazy" src="projet-outil-echelles.webp" alt="Deux périmètres de schéma directeur côte à côte&nbsp;: un ensemble d’une vingtaine de communes, et une commune seule"></a>
               <figcaption>Deux schémas directeurs&nbsp;: à gauche une vingtaine de communes, à droite une commune seule.<br><a class="zoom" href="projet-outil-echelles.webp" target="_blank" rel="noopener" aria-label="Pleine résolution, nouvel onglet : Deux périmètres de schéma directeur côte à côte&nbsp;: un ensemble d’une vingtaine de communes, et une commune seule">Pleine résolution ↗</a></figcaption>
             </figure>
-            <figure class="plate plate--cote plate--vignette">
+            <figure class="plate plate--cote plate--cote-large">
               <a href="projet-outil-atlas.webp" target="_blank" rel="noopener"><img width="1574" height="553" loading="lazy" src="projet-outil-atlas.webp" alt="Atlas cartographique généré automatiquement sous QGIS"></a>
               <figcaption>Atlas en grille ordonnée&nbsp;: le périmètre d’ensemble, puis une carte de détail par case. La solution retenue pour les collègues qui voulaient remettre des images plutôt que le lien en ligne.<br><a class="zoom" href="projet-outil-atlas.webp" target="_blank" rel="noopener" aria-label="Pleine résolution, nouvel onglet : Atlas cartographique généré automatiquement sous QGIS">Pleine résolution ↗</a></figcaption>
             </figure>
