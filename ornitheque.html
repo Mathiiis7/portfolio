@@ -6,7 +6,7 @@
 <title>L’Ornithèque – Mathis Burgevin</title>
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
-<meta name="description" content="L’Ornithèque, application web pour un groupe d’amis observateurs d’oiseaux&nbsp;: classements, collection illustrée, trophées, quiz de chants, cartes d’observations.">
+<meta name="description" content="L’Ornithèque, application web pour un groupe d’amis observateurs d’oiseaux&nbsp;: classements, collection illustrée, trophées, quiz de chants, cartes de répartition refaites à partir des observations eBird publiées sur GBIF.">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Mathis Burgevin">
 <meta property="og:title" content="L’Ornithèque, projet personnel">
@@ -53,68 +53,128 @@
     <p class="page-sub">Démonstration publique, sans compte, sur des données inventées. Le site réel est privé.</p>
     <div class="facts">
       <span class="fact"><b>48</b><span>pays couverts</span></span>
-      <span class="fact"><b>12</b><span>écrans</span></span>
+      <span class="fact"><b>10&nbsp;896</b><span>cartes de répartition</span></span>
       <span class="fact"><b>11</b><span>bancs de mesure automatisés</span></span>
     </div>
   </header>
 
   <section class="item reveal">
-
-    <figure class="plate">
-      <a href="projet-ligue-dex.webp" target="_blank" rel="noopener"><img width="1478" height="1038" loading="lazy" src="projet-ligue-dex.webp" alt="Collection Birdydex, dex des espèces avec fiche détaillée"></a>
-      <figcaption>Collection Birdydex&nbsp;: les espèces trouvables en France, chaque fiche présentant description, rareté locale et phénologie annuelle.<br><a class="zoom" href="projet-ligue-dex.webp" target="_blank" rel="noopener" aria-label="Pleine résolution, nouvel onglet : Collection Birdydex, dex des espèces avec fiche détaillée">Pleine résolution ↗</a></figcaption>
-    </figure>
-
-    <div class="plates--pair">
-      <figure class="plate">
-        <a href="projet-ligue-obs.webp" target="_blank" rel="noopener"><img width="1461" height="1007" loading="lazy" src="projet-ligue-obs.webp" alt="Carte des observations récentes en Île-de-France"></a>
-        <figcaption>Observations récentes en Île-de-France, colorées selon la rareté de l’espèce (données <a href="https://ebird.org" target="_blank" rel="noopener">eBird</a> / <a href="https://www.gbif.org" target="_blank" rel="noopener">GBIF</a>).<br><a class="zoom" href="projet-ligue-obs.webp" target="_blank" rel="noopener" aria-label="Pleine résolution, nouvel onglet : Carte des observations récentes en Île-de-France">Pleine résolution ↗</a></figcaption>
-      </figure>
-      <figure class="plate">
-        <a href="projet-ligue-zone.webp" target="_blank" rel="noopener"><img width="1210" height="1021" loading="lazy" src="projet-ligue-zone.webp" alt="Outil de sélection de zone sur la carte"></a>
-        <figcaption>Outil de sélection à main levée pour lister les espèces observées dans une zone précise, ici Paris intra-muros, 14 derniers jours.<br><a class="zoom" href="projet-ligue-zone.webp" target="_blank" rel="noopener" aria-label="Pleine résolution, nouvel onglet : Outil de sélection de zone sur la carte">Pleine résolution ↗</a></figcaption>
-      </figure>
-    </div>
+    <h2 class="item__title">Ce qu’on y fait</h2>
 
     <div class="releve">
       <div>
         <p class="releve__k">Mon rôle</p>
         <p class="releve__v">J’ai défini le périmètre et les règles du jeu (trois façons de classer, seuils des trophées, difficulté du quiz), choisi les sources de données et décidé de l’accès, fermé par invitation. Le développement, qui n’est pas mon métier, a été piloté avec un assistant IA (Claude Code)&nbsp;: je décide, je vérifie sur le site, et j’exige une mesure plutôt qu’une impression.</p>
       </div>
+    </div>
+
+    <figure class="plate">
+      <a href="projet-ornitheque-classement.webp" target="_blank" rel="noopener"><img width="1600" height="1048" loading="lazy" src="projet-ornitheque-classement.webp" alt="Classement de la ligue et tableau Qui a vu quoi"></a>
+      <figcaption>Le classement de la ligue, trois façons de classer, et dessous «&nbsp;Qui a vu quoi&nbsp;», espèce par espèce. Joueurs et listes de la démonstration, inventés.<br><a class="zoom" href="projet-ornitheque-classement.webp" target="_blank" rel="noopener" aria-label="Pleine résolution, nouvel onglet : Classement de la ligue et tableau Qui a vu quoi">Pleine résolution ↗</a></figcaption>
+    </figure>
+
+    <figure class="plate">
+      <a href="projet-ornitheque-birdydex.webp" target="_blank" rel="noopener"><img width="1600" height="1012" loading="lazy" src="projet-ornitheque-birdydex.webp" alt="Birdydex, collection illustrée des espèces trouvables en France"></a>
+      <figcaption>Le Birdydex, collection illustrée des 466 espèces régulières en France, oiseaux accidentels à part&nbsp;: en couleur celles que le joueur a vues, en gris les autres, chacune avec sa note de rareté.<br><a class="zoom" href="projet-ornitheque-birdydex.webp" target="_blank" rel="noopener" aria-label="Pleine résolution, nouvel onglet : Birdydex, collection illustrée des espèces trouvables en France">Pleine résolution ↗</a></figcaption>
+    </figure>
+
+    <div class="plates--pair">
+      <figure class="plate">
+        <a href="projet-ornitheque-fiche.webp" target="_blank" rel="noopener"><img width="1000" height="1335" loading="lazy" src="projet-ornitheque-fiche.webp" alt="Fiche espèce du Canard colvert, onglet Info"></a>
+        <figcaption>La fiche d’une espèce&nbsp;: photo, description, milieux de vie, mensurations, répartition.<br><a class="zoom" href="projet-ornitheque-fiche.webp" target="_blank" rel="noopener" aria-label="Pleine résolution, nouvel onglet : Fiche espèce du Canard colvert, onglet Info">Pleine résolution ↗</a></figcaption>
+      </figure>
+      <figure class="plate">
+        <a href="projet-ornitheque-chants.webp" target="_blank" rel="noopener"><img width="1000" height="1335" loading="lazy" src="projet-ornitheque-chants.webp" alt="Fiche espèce, onglet Sons avec sonagrammes"></a>
+        <figcaption>Les chants, enregistrements de <a href="https://xeno-canto.org" target="_blank" rel="noopener">xeno-canto</a> avec leur sonagramme.<br><a class="zoom" href="projet-ornitheque-chants.webp" target="_blank" rel="noopener" aria-label="Pleine résolution, nouvel onglet : Fiche espèce, onglet Sons avec sonagrammes">Pleine résolution ↗</a></figcaption>
+      </figure>
+    </div>
+
+    <div class="plates--pair">
+      <figure class="plate">
+        <a href="projet-ornitheque-trophees.webp" target="_blank" rel="noopener"><img width="1200" height="562" loading="lazy" src="projet-ornitheque-trophees.webp" alt="Page des trophées"></a>
+        <figcaption>Les trophées, gagnés selon les espèces vues.<br><a class="zoom" href="projet-ornitheque-trophees.webp" target="_blank" rel="noopener" aria-label="Pleine résolution, nouvel onglet : Page des trophées">Pleine résolution ↗</a></figcaption>
+      </figure>
+      <figure class="plate">
+        <a href="projet-ornitheque-quiz.webp" target="_blank" rel="noopener"><img width="1000" height="671" loading="lazy" src="projet-ornitheque-quiz.webp" alt="Quiz de reconnaissance des chants, une question en cours"></a>
+        <figcaption>Le quiz de chants&nbsp;: un enregistrement, quatre réponses.<br><a class="zoom" href="projet-ornitheque-quiz.webp" target="_blank" rel="noopener" aria-label="Pleine résolution, nouvel onglet : Quiz de reconnaissance des chants, une question en cours">Pleine résolution ↗</a></figcaption>
+      </figure>
+    </div>
+
+  </section>
+
+  <section class="item reveal">
+    <h2 class="item__title">Les cartes et les données</h2>
+
+    <figure class="plate">
+      <a href="projet-ornitheque-carte.webp" target="_blank" rel="noopener"><img width="1600" height="1048" loading="lazy" src="projet-ornitheque-carte.webp" alt="Carte des observations de la ligue en France"></a>
+      <figcaption>La carte des observations de la ligue, colorées selon la rareté de l’espèce. Points de la démonstration, inventés.<br><a class="zoom" href="projet-ornitheque-carte.webp" target="_blank" rel="noopener" aria-label="Pleine résolution, nouvel onglet : Carte des observations de la ligue en France">Pleine résolution ↗</a></figcaption>
+    </figure>
+
+    <div class="releve">
       <div>
-        <p class="releve__k">Outils</p>
-        <div class="tools"><span class="tools-cat">Cartographie</span><span>Leaflet</span><span class="tools-cat">Données</span><span>eBird</span><span>GBIF</span><span>xeno-canto</span><span>AVONET</span><span>BIRDBASE</span><span class="tools-cat">Autre</span><span>Firebase</span><span>GitHub Pages</span><span>Claude Code</span></div>
+        <p class="releve__k">D’où viennent les données</p>
+        <p class="releve__v">eBird donne la fréquence de chaque espèce par zone et par période, GBIF les observations mondiales, xeno-canto les enregistrements de chants, AVONET les traits des espèces et BIRDBASE leurs milieux de vie. Des dizaines de programmes de collecte et de calcul fabriquent les fichiers que le site publie. La rareté de chaque espèce est notée de 0 à 10 selon sa fréquence réelle dans la zone choisie.</p>
       </div>
       <div>
-        <p class="releve__k">Sources</p>
-        <p class="releve__v releve__v--note">Observations&nbsp;: eBird, base de données en ligne sur la répartition et l’abondance des oiseaux, Cornell Lab of Ornithology, Ithaca, New York (<a href="https://ebird.org" target="_blank" rel="noopener">ebird.org</a>)&nbsp;; <a href="https://www.gbif.org" target="_blank" rel="noopener">GBIF</a>. Chants&nbsp;: <a href="https://xeno-canto.org" target="_blank" rel="noopener">xeno-canto</a>. Traits des espèces&nbsp;: AVONET (Tobias et al., 2022). Milieux de vie&nbsp;: BIRDBASE.</p>
+        <p class="releve__k">Refaire les cartes soi-même</p>
+        <p class="releve__v">Les cartes de répartition venaient d’abord des modèles Status &amp; Trends de Cornell. En lisant leurs conditions d’utilisation, j’ai vu qu’elles ne peuvent pas être publiées sur un site sans accord écrit. Je les ai donc fait reconstruire, avec l’assistant IA, à partir des observations eBird brutes, que Cornell publie sur GBIF sous licence libre&nbsp;: 1,48&nbsp;milliard d’observations depuis 2015, comptées par espèce, par mois et par case de 0,25°, soit 28&nbsp;km. Un premier essai par les cartes toutes faites de GBIF donnait des cases de 155&nbsp;km, trop grosses&nbsp;: il a fallu passer par un téléchargement en SQL. Pour ne pas cartographier les observateurs à la place des oiseaux, chaque case donne une fréquence de signalement, les observations de l’espèce divisées par toutes les observations d’oiseaux de la case. Résultat&nbsp;: 10&nbsp;660 espèces cartographiées en fréquence de signalement, animées sur douze mois, et 236 autres, absentes des données eBird publiées, en simple présence tirée d’autres sources de GBIF. Stockées en grilles de gris que le navigateur colore et projette, elles pèsent 82,7&nbsp;Mo, au lieu de 2,7&nbsp;Go en images couleur.</p>
+      </div>
+    </div>
+
+    <div class="plates--pair">
+      <figure class="plate">
+        <a href="projet-ornitheque-repartition.webp" target="_blank" rel="noopener"><img width="1000" height="1335" loading="lazy" src="projet-ornitheque-repartition.webp" alt="Carte de répartition mondiale du Canard colvert"></a>
+        <figcaption>Répartition mondiale du Canard colvert, en fréquence de signalement par case de 28&nbsp;km (observations eBird publiées sur <a href="https://www.gbif.org" target="_blank" rel="noopener">GBIF</a>).<br><a class="zoom" href="projet-ornitheque-repartition.webp" target="_blank" rel="noopener" aria-label="Pleine résolution, nouvel onglet : Carte de répartition mondiale du Canard colvert">Pleine résolution ↗</a></figcaption>
+      </figure>
+      <figure class="plate">
+        <a href="projet-ornitheque-fiche-carte.webp" target="_blank" rel="noopener"><img width="1000" height="1335" loading="lazy" src="projet-ornitheque-fiche-carte.webp" alt="Fiche espèce, onglet Carte et observations"></a>
+        <figcaption>Dans la fiche, les observations d’une espèce&nbsp;: celles de la ligue, celles d’eBird sur trente jours, celles de GBIF.<br><a class="zoom" href="projet-ornitheque-fiche-carte.webp" target="_blank" rel="noopener" aria-label="Pleine résolution, nouvel onglet : Fiche espèce, onglet Carte et observations">Pleine résolution ↗</a></figcaption>
+      </figure>
+    </div>
+
+    <div class="releve">
+      <div>
+        <p class="releve__k">Un exemple de rigueur</p>
+        <p class="releve__v">L’année en cours est toujours incomplète&nbsp;: janvier à septembre portent huit années de données, octobre à décembre sept. Sans correction, le début d’année pèse trop. La correction retenue pondère par le nombre de listes par an, et elle a été validée par un test à blanc&nbsp;: on retire exprès une année complète et on compare à la vérité connue. Erreur médiane pour la France&nbsp;: 2,12&nbsp;% avec la correction, 3,07&nbsp;% sans, 4,09&nbsp;% en jetant l’année incomplète.</p>
       </div>
     </div>
 
   </section>
 
   <section class="item reveal">
-    <h2 class="item__title">Les données et la méthode</h2>
+    <h2 class="item__title">Mesurer plutôt que regarder</h2>
     <div class="releve">
       <div>
-        <p class="releve__k">D’où viennent les données</p>
-        <p class="releve__v">eBird donne la fréquence de chaque espèce par zone et par période, GBIF les observations mondiales, xeno-canto les enregistrements de chants, AVONET les traits des espèces et BIRDBASE leurs milieux de vie. 71 programmes de collecte et de calcul fabriquent les fichiers que le site publie. La rareté de chaque espèce est notée de 0 à 10 selon sa fréquence réelle dans la zone choisie.</p>
-      </div>
-      <div>
-        <p class="releve__k">Un exemple de rigueur</p>
-        <p class="releve__v">L’année en cours est toujours incomplète&nbsp;: janvier à septembre portent huit années de données, octobre à décembre sept. Sans correction, le début d’année pèse trop. La correction retenue pondère par le nombre de listes par an, et elle a été validée par un test à blanc&nbsp;: on retire exprès une année complète et on compare à la vérité connue. Erreur médiane pour la France&nbsp;: 2,12&nbsp;% avec la correction, 3,07&nbsp;% sans, 4,09&nbsp;% en jetant l’année incomplète.</p>
-      </div>
-      <div>
-        <p class="releve__k">Mesurer plutôt que regarder</p>
-        <p class="releve__v">Onze bancs de mesure rejouent le vrai site dans un navigateur et rendent un verdict. Ils ont attrapé des défauts qu’aucun œil n’avait vus, dont quatre erreurs déjà en production. Le démarrage a été mesuré puis allégé&nbsp;: 14 737&nbsp;Ko de photos lus à l’ouverture, ramenés à 212&nbsp;Ko.</p>
+        <p class="releve__k">Les bancs de mesure</p>
+        <p class="releve__v">Onze bancs de mesure rejouent le vrai site dans un navigateur et rendent un verdict. Ils ont attrapé des défauts qu’aucun œil n’avait vus, dont quatre erreurs déjà en production. Le démarrage a été mesuré puis allégé&nbsp;: 14&nbsp;737&nbsp;Ko de photos lus à l’ouverture, ramenés à 212&nbsp;Ko.</p>
       </div>
       <div>
         <p class="releve__k">Accès et droits</p>
-        <p class="releve__v">L’accès est fermé par un code d’invitation à usage unique depuis le 28 septembre, après un audit des règles de sécurité. En lisant les conditions d’utilisation de Cornell, j’ai vu que ses cartes Status &amp; Trends ne peuvent pas être publiées sans accord écrit. J’ai retiré du site la carte départementale et la table qui l’alimentait, retiré leurs captures de cette page, et je prépare des cartes de remplacement faites à partir d’observations eBird publiées sur GBIF.</p>
+        <p class="releve__v">L’accès est fermé par un code d’invitation à usage unique depuis le 28 septembre, après un audit des règles de sécurité. Chaque source est citée selon sa licence, jusqu’aux références des deux téléchargements GBIF qui ont servi aux cartes.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="item reveal">
+    <h2 class="item__title">Ce qui reste imparfait</h2>
+    <div class="releve">
+      <div>
+        <p class="releve__k">Les limites connues</p>
+        <p class="releve__v">Les règles de sécurité sont relues à la main, pas testées automatiquement. Les cartes comptent des observations, sans le modèle statistique de Cornell&nbsp;: là où l’on observe peu, en Afrique ou en Sibérie, elles restent clairsemées. L’accessibilité a eu une première passe mesurée, pas d’audit extérieur.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="item reveal">
+    <h2 class="item__title">Outils et sources</h2>
+    <div class="releve">
+      <div>
+        <p class="releve__k">Outils</p>
+        <div class="tools"><span class="tools-cat">Cartographie</span><span>Leaflet</span><span class="tools-cat">Données</span><span>eBird</span><span>GBIF</span><span>xeno-canto</span><span>AVONET</span><span>BIRDBASE</span><span class="tools-cat">Autre</span><span>Firebase</span><span>GitHub Pages</span><span>Claude Code</span></div>
       </div>
       <div>
-        <p class="releve__k">Ce qui reste imparfait</p>
-        <p class="releve__v">Les règles de sécurité sont relues à la main, pas testées automatiquement. Les cartes de répartition et de migration de l’application sont en cours de remplacement. L’accessibilité a eu une première passe mesurée, pas d’audit extérieur.</p>
+        <p class="releve__k">Sources</p>
+        <p class="releve__v releve__v--note">Observations&nbsp;: eBird, base de données en ligne sur la répartition et l’abondance des oiseaux, Cornell Lab of Ornithology, Ithaca, New York (<a href="https://ebird.org" target="_blank" rel="noopener">ebird.org</a>)&nbsp;; observations eBird publiées sur <a href="https://www.gbif.org" target="_blank" rel="noopener">GBIF</a>, licence CC BY 4.0, téléchargements <a href="https://doi.org/10.15468/dl.c7y4kg" target="_blank" rel="noopener">10.15468/dl.c7y4kg</a> et <a href="https://doi.org/10.15468/dl.rb9sut" target="_blank" rel="noopener">10.15468/dl.rb9sut</a>. Chants&nbsp;: <a href="https://xeno-canto.org" target="_blank" rel="noopener">xeno-canto</a>. Traits des espèces&nbsp;: AVONET (Tobias et al., 2022). Milieux de vie&nbsp;: BIRDBASE.</p>
       </div>
     </div>
   </section>
