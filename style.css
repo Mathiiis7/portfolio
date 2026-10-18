@@ -625,6 +625,10 @@ img{display:block;max-width:100%;height:auto;}
 .close .btn:hover{background:#fff;}
 .close .btn--primary{background:var(--accent);color:#fff;}
 .close .btn--primary:hover{background:var(--ink);}
+/* Formulaire de contact Tally, sous les boutons : un filet le separe. */
+.close .message{margin-top:30px;padding-top:24px;border-top:1px solid var(--hair);max-width:620px;}
+.close .message h3{margin:0 0 4px;font-size:19px;font-weight:700;letter-spacing:-.015em;}
+.close .message iframe{display:block;border:0;width:100%;min-height:380px;}
 
 .foot{
   margin-top:48px;padding:24px 0 56px;border-top:1px solid var(--hair);

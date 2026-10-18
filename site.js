@@ -92,6 +92,35 @@
 })();
 
 
+/* Formulaire de contact (Tally) : le script de tally.so n'est charge qu'a
+   l'approche du bas de page, pour ne rien demander a un tiers avant. */
+(function () {
+  var cadres = document.querySelectorAll('iframe[data-tally-src]');
+  if (!cadres.length) return;
+  var w = 'https://tally.so/widgets/embed.js';
+  function afficher() {
+    if (typeof Tally !== 'undefined') Tally.loadEmbeds();
+    else for (var i = 0; i < cadres.length; i++) {
+      if (!cadres[i].src) cadres[i].src = cadres[i].getAttribute('data-tally-src');
+    }
+  }
+  function charger() {
+    if (typeof Tally !== 'undefined') return afficher();
+    if (document.querySelector('script[src="' + w + '"]')) return;
+    var s = document.createElement('script');
+    s.src = w; s.onload = afficher; s.onerror = afficher;
+    document.body.appendChild(s);
+  }
+  if (!('IntersectionObserver' in window)) return charger();
+  var io = new IntersectionObserver(function (entries) {
+    if (!entries.some(function (e) { return e.isIntersecting; })) return;
+    io.disconnect();
+    charger();
+  }, { rootMargin: '600px 0px' });
+  for (var j = 0; j < cadres.length; j++) io.observe(cadres[j]);
+})();
+
+
 /* Etude de cas : le curseur des annees pilote la carte et le tableau de bord.
    Chiffres fictifs, coherents entre eux : la somme par type et par quartier
    vaut toujours le realise de l'annee, et le cumul est la somme des annees. */
