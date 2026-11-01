@@ -357,6 +357,8 @@ img{display:block;max-width:100%;height:auto;}
   display:block;width:100%;height:auto;border-radius:var(--r-md);background:#fff;
   box-shadow:0 1px 2px rgba(21,32,27,.05),0 8px 22px rgba(21,32,27,.07);
 }
+/* En plein écran, le fond du lecteur remplit les bandes quand l'écran n'est pas en 16/9 : blanc, il faisait une bande blanche. */
+.film video:fullscreen{background:#000;border-radius:0;box-shadow:none;}
 .film figcaption{margin:6px 2px 0;font-size:15px;}
 .zoom{
   display:inline-flex;align-items:center;gap:7px;min-height:44px;
